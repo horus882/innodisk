@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 // import 'fullpage.js/vendors/scrolloverflow'
-import VueFullPage from 'vue-fullpage.js'
+// import VueFullPage from 'vue-fullpage.js'
 
 import VueAnime from './vue-anime';
 Vue.use(VueAnime);
-Vue.use(VueFullPage);
+// Vue.use(VueFullPage);
 
 // import VueRouter from 'vue-router'
 // import About from './pages/About'

@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <Intro />
+    <div id="main">
+      <div id="index" class="section">INDEX</div>
+      <div id="products" class="section">PRODUCTS</div>
+    </div>
+    <!--
     <div>
       <full-page ref="fullpage" :options="options" id="fullpage">
         <div class="section">
@@ -11,11 +16,14 @@
         </div>
       </full-page>
     </div>
+    -->
   </div>
 </template>
 
 <script>
 import Intro from './components/Intro.vue'
+import "normalize.css"
+import $ from 'jquery'
 
 export default {
   name: 'App',
@@ -23,6 +31,25 @@ export default {
     Intro
   },
   mounted() {
+
+    // fullpage.js 初始化
+
+    $('#main').fullpage({
+      // navigation: true,            // 顯示導行列
+      // navigationPosition: 'right', // 導行列位置
+      // anchors: ['index', 'thermo_spot', 'titanium_excellence', 'conducting', 'various', 'series'],
+      // scrollOverflow: true,
+      // scrollOverflowOptions: {
+      //   disablePointer: true
+      // },
+      // afterLoad: function(anchorLink, index) {
+      //   var currentPage = anchorLink.charAt(0).toUpperCase() + anchorLink.slice(1);
+      //   if (Page.Loaded) {
+      //     Page[currentPage].init();
+      //   }
+      // }
+    });
+
   }
 }
 </script>
