@@ -36,4 +36,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.intro {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-enter-active, 
+.fade-leave-active {
+  transition: .75s opacity;
+}
+
+.fade-enter, 
+.fade-leave-to {
+  opacity: 0;
+}
+
 </style>
