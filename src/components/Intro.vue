@@ -112,9 +112,9 @@ export default {
         // 下方文字出現
         self.subheadingIntro = false;
 
-        // setTimeout(function() { self.part1Show = false; }, 1500);
-        // setTimeout(function() { self.part2Show = true;  }, 2000);
-        // setTimeout(function() { self.introShow = false; }, 5000);
+        setTimeout(function() { self.part1Show = false; }, 1500);
+        setTimeout(function() { self.part2Show = true;  }, 2000);
+        setTimeout(function() { self.introShow = false; }, 5700);
 
       }
     });
@@ -135,6 +135,7 @@ export default {
   height: 100%;
   background: url(../assets/intro-bg.jpg) center center no-repeat;
   background-size: cover;
+  // z-index: 2;
 
   .part-2 {
     transition: opacity .75s ease-out;
