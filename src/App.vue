@@ -1,9 +1,15 @@
 <template>
   <div id="app">
     <Intro />
-    <div id="main">
-      <div id="index" class="section">INDEX</div>
-      <div id="products" class="section">PRODUCTS</div>
+    <div id="wrap">
+      <div id="main">
+        <div id="index" class="section">
+          <p style="text-align: center">INDEX</p>
+        </div>
+        <div id="products" class="section">
+          <p style="text-align: center">PRODUCTS</p>
+        </div>
+      </div>
     </div>
     <!--
     <div>
@@ -34,22 +40,27 @@ export default {
 
     // fullpage.js 初始化
 
-    $('#main').fullpage({
-      // navigation: true,            // 顯示導行列
-      // navigationPosition: 'right', // 導行列位置
-      // anchors: ['index', 'thermo_spot', 'titanium_excellence', 'conducting', 'various', 'series'],
-      // scrollOverflow: true,
-      // scrollOverflowOptions: {
-      //   disablePointer: true
-      // },
-      // afterLoad: function(anchorLink, index) {
-      //   var currentPage = anchorLink.charAt(0).toUpperCase() + anchorLink.slice(1);
-      //   if (Page.Loaded) {
-      //     Page[currentPage].init();
-      //   }
-      // }
-    });
+  },
+  methods: {
+    initFullpage() {
 
+      $('#main').fullpage({
+        // navigation: true,            // 顯示導行列
+        // navigationPosition: 'right', // 導行列位置
+        // anchors: ['index', 'thermo_spot', 'titanium_excellence', 'conducting', 'various', 'series'],
+        // scrollOverflow: true,
+        // scrollOverflowOptions: {
+        //   disablePointer: true
+        // },
+        // afterLoad: function(anchorLink, index) {
+        //   var currentPage = anchorLink.charAt(0).toUpperCase() + anchorLink.slice(1);
+        //   if (Page.Loaded) {
+        //     Page[currentPage].init();
+        //   }
+        // }
+      });
+
+    }
   }
 }
 </script>
@@ -60,7 +71,7 @@ export default {
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
 body {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 #app {
@@ -71,6 +82,12 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#wrap {
+  position: relative;
+  width: 100%;
+  z-index: 1;
 }
 
 .intro {

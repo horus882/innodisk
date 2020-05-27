@@ -116,9 +116,14 @@ export default {
         setTimeout(function() { self.part2Show = true;  }, 2000);
         setTimeout(function() { self.introShow = false; }, 5700);
 
+        self.initFullpage();
+        
       }
     });
 
+  },
+  methods: {
+    initFullpage() {this.$parent.initFullpage();}
   }
 }
 
@@ -135,7 +140,7 @@ export default {
   height: 100%;
   background: url(../assets/intro-bg.jpg) center center no-repeat;
   background-size: cover;
-  // z-index: 2;
+  z-index: 3;
 
   .part-2 {
     transition: opacity .75s ease-out;
