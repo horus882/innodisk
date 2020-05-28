@@ -114,9 +114,10 @@ export default {
 
         setTimeout(function() { self.part1Show = false; }, 1500);
         setTimeout(function() { self.part2Show = true;  }, 2000);
-        setTimeout(function() { self.introShow = false; }, 5700);
-
-        self.initFullpage();
+        setTimeout(function() { 
+          self.introShow = false;
+          self.initFullpage();
+        }, 5700);
         
       }
     });
@@ -133,12 +134,14 @@ export default {
 
 #intro {
 
+  // display: none;
+
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../assets/intro-bg.jpg) center center no-repeat;
+  background: url(../assets/intro/bg.jpg) center center no-repeat;
   background-size: cover;
   z-index: 3;
 

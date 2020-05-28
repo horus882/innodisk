@@ -2,10 +2,9 @@
   <div id="app">
     <Intro />
     <div id="wrap">
+      <Header />
       <div id="main">
-        <div id="index" class="section">
-          <p style="text-align: center">INDEX</p>
-        </div>
+        <Index />
         <div id="products" class="section">
           <p style="text-align: center">PRODUCTS</p>
         </div>
@@ -27,26 +26,48 @@
 </template>
 
 <script>
+
 import Intro from './components/Intro.vue'
+import Header from './components/Header.vue'
+import Index from './components/Index.vue'
+
 import "normalize.css"
+
 import $ from 'jquery'
 
 export default {
   name: 'App',
+  data: function() {
+    return {
+      isMobile: false
+    }
+  },
   components: {
-    Intro
+    Intro,
+    Header,
+    Index
+  },
+  created() {
+    if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      const metaViewPort = document.querySelector('head meta[name="viewport"]');
+      metaViewPort.setAttribute('content', 'width=320, user-scalable=no');
+      console.log('[Mobile]');
+    } else {
+      console.log('[Desktop]');
+    }
   },
   mounted() {
 
     // fullpage.js 初始化
+    // this.initFullpage();
 
   },
   methods: {
     initFullpage() {
 
       $('#main').fullpage({
-        // navigation: true,            // 顯示導行列
-        // navigationPosition: 'right', // 導行列位置
+        navigation: true,            // 顯示導行列
+        navigationPosition: 'left', // 導行列位置
         // anchors: ['index', 'thermo_spot', 'titanium_excellence', 'conducting', 'various', 'series'],
         // scrollOverflow: true,
         // scrollOverflowOptions: {
@@ -71,6 +92,7 @@ export default {
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
 body {
+  background: #efefef;
   /* overflow-y: scroll; */
 }
 
@@ -88,6 +110,14 @@ body {
   position: relative;
   width: 100%;
   z-index: 1;
+}
+
+#main {
+  position: relative;
+}
+
+.section {
+  position: relative;
 }
 
 .intro {
