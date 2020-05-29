@@ -116,7 +116,7 @@ export default {
         setTimeout(function() { self.part2Show = true;  }, 2000);
         setTimeout(function() { 
           self.introShow = false;
-          self.initFullpage();
+          // self.initFullpage();
         }, 5700);
         
       }
@@ -134,7 +134,7 @@ export default {
 
 #intro {
 
-  // display: none;
+  display: none;
 
   position: fixed;
   top: 0;
@@ -170,11 +170,6 @@ export default {
     height: 82px;
     margin-bottom: 14px;
 
-    // .path {
-    //   stroke-dasharray: 100;
-    //   animation: dash 5s linear;
-    // }
-
     path {
       // stroke: #16272e;
       stroke: url(#strokeGradient);
@@ -194,14 +189,10 @@ export default {
   }
 
   .text {
-    // position: absolute;
-    // top: 50%;
-    // width: 100%;
     font-size: 24px;
     line-height: 48px;
     text-align: center;
     margin: 0;
-    // transform: translateY(-50%);
   }
 
 }

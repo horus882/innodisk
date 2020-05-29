@@ -4,32 +4,32 @@
     <div id="wrap">
       <Header />
       <div id="main">
-        <Index />
-        <div id="products" class="section">
-          <p style="text-align: center">PRODUCTS</p>
+        <Index :pages="pages" />
+        <div id="page-automation" class="section">
+          <p style="text-align: center">Automation</p>
+        </div>
+        <div id="page-security" class="section">
+          <p style="text-align: center">Security</p>
+        </div>
+        <div id="page-infrastructure" class="section">
+          <p style="text-align: center">Infrastructure</p>
+        </div>
+        <div id="page-service" class="section">
+          <p style="text-align: center">Service</p>
+        </div>
+        <div id="page-others" class="section">
+          <p style="text-align: center">Others</p>
         </div>
       </div>
     </div>
-    <!--
-    <div>
-      <full-page ref="fullpage" :options="options" id="fullpage">
-        <div class="section">
-          First section ...
-        </div>
-        <div class="section">
-          Second section ...
-        </div>
-      </full-page>
-    </div>
-    -->
   </div>
 </template>
 
 <script>
 
-import Intro from './components/Intro.vue'
+import Intro  from './components/Intro.vue'
 import Header from './components/Header.vue'
-import Index from './components/Index.vue'
+import Index  from './components/Index.vue'
 
 import "normalize.css"
 
@@ -39,9 +39,11 @@ export default {
   name: 'App',
   data: function() {
     return {
-      isMobile: false
+      isMobile: false,
+      pages: ['index', 'automation', 'security', 'infrastructure', 'service', 'others']
     }
   },
+  props: {},
   components: {
     Intro,
     Header,
@@ -59,16 +61,16 @@ export default {
   mounted() {
 
     // fullpage.js 初始化
-    // this.initFullpage();
+    this.initFullpage();
 
   },
   methods: {
-    initFullpage() {
 
+    initFullpage() {
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
         navigationPosition: 'left', // 導行列位置
-        // anchors: ['index', 'thermo_spot', 'titanium_excellence', 'conducting', 'various', 'series'],
+        anchors: ['index', 'automation', 'security', 'infrastructure', 'service', 'others'],
         // scrollOverflow: true,
         // scrollOverflowOptions: {
         //   disablePointer: true
@@ -80,8 +82,8 @@ export default {
         //   }
         // }
       });
-
     }
+
   }
 }
 </script>
@@ -96,8 +98,22 @@ body {
   /* overflow-y: scroll; */
 }
 
+a, a:hover {
+  color: #16272e;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul, li {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+p {margin: 0;}
+
 #app {
-  color: #000;
+  color: #16272e;
   font-size: 16px;
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   font-family: 'Lato', 'sourcehansans-tc', 'Noto Sans S Chinese', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
@@ -112,17 +128,57 @@ body {
   z-index: 1;
 }
 
-#main {
+.inner {
   position: relative;
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
 }
 
-.section {
-  position: relative;
-}
+#main {position: relative;}
+
+.section {position: relative;}
 
 .intro {
   opacity: 0;
   pointer-events: none;
+}
+
+#fp-nav.left {left: 30px;}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  width: 9px;
+  height: 9px;
+  margin: 15px 0;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span,
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: #16272e 2px solid;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span {
+  background: #16272e;
+}
+
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .fade-enter-active, 
