@@ -1,0 +1,61 @@
+<template>
+  <div id="page-automation" class="section">
+    <div class="inner">
+    </div>
+  </div>
+</template>
+
+<script>
+
+// import $ from 'jquery'
+
+export default {
+  name: 'Automation',
+  data: function() {
+    return {
+    }
+  },
+  props: {
+  },
+  mounted() {
+  },
+  methods: {
+  }
+}
+
+</script>
+
+<style lang="scss" scoped>
+
+#page-automation {
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../assets/automation/bg.jpg) center center no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  &::after {
+    // background-image: url(../assets/index/light_md.png);
+    // background-size: 1200px 675px;
+  }
+
+  @media (min-width: 1600px) {
+
+    &::after {
+      // background-image: url(../assets/index/light_lg.png);
+      // background-size: 1900px 950px;
+    }
+
+  }
+
+}
+
+</style>

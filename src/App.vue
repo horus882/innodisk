@@ -5,9 +5,7 @@
       <Header />
       <div id="main">
         <Index :pages="pages" />
-        <div id="page-automation" class="section">
-          <p style="text-align: center">Automation</p>
-        </div>
+        <Automation />
         <div id="page-security" class="section">
           <p style="text-align: center">Security</p>
         </div>
@@ -27,9 +25,10 @@
 
 <script>
 
-import Intro  from './components/Intro.vue'
-import Header from './components/Header.vue'
-import Index  from './components/Index.vue'
+import Intro      from './components/Intro.vue'
+import Header     from './components/Header.vue'
+import Index      from './components/Index.vue'
+import Automation from './components/Automation'
 
 import "normalize.css"
 
@@ -47,7 +46,8 @@ export default {
   components: {
     Intro,
     Header,
-    Index
+    Index,
+    Automation
   },
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -70,7 +70,7 @@ export default {
     initFullpage() {
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
-        navigationPosition: 'left', // 導行列位置
+        navigationPosition: 'left',  // 導行列位置
         anchors: ['index', 'automation', 'security', 'infrastructure', 'service', 'others'],
         // scrollOverflow: true,
         // scrollOverflowOptions: {
@@ -95,6 +95,7 @@ export default {
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
 body {
+  min-width: 1000px;
   background: #efefef;
   /* overflow-y: scroll; */
 }

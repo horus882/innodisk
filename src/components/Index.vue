@@ -6,7 +6,7 @@
           <li v-for="(item, index) in anchors" v-bind:key="index">
             <div class="anchor" tabindex="0" v-bind:class="'anchor-' + item.idName" v-on:click="moveToPage(item.idName)" v-on:keyup.enter="moveToPage(item.idName)">
               <p class="page-name">{{ item.pageName }}</p>
-              <p class="page-desc">{{ item.pageDesc }} <a v-if="item.link" v-on:click.stop v-bind:href="item.link" target="_blank">more</a></p>
+              <p class="page-label">{{ item.pageLabel }} <a v-if="item.link" v-on:click.stop v-bind:href="item.link" target="_blank">more</a></p>
             </div>
           </li>
         </ul>
@@ -27,31 +27,31 @@ export default {
         {
           idName: this.pages[1],
           pageName: 'Smart Automation',
-          pageDesc: 'Manufacturing',
+          pageLabel: 'Manufacturing',
           link: 'https://www.google.com'
         },
         {
           idName: this.pages[2],
           pageName: 'Smart Security',
-          pageDesc: 'Facial recognition applications',
+          pageLabel: 'Facial recognition applications',
           link: 'https://www.google.com'
         },
         {
           idName: this.pages[3],
           pageName: 'Smart Infrastructure',
-          pageDesc: 'Road infrastructure',
+          pageLabel: 'Road infrastructure',
           link: 'https://www.google.com'
         },
         {
           idName: this.pages[4],
           pageName: 'Smart Service',
-          pageDesc: 'Healthcare',
+          pageLabel: 'Healthcare',
           link: 'https://www.google.com'
         },
         {
           idName: this.pages[5],
           pageName: 'Others',
-          pageDesc: '',
+          pageLabel: '',
           link: ''
         },
       ]
@@ -133,7 +133,7 @@ export default {
     height: 25px;
     border: #fff 1px solid;
     border-radius: 50%;
-    box-shadow: rgba(255, 255, 255, 0.75) 0 0 15px;
+    box-shadow: rgba(255, 255, 255, 0.75) 0 0 15px, rgba(255, 255, 255, 0.75) 0 0 15px;
     @media (min-width: 1600px) {
       width: 35px;
       height: 35px;
@@ -208,7 +208,7 @@ export default {
     }
   }
 
-  .page-desc {
+  .page-label {
     font-size: 14px;
     font-weight: 800;
     @media (min-width: 1600px) {
