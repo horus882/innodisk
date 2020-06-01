@@ -165,6 +165,13 @@ export default {
     }
   }
 
+  .part-2 {
+    .inner {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .brand {
 
     height: 82px;

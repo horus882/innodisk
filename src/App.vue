@@ -60,12 +60,13 @@ export default {
   },
   mounted() {
 
-    // fullpage.js 初始化
+    // // fullpage.js 初始化
     this.initFullpage();
 
   },
   methods: {
 
+    // fullpage.js 初始化
     initFullpage() {
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
@@ -90,7 +91,7 @@ export default {
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
 body {
