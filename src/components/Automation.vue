@@ -1,6 +1,11 @@
 <template>
   <div id="page-automation" class="section">
     <div class="inner">
+      <div class="page-info">
+        <p class="page-name">{{ page.pageName }}</p>
+        <p class="page-label"><span>{{ page.pageLabel }}</span>Agriculture</p>
+        <p class="page-text" v-html="page.pageText"></p>
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +21,7 @@ export default {
     }
   },
   props: {
+    page: Object
   },
   mounted() {
   },

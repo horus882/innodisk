@@ -5,7 +5,7 @@
       <Header />
       <div id="main">
         <Index :pages="pages" />
-        <Automation />
+        <Automation :page="pages[1]" />
         <div id="page-security" class="section">
           <p style="text-align: center">Security</p>
         </div>
@@ -39,7 +39,51 @@ export default {
   data: function() {
     return {
       isMobile: false,
-      pages: ['index', 'automation', 'security', 'infrastructure', 'service', 'others']
+      // pages: ['index', 'automation', 'security', 'infrastructure', 'service', 'others']
+      pages: [
+        {
+          idName: 'index',
+          pageName: 'Index',
+          pageLabel: null,
+          pageText: '',
+          moreLink: null
+        },
+        {
+          idName: 'automation',
+          pageName: 'Smart Automation',
+          pageLabel: 'Manufacturing',
+          pageText: 'Factories can be made smarter in countless ways.<br>Which solution interests you the most?',
+          moreLink: 'https://www.google.com/'
+        },
+        {
+          idName: 'security',
+          pageName: 'Smart Security',
+          pageLabel: 'Facial recognition applications',
+          pageText: '',
+          moreLink: 'https://www.google.com/'
+        },
+        {
+          idName: 'infrastructure',
+          pageName: 'Smart Infrastructure',
+          pageLabel: 'Road infrastructure',
+          pageText: '',
+          moreLink: 'https://www.google.com/'
+        },
+        {
+          idName: 'service',
+          pageName: 'Smart Service',
+          pageLabel: 'Healthcare',
+          pageText: '',
+          moreLink: 'https://www.google.com/'
+        },
+        {
+          idName: 'others',
+          pageName: 'Others',
+          pageLabel: null,
+          pageText: '',
+          moreLink: null
+        }
+      ]
     }
   },
   props: {},
@@ -89,7 +133,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+@import url('_variables.scss');
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
@@ -135,11 +181,99 @@ p {margin: 0;}
   width: 1000px;
   height: 100%;
   margin: 0 auto;
+  // padding: 0 100px;
+  // box-sizing: border-box;
+  // @media (min-width: 1600px) {
+  //   max-width: 1660px;
+  //   width: 100%;
+  // }
 }
 
 #main {position: relative;}
 
-.section {position: relative;}
+.section {
+
+  &#page-automation .inner {
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+    @media (min-width: 1600px) {
+      padding: 0 120px;
+    }
+  }
+
+  position: relative;
+
+  .page-info {
+
+    position: relative;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    padding-top: 30px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 316px;
+      width: 188px;
+      height: 11px;
+      background: url(assets/common/page-info-deco.svg) 0 bottom no-repeat;
+      background-size: 210px auto;
+      @media (min-width: 1600px) {
+        left: 450px;
+        width: 296px;
+        height: 13px;
+        background-size: 332px auto;
+      }
+    }
+
+    .page-name {
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 6px;
+      @media (min-width: 1600px) {
+        font-size: 67px;
+        margin-bottom: 10px;
+      }
+    }
+    
+    .page-label {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px;
+      margin-bottom: 12px;
+      @media (min-width: 1600px) {
+        font-size: 28px;
+        line-height: 38px;
+        margin-bottom: 14px;
+      }
+      span {
+        display: inline-block;
+        color: #fff;
+        padding: 0 5px;
+        margin-right: 10px;
+        background: #17282f;
+        @media (min-width: 1600px) {
+          padding: 0 8px;
+        }
+      }
+    }
+    
+    .page-text {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.33;
+      @media (min-width: 1600px) {
+        font-size: 21px;
+      }
+    }
+    
+  }
+
+}
 
 .intro {
   opacity: 0;

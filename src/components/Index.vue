@@ -25,34 +25,34 @@ export default {
     return {
       anchors: [
         {
-          idName: this.pages[1],
-          pageName: 'Smart Automation',
-          pageLabel: 'Manufacturing',
-          link: 'https://www.google.com'
+          idName: this.pages[1].idName,
+          pageName: this.pages[1].pageName,
+          pageLabel: this.pages[1].pageLabel,
+          link: this.pages[1].moreLink
         },
         {
-          idName: this.pages[2],
-          pageName: 'Smart Security',
-          pageLabel: 'Facial recognition applications',
-          link: 'https://www.google.com'
+          idName: this.pages[2].idName,
+          pageName: this.pages[2].pageName,
+          pageLabel: this.pages[2].pageLabel,
+          link: this.pages[2].moreLink
         },
         {
-          idName: this.pages[3],
-          pageName: 'Smart Infrastructure',
-          pageLabel: 'Road infrastructure',
-          link: 'https://www.google.com'
+          idName: this.pages[3].idName,
+          pageName: this.pages[3].pageName,
+          pageLabel: this.pages[3].pageLabel,
+          link: this.pages[3].moreLink
         },
         {
-          idName: this.pages[4],
-          pageName: 'Smart Service',
-          pageLabel: 'Healthcare',
-          link: 'https://www.google.com'
+          idName: this.pages[4].idName,
+          pageName: this.pages[4].pageName,
+          pageLabel: this.pages[4].pageLabel,
+          link: this.pages[4].moreLink
         },
         {
-          idName: this.pages[5],
-          pageName: 'Others',
-          pageLabel: '',
-          link: ''
+          idName: this.pages[5].idName,
+          pageName: this.pages[5].pageName,
+          pageLabel: this.pages[5].pageLabel,
+          link: this.pages[5].moreLink
         },
       ]
     }
@@ -107,6 +107,7 @@ export default {
     top: 50%;
     left: 50%;
     white-space: nowrap;
+    cursor: pointer;
   }
 
   .anchor-automation { margin: -165px 0 0 350px; }
