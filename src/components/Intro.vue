@@ -141,7 +141,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../assets/intro/bg.jpg) center center no-repeat;
+  background: url(../assets/images/intro/bg.jpg) center center no-repeat;
   background-size: cover;
   z-index: 3;
 
@@ -178,10 +178,10 @@ export default {
     margin-bottom: 14px;
 
     path {
-      // stroke: #16272e;
+      // stroke: $primary-color;
       stroke: url(#strokeGradient);
       stroke-width: .75px;
-      fill: #16272e;
+      fill: $primary-color;
       fill-opacity: 0;
     }
 

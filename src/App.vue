@@ -135,7 +135,7 @@ export default {
 
 <style lang="scss">
 
-@import url('_variables.scss');
+// @import url('_variables.scss');
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
@@ -147,7 +147,7 @@ body {
 }
 
 a, a:hover {
-  color: #16272e;
+  color: $primary-color;
   cursor: pointer;
   text-decoration: none;
 }
@@ -161,7 +161,7 @@ ul, li {
 p {margin: 0;}
 
 #app {
-  color: #16272e;
+  color: $primary-color;
   font-size: 16px;
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   font-family: 'Lato', 'sourcehansans-tc', 'Noto Sans S Chinese', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Tahoma, Verdana, Arial, Helvetica, sans-serif;
@@ -183,7 +183,7 @@ p {margin: 0;}
   margin: 0 auto;
   // padding: 0 100px;
   // box-sizing: border-box;
-  // @media (min-width: 1600px) {
+  // @media (min-width: $screen-lg) {
   //   max-width: 1660px;
   //   width: 100%;
   // }
@@ -197,7 +197,7 @@ p {margin: 0;}
     width: 100%;
     padding: 0 100px;
     box-sizing: border-box;
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       padding: 0 120px;
     }
   }
@@ -219,9 +219,9 @@ p {margin: 0;}
       left: 316px;
       width: 188px;
       height: 11px;
-      background: url(assets/common/page-info-deco.svg) 0 bottom no-repeat;
+      background: url(assets/images/common/page-info-deco.svg) 0 bottom no-repeat;
       background-size: 210px auto;
-      @media (min-width: 1600px) {
+      @media (min-width: $screen-lg) {
         left: 450px;
         width: 296px;
         height: 13px;
@@ -234,7 +234,7 @@ p {margin: 0;}
       font-weight: 300;
       line-height: 1;
       margin-bottom: 6px;
-      @media (min-width: 1600px) {
+      @media (min-width: $screen-lg) {
         font-size: 67px;
         margin-bottom: 10px;
       }
@@ -245,7 +245,7 @@ p {margin: 0;}
       font-weight: 600;
       line-height: 26px;
       margin-bottom: 12px;
-      @media (min-width: 1600px) {
+      @media (min-width: $screen-lg) {
         font-size: 28px;
         line-height: 38px;
         margin-bottom: 14px;
@@ -256,7 +256,7 @@ p {margin: 0;}
         padding: 0 5px;
         margin-right: 10px;
         background: #17282f;
-        @media (min-width: 1600px) {
+        @media (min-width: $screen-lg) {
           padding: 0 8px;
         }
       }
@@ -266,7 +266,7 @@ p {margin: 0;}
       font-size: 15px;
       font-weight: 600;
       line-height: 1.33;
-      @media (min-width: 1600px) {
+      @media (min-width: $screen-lg) {
         font-size: 21px;
       }
     }
@@ -299,7 +299,7 @@ p {margin: 0;}
   width: 100%;
   height: 100%;
   margin: 0;
-  border: #16272e 2px solid;
+  border: $primary-color 2px solid;
   background: #fff;
   box-sizing: border-box;
 }
@@ -308,7 +308,7 @@ p {margin: 0;}
 #fp-nav ul li:hover a.active span,
 .fp-slidesNav ul li a.active span,
 .fp-slidesNav ul li:hover a.active span {
-  background: #16272e;
+  background: $primary-color;
 }
 
 #fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {

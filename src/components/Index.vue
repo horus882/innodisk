@@ -83,20 +83,20 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../assets/index/bg.jpg) center center no-repeat;
+    background: url(../assets/images/index/bg.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
   }
 
   &::after {
-    background-image: url(../assets/index/light_md.png);
+    background-image: url(../assets/images/index/light_md.png);
     background-size: 1200px 675px;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: $screen-lg) {
 
     &::after {
-      background-image: url(../assets/index/light_lg.png);
+      background-image: url(../assets/images/index/light_lg.png);
       background-size: 1900px 950px;
     }
 
@@ -116,7 +116,7 @@ export default {
   .anchor-service { margin: -156px 0 0 -292px; }
   .anchor-others { margin: -88px 0 0 -458px; }
 
-  @media (min-width: 1600px) {
+  @media (min-width: $screen-lg) {
     .anchor-automation { margin: -262px 0 0 528px; }
     .anchor-security { margin: -178px 0 0 72px; }
     .anchor-infrastructure { margin: -374px 0 0 -38px; }
@@ -135,7 +135,7 @@ export default {
     border: #fff 1px solid;
     border-radius: 50%;
     box-shadow: rgba(255, 255, 255, 0.75) 0 0 15px, rgba(255, 255, 255, 0.75) 0 0 15px;
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       width: 35px;
       height: 35px;
     }
@@ -148,7 +148,7 @@ export default {
     height: 11px;
     border: 0;
     background-color: #fff;
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       bottom: -24px;
       left: -24px;
       width: 15px;
@@ -159,14 +159,14 @@ export default {
   .anchor-automation {
     &::before {bottom: -48px; left: -15px;}
     &::after {bottom: -40px; left: -7px;}
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       &::before {bottom: -51px; left: -8px;}
       &::after {bottom: -40px; left: 3px;}
     }
   }
 
   .anchor-security {
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       &::before {bottom: -19px; left: -46px;}
       &::after {bottom: -8px; left: -35px;}
     }
@@ -175,7 +175,7 @@ export default {
   .anchor-infrastructure {
     &::before {bottom: -46px; left: -35px;}
     &::after {bottom: -38px; left: -27px;}
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       &::before {bottom: -42px; left: -42px;}
       &::after {bottom: -31px; left: -31px;}
     }
@@ -184,7 +184,7 @@ export default {
   .anchor-service {
     &::before {bottom: -25px; left: -35px;}
     &::after {bottom: -17px; left: -27px;}
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       &::before {bottom: -34px; left: -50px;}
       &::after {bottom: -23px; left: -39px;}
     }
@@ -193,7 +193,7 @@ export default {
   .anchor-others {
     &::before {bottom: -40px; left: -35px;}
     &::after {bottom: -32px; left: -27px;}
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       &::before {bottom: -52px; left: -28px;}
       &::after {bottom: -41px; left: -17px;}
     }
@@ -203,7 +203,7 @@ export default {
     font-size: 28px;
     font-weight: 400;
     margin: 0 0 5px;
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       font-size: 40px;
       font-weight: 300;
     }
@@ -212,7 +212,7 @@ export default {
   .page-label {
     font-size: 14px;
     font-weight: 800;
-    @media (min-width: 1600px) {
+    @media (min-width: $screen-lg) {
       font-size: 20px;
       font-weight: 700;
     }
@@ -226,10 +226,10 @@ export default {
       line-height: 13px;
       margin-left: 2px;
       padding-left: 10px;
-      background: url(../assets/index/btn-more.svg) 0 0 no-repeat;
+      background: url(../assets/images/index/btn-more.svg) 0 0 no-repeat;
       background-size: contain;
       box-sizing: border-box;
-      @media (min-width: 1600px) {
+      @media (min-width: $screen-lg) {
         width: 80px;
         height: 18px;
         font-size: 18px;

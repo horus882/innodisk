@@ -65,7 +65,7 @@ export default {
       left: 18px;
       width: 33px;
       height: 1px;
-      background: #16272e;
+      background: $primary-color;
       transition: .25s ease-in-out;
       &:nth-child(1) {top: 26px;}
       &:nth-child(2),
@@ -92,7 +92,7 @@ export default {
       display: block;
       width: 100%;
       height: 100%;
-      background: url(../assets/common/header-logo.svg) 0 0 no-repeat;
+      background: url(../assets/images/common/header-logo.svg) 0 0 no-repeat;
       background-size: contain;
     }
   }

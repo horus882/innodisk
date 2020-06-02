@@ -43,20 +43,20 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../assets/automation/bg.jpg) center center no-repeat;
+    background: url(../assets/images/automation/bg.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
   }
 
   &::after {
-    // background-image: url(../assets/index/light_md.png);
+    // background-image: url(../assets/images/index/light_md.png);
     // background-size: 1200px 675px;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: $screen-lg) {
 
     &::after {
-      // background-image: url(../assets/index/light_lg.png);
+      // background-image: url(../assets/images/index/light_lg.png);
       // background-size: 1900px 950px;
     }
 
