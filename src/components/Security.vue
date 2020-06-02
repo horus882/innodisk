@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="page-info">
         <p class="page-name">{{ page.pageName }}</p>
-        <p class="page-label"><span>{{ page.pageLabel }}</span>Agriculture</p>
+        <p class="page-label"><span>{{ page.pageLabel.replace('applications', '') }}</span>Security systems</p>
         <p class="page-text" v-html="page.pageText"></p>
       </div>
     </div>
@@ -15,7 +15,7 @@
 // import $ from 'jquery'
 
 export default {
-  name: 'Automation',
+  name: 'Security',
   data: function() {
     return {
     }
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 
-#page-automation {
+#page-security {
 
   &::before {
   // &::after {
@@ -43,7 +43,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../assets/images/automation/bg.jpg) center center no-repeat;
+    background: url(../assets/images/security/bg.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
   }

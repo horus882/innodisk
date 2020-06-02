@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="page-info">
         <p class="page-name">{{ page.pageName }}</p>
-        <p class="page-label"><span>{{ page.pageLabel }}</span>Agriculture</p>
+        <p class="page-label"><span>{{ page.pageLabel }}</span></p>
         <p class="page-text" v-html="page.pageText"></p>
       </div>
     </div>
@@ -15,7 +15,7 @@
 // import $ from 'jquery'
 
 export default {
-  name: 'Automation',
+  name: 'Others',
   data: function() {
     return {
     }
@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 
-#page-automation {
+#page-others {
 
   &::before {
   // &::after {
@@ -43,9 +43,23 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../assets/images/automation/bg.jpg) center center no-repeat;
+    background: url(../assets/images/others/bg.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
+  }
+
+  .page-info {
+    color: #fff;
+  }
+
+  .page-name,
+  .page-label {
+    display: none;
+  }
+
+  .page-text {
+    font-size: 28px;
+    font-weight: 300;
   }
 
 }

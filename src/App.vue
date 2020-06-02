@@ -4,20 +4,12 @@
     <div id="wrap">
       <Header />
       <div id="main">
-        <Index :pages="pages" />
-        <Automation :page="pages[1]" />
-        <div id="page-security" class="section">
-          <p style="text-align: center">Security</p>
-        </div>
-        <div id="page-infrastructure" class="section">
-          <p style="text-align: center">Infrastructure</p>
-        </div>
-        <div id="page-service" class="section">
-          <p style="text-align: center">Service</p>
-        </div>
-        <div id="page-others" class="section">
-          <p style="text-align: center">Others</p>
-        </div>
+        <Index          :pages="pages" />
+        <Automation     :page="pages[1]" />
+        <Security       :page="pages[2]" />
+        <Infrastructure :page="pages[3]" />
+        <Service        :page="pages[4]" />
+        <Others         :page="pages[5]" />
       </div>
     </div>
   </div>
@@ -25,10 +17,14 @@
 
 <script>
 
-import Intro      from './components/Intro.vue'
-import Header     from './components/Header.vue'
-import Index      from './components/Index.vue'
-import Automation from './components/Automation'
+import Intro            from './components/Intro.vue'
+import Header           from './components/Header.vue'
+import Index            from './components/Index.vue'
+import Automation       from './components/Automation'
+import Security         from './components/Security'
+import Infrastructure   from './components/Infrastructure'
+import Service          from './components/Service'
+import Others           from './components/Others'
 
 import "normalize.css"
 
@@ -39,7 +35,6 @@ export default {
   data: function() {
     return {
       isMobile: false,
-      // pages: ['index', 'automation', 'security', 'infrastructure', 'service', 'others']
       pages: [
         {
           idName: 'index',
@@ -59,28 +54,28 @@ export default {
           idName: 'security',
           pageName: 'Smart Security',
           pageLabel: 'Facial recognition applications',
-          pageText: '',
+          pageText: 'Facial recognition can be made smarter in countless ways.<br>Which solution interests you the most?',
           moreLink: 'https://www.google.com/'
         },
         {
           idName: 'infrastructure',
           pageName: 'Smart Infrastructure',
           pageLabel: 'Road infrastructure',
-          pageText: '',
+          pageText: 'Road infrastructure can be made smarter in countless ways.<br>Which solution interests you the most?',
           moreLink: 'https://www.google.com/'
         },
         {
           idName: 'service',
           pageName: 'Smart Service',
           pageLabel: 'Healthcare',
-          pageText: '',
+          pageText: 'Healthcare can be made smarter in countless ways.<br>Which solution interests you the most?',
           moreLink: 'https://www.google.com/'
         },
         {
           idName: 'others',
           pageName: 'Others',
           pageLabel: null,
-          pageText: '',
+          pageText: 'Which of the applications<br>interest you the most?',
           moreLink: null
         }
       ]
@@ -91,7 +86,11 @@ export default {
     Intro,
     Header,
     Index,
-    Automation
+    Automation,
+    Security,
+    Infrastructure,
+    Service,
+    Others
   },
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -193,10 +192,14 @@ p {margin: 0;}
 
 .section {
 
-  &#page-automation .inner {
+  &#page-automation .inner,
+  &#page-security .inner,
+  &#page-infrastructure .inner,
+  &#page-service .inner {
     width: 100%;
     padding: 0 100px;
     box-sizing: border-box;
+    overflow: hidden;
     @media (min-width: $screen-lg) {
       padding: 0 120px;
     }
