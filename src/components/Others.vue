@@ -6,6 +6,22 @@
         <p class="page-label"><span>{{ page.pageLabel }}</span></p>
         <p class="page-text" v-html="page.pageText"></p>
       </div>
+      <div class="applications">
+        <ul>
+          <li>
+            <a class="item" href="#" target="_blank">
+              <p class="item-name">Agriculture</p>
+              <span class="item-extra">learn more</span>
+            </a>
+          </li>
+          <li>
+            <a class="item" href="#" target="_blank">
+              <p class="item-name">Agriculture</p>
+              <span class="item-extra">learn more</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -60,6 +76,40 @@ export default {
   .page-text {
     font-size: 28px;
     font-weight: 300;
+  }
+
+  .applications {
+
+    font-size: 0;
+    text-align: left;
+    padding-top: 15px;
+
+    li {
+      display: inline-block;
+      width: 240px;
+      height: 150px;
+      margin: 8px 2px;
+    }
+
+    .item {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      padding: 7px 14px;
+      box-sizing: border-box;
+      background: $primary-color;
+      cursor: pointer;
+    }
+
+    .item-name {
+      font-size: 21px;
+    }
+
+    .item-extra {
+      font-size: 12px;
+    }
+
   }
 
 }

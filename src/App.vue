@@ -142,7 +142,6 @@ export default {
 body {
   min-width: 1000px;
   background: #efefef;
-  /* overflow-y: scroll; */
 }
 
 a, a:hover {
@@ -203,6 +202,12 @@ p {margin: 0;}
     @media (min-width: $screen-lg) {
       padding: 0 120px;
     }
+  }
+
+  &#page-others .inner {
+    width: 980px;
+    padding: 0 100px;
+    overflow: hidden;
   }
 
   position: relative;
