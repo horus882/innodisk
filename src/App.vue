@@ -76,7 +76,102 @@ export default {
           pageName: 'Others',
           pageLabel: null,
           pageText: 'Which of the applications<br>interest you the most?',
-          moreLink: null
+          moreLink: null,
+          apps: [
+            {
+              name: 'Agriculture',
+              image: require('./assets/images/others/item-pic-1.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: 'Construction',
+              image: require('./assets/images/others/item-pic-2.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: 'Delivery Services',
+              image: require('./assets/images/others/item-pic-3.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: 'Public\nTransportation',
+              image: require('./assets/images/others/item-pic-4.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: 'Logistics',
+              image: require('./assets/images/others/item-pic-5.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+
+
+
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-6.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-7.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-8.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-9.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-10.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-11.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-12.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-13.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-14.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: '',
+              image: require('./assets/images/others/item-pic-15.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+          ]
         }
       ]
     }
