@@ -112,65 +112,77 @@ export default {
 
 
             {
-              name: '',
+              name: 'Public services',
               image: require('./assets/images/others/item-pic-6.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Surveillance',
               image: require('./assets/images/others/item-pic-7.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Security systems',
               image: require('./assets/images/others/item-pic-8.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Security\ncheck points',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Mining and Drilling',
               image: require('./assets/images/others/item-pic-10.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Oli and Gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Retail',
               image: require('./assets/images/others/item-pic-12.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Automated Machines',
               image: require('./assets/images/others/item-pic-13.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Aviation',
               image: require('./assets/images/others/item-pic-14.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
             {
-              name: '',
+              name: 'Power',
               image: require('./assets/images/others/item-pic-15.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
             },
+            {
+              name: 'Defense',
+              image: require('./assets/images/others/item-pic-16.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            },
+            {
+              name: 'Border Security',
+              image: require('./assets/images/others/item-pic-17.jpg'),
+              link: 'https://www.google.com/',
+              extra: 'learn more'
+            }
           ]
         }
       ]
