@@ -72,6 +72,7 @@ export default {
           moreLink: 'https://www.google.com/'
         },
         {
+          // pageIntro: true,
           idName: 'others',
           pageName: 'Others',
           pageLabel: null,
@@ -97,7 +98,7 @@ export default {
               extra: 'contact us'
             },
             {
-              name: 'Public\nTransportation',
+              name: 'Public<br>Transportation',
               image: require('./assets/images/others/item-pic-4.jpg'),
               link: 'https://www.google.com/',
               extra: 'learn more'
@@ -127,7 +128,7 @@ export default {
               extra: 'learn more'
             },
             {
-              name: 'Security\ncheck points',
+              name: 'Security<br>check points',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://www.google.com/',
               extra: 'contact us'
@@ -215,6 +216,7 @@ export default {
 
     // fullpage.js 初始化
     initFullpage() {
+      // var self = this;
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
         navigationPosition: 'left',  // 導行列位置
@@ -223,12 +225,16 @@ export default {
         // scrollOverflowOptions: {
         //   disablePointer: true
         // },
-        // afterLoad: function(anchorLink, index) {
-        //   var currentPage = anchorLink.charAt(0).toUpperCase() + anchorLink.slice(1);
-        //   if (Page.Loaded) {
-        //     Page[currentPage].init();
-        //   }
-        // }
+        afterLoad: function(anchorLink, index) {
+          console.log(anchorLink);
+          console.log(index);
+          document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
+          // var result = self.pages.filter(function(item) { // , index, array
+          //   return item.idName == anchorLink;
+          // });
+          // console.log(result);
+          // result[0].pageIntro = false;
+        }
       });
     }
 
@@ -237,8 +243,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-// @import url('_variables.scss');
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
@@ -349,22 +353,30 @@ p {margin: 0;}
       }
     }
 
+    .page-name,
+    .page-label,
+    .page-text {
+      transition: .75s ease-out;
+    }
+
     .page-name {
       font-size: 48px;
       font-weight: 300;
       line-height: 1;
       margin-bottom: 6px;
+      transition-delay: .0s;
       @media (min-width: $screen-lg) {
         font-size: 67px;
         margin-bottom: 10px;
       }
     }
-    
+
     .page-label {
       font-size: 20px;
       font-weight: 600;
       line-height: 26px;
       margin-bottom: 12px;
+      transition-delay: .1s;
       @media (min-width: $screen-lg) {
         font-size: 28px;
         line-height: 38px;
@@ -386,11 +398,23 @@ p {margin: 0;}
       font-size: 15px;
       font-weight: 600;
       line-height: 1.33;
+      transition-delay: .2s;
       @media (min-width: $screen-lg) {
         font-size: 21px;
       }
     }
     
+  }
+
+  &.page-intro .page-info {
+
+    .page-name,
+    .page-label,
+    .page-text {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
   }
 
   &#page-others .page-info {

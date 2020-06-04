@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:id="'page-' + page.idName" class="section">
+  <div v-bind:id="'page-' + page.idName" class="section page-intro">
     <div class="inner">
       <div class="page-info">
         <p class="page-name">{{ page.pageName }}</p>
@@ -8,11 +8,11 @@
       </div>
       <div class="applications">
         <ul>
-          <li v-for="(item, index) in page.apps" v-bind:key="index">
+          <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + (index * 0.05) + 's'">
             <!-- <a class="item" v-bind:href="item.link" target="_blank" v-bind:style="{'background-image': 'url(' + item.image + ')'}"> -->
             <a class="item" v-bind:href="item.link" target="_blank">
               <img class="item-image" v-bind:src="item.image">
-              <p class="item-name">{{ item.name }}</p>
+              <p class="item-name" v-html="item.name"></p>
               <span class="item-extra">{{ item.extra }}</span>
             </a>
           </li>
@@ -78,13 +78,24 @@ export default {
   .page-text {
     font-size: 28px;
     font-weight: 300;
+    @media (min-width: $screen-lg) {
+      font-size: 36px;
+    }
   }
 
   .applications {
 
     font-size: 0;
     text-align: left;
-    padding-top: 15px;
+    padding-top: 17px;
+
+    @media (min-width: $screen-lg) {
+      padding-top: 30px;
+    }
+
+    ul {
+      perspective: 1000px;
+    }
 
     li {
       display: inline-block;
@@ -92,6 +103,7 @@ export default {
       height: 120px;
       margin: 8px 2px;
       vertical-align: top;
+      transition: .75s ease-out;
       @media (min-width: $screen-lg) {
         width: 240px;
         height: 150px;
@@ -112,6 +124,9 @@ export default {
       background-size: cover;
       cursor: pointer;
       overflow: hidden;
+      @media (min-width: $screen-lg) {
+        padding-bottom: 28px;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -125,7 +140,7 @@ export default {
       }
       &:hover {
         .item-image {
-          opacity: 0.7;
+          opacity: 0.6;
           transform: scale(1.1);
         }
       }
@@ -146,6 +161,10 @@ export default {
       position: relative;
       font-size: 21px;
       z-index: 2;
+      @media (min-width: $screen-lg) {
+        font-size: 26px;
+        font-weight: 600;
+      }
     }
 
     .item-extra {
@@ -164,9 +183,25 @@ export default {
         border-style: solid;
         border-width: 3px 0 3px 7px;
         border-color: transparent transparent transparent #fff;
+        @media (min-width: $screen-lg) {
+          margin-left: 10px;
+          border-width: 4px 0 4px 8px;
+        }
+      }
+      @media (min-width: $screen-lg) {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 20px;
       }
     }
 
+  }
+
+  &.page-intro {
+    .applications li {
+      transform: translateY(70px) rotateX(45deg);
+      opacity: 0;
+    }
   }
 
 }

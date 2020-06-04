@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:id="'page-' + page.idName" class="section">
+  <div v-bind:id="'page-' + page.idName" class="section page-intro">
     <div class="inner">
       <div class="page-info">
         <p class="page-name">{{ page.pageName }}</p>
