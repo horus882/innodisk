@@ -9,7 +9,9 @@
       <div class="applications">
         <ul>
           <li v-for="(item, index) in page.apps" v-bind:key="index">
-            <a class="item" v-bind:href="item.link" target="_blank" v-bind:style="{'background-image': 'url(' + item.image + ')'}">
+            <!-- <a class="item" v-bind:href="item.link" target="_blank" v-bind:style="{'background-image': 'url(' + item.image + ')'}"> -->
+            <a class="item" v-bind:href="item.link" target="_blank">
+              <img class="item-image" v-bind:src="item.image">
               <p class="item-name">{{ item.name }}</p>
               <span class="item-extra">{{ item.extra }}</span>
             </a>
@@ -109,6 +111,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       cursor: pointer;
+      overflow: hidden;
       &::before {
         content: '';
         position: absolute;
@@ -118,14 +121,31 @@ export default {
         height: 100%;
         background: $primary-color;
         opacity: 0.4;
-        z-index: 0;
+        z-index: 1;
       }
+      &:hover {
+        .item-image {
+          opacity: 0.7;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .item-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      object-fit: cover;
+      transition: .35s cubic-bezier(0.5, 1, 0.89, 1);
     }
 
     .item-name {
       position: relative;
       font-size: 21px;
-      z-index: 1;
+      z-index: 2;
     }
 
     .item-extra {
@@ -134,7 +154,7 @@ export default {
       bottom: 8px;
       font-size: 12px;
       line-height: 15px;
-      z-index: 1;
+      z-index: 2;
       &::after {
         content: '';
         display: inline-block;

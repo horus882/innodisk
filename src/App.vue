@@ -88,13 +88,13 @@ export default {
               name: 'Construction',
               image: require('./assets/images/others/item-pic-2.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Delivery Services',
               image: require('./assets/images/others/item-pic-3.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Public\nTransportation',
@@ -106,22 +106,19 @@ export default {
               name: 'Logistics',
               image: require('./assets/images/others/item-pic-5.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
-
-
-
             {
               name: 'Public services',
               image: require('./assets/images/others/item-pic-6.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Surveillance',
               image: require('./assets/images/others/item-pic-7.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Security systems',
@@ -133,19 +130,19 @@ export default {
               name: 'Security\ncheck points',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Mining and Drilling',
               image: require('./assets/images/others/item-pic-10.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Oli and Gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Retail',
@@ -157,31 +154,31 @@ export default {
               name: 'Automated Machines',
               image: require('./assets/images/others/item-pic-13.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Aviation',
               image: require('./assets/images/others/item-pic-14.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Power',
               image: require('./assets/images/others/item-pic-15.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Defense',
               image: require('./assets/images/others/item-pic-16.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             },
             {
               name: 'Border Security',
               image: require('./assets/images/others/item-pic-17.jpg'),
               link: 'https://www.google.com/',
-              extra: 'learn more'
+              extra: 'contact us'
             }
           ]
         }
@@ -312,9 +309,17 @@ p {margin: 0;}
   }
 
   &#page-others .inner {
-    width: 980px;
-    padding: 0 100px;
+    width: 970px;
+    // padding: 0 100px;
+    padding: 0 0 0 70px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    @media (min-width: $screen-lg) {
+      width: 1220px;
+    }
   }
 
   position: relative;
@@ -386,6 +391,13 @@ p {margin: 0;}
       }
     }
     
+  }
+
+  &#page-others .page-info {
+    padding-top: 0;
+    &::before {
+      content: none;
+    }
   }
 
 }
