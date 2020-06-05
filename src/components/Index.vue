@@ -1,5 +1,5 @@
 <template>
-  <div id="page-index" class="section">
+  <div id="page-index" class="section page-intro">
     <div class="inner">
       <nav>
         <ul class="anchors">

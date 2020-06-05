@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Intro />
-    <div id="wrap">
+    <div id="wrap" v-bind:style="{position: wrapPosition}">
       <Header />
       <div id="main">
         <Index          :pages="pages" />
@@ -35,6 +35,7 @@ export default {
   data: function() {
     return {
       isMobile: false,
+      wrapPosition: 'fixed',
       pages: [
         {
           idName: 'index',
@@ -208,7 +209,7 @@ export default {
   },
   mounted() {
 
-    // // fullpage.js 初始化
+    // fullpage.js 初始化
     this.initFullpage();
 
   },
@@ -216,6 +217,7 @@ export default {
 
     // fullpage.js 初始化
     initFullpage() {
+      this.wrapPosition = 'relative';
       // var self = this;
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
@@ -225,9 +227,15 @@ export default {
         // scrollOverflowOptions: {
         //   disablePointer: true
         // },
-        afterLoad: function(anchorLink, index) {
-          console.log(anchorLink);
-          console.log(index);
+        onLeave: function(origin, destination, direction) {
+          console.log(origin);
+          console.log(destination);
+          console.log(direction);
+          this[0].classList.add('page-intro');
+        },
+        afterLoad: function(anchorLink) { //, index
+          // console.log(anchorLink);
+          // console.log(index);
           document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
           // var result = self.pages.filter(function(item) { // , index, array
           //   return item.idName == anchorLink;
@@ -356,7 +364,7 @@ p {margin: 0;}
     .page-name,
     .page-label,
     .page-text {
-      transition: .75s ease-out;
+      transition: transform .75s ease-out, opacity .75s ease-out;
     }
 
     .page-name {

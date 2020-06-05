@@ -103,7 +103,7 @@ export default {
       height: 120px;
       margin: 8px 2px;
       vertical-align: top;
-      transition: .75s ease-out;
+      transition: transform .75s ease-out, opacity .75s ease-out;
       @media (min-width: $screen-lg) {
         width: 240px;
         height: 150px;
