@@ -8,20 +8,13 @@
       </div>
       <div class="applications">
         <ul>
-          <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + (index * 0.05) + 's'">
-            <!-- <a class="item" v-bind:href="item.link" target="_blank" v-bind:style="{'background-image': 'url(' + item.image + ')'}"> -->
+          <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + randomDelay(index) + 's'">
             <a class="item" v-bind:href="item.link" target="_blank">
               <img class="item-image" v-bind:src="item.image">
               <p class="item-name" v-html="item.name"></p>
               <span class="item-extra">{{ item.extra }}</span>
             </a>
           </li>
-          <!-- <li>
-            <a class="item" href="#" target="_blank" v-bind:style="{'background-image': 'url(' + page.apps[0].image + ')'}">
-              <p class="item-name">{{ page.apps[0].name }}</p>
-              <span class="item-extra">{{ page.apps[0].extra }}</span>
-            </a>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -42,8 +35,12 @@ export default {
     page: Object
   },
   mounted() {
+    this.randomDelay();
   },
   methods: {
+    randomDelay(index) {
+      return this.$parent.randomDelay(index);
+    }
   }
 }
 

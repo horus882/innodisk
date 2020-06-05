@@ -184,7 +184,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      othersItemsArray: []
     }
   },
   props: {},
@@ -211,6 +212,12 @@ export default {
 
     // fullpage.js 初始化
     this.initFullpage();
+    // this.randomOthersItems();
+    for (let i = 0; i < this.pages[5].apps.length; i++) {
+      this.othersItemsArray.push(i);
+    }
+
+    this.shuffle(this.othersItemsArray);
 
   },
   methods: {
@@ -244,6 +251,18 @@ export default {
           // result[0].pageIntro = false;
         }
       });
+    },
+
+    randomDelay(index) {
+      return this.othersItemsArray[index] * 0.025;
+    },
+
+    shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+      return a;
     }
 
   }
