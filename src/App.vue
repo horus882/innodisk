@@ -17,9 +17,9 @@
 
 <script>
 
-import Intro            from './components/Intro.vue'
-import Header           from './components/Header.vue'
-import Index            from './components/Index.vue'
+import Intro            from './components/Intro'
+import Header           from './components/Header'
+import Index            from './components/Index'
 import Automation       from './components/Automation'
 import Security         from './components/Security'
 import Infrastructure   from './components/Infrastructure'
