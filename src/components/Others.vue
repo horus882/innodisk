@@ -91,7 +91,7 @@ export default {
     }
 
     ul {
-      perspective: 1000px;
+      perspective: 500px;
     }
 
     li {
@@ -196,7 +196,7 @@ export default {
 
   &.page-intro {
     .applications li {
-      transform: translateY(70px) rotateX(45deg);
+      transform: translateY(100px) rotateX(50deg);
       opacity: 0;
     }
   }

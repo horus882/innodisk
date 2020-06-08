@@ -451,6 +451,86 @@ p {margin: 0;}
     }
   }
 
+  .points {
+
+    .point {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 56px;
+      height: 56px;
+
+      @media (min-width: $screen-lg) {
+        width: 78px;
+        height: 78px;
+      }
+
+      cursor: pointer;
+
+    }
+
+    .ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(./assets/images/common/ring-outer.svg) center center no-repeat;
+        background-size: contain;
+        animation: ringRotateCW 10s linear infinite;
+      }
+
+      &::after {
+        background-image: url(./assets/images/common/ring-inner.svg);
+        animation: ringRotateCCW 10s linear infinite;
+      }
+
+      @keyframes ringRotateCW {
+        0% {
+          transform: rotate(0deg)
+        }
+        100% {
+          transform: rotate(360deg)
+        }
+      }
+
+      @keyframes ringRotateCCW {
+        0% {
+          transform: rotate(0deg)
+        }
+        100% {
+          transform: rotate(-360deg)
+        }
+      }
+
+    }
+
+    .line {
+      position: absolute;
+    }
+
+    .label {
+      position: absolute;
+      color: #fff;
+      font-size: 16px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @media (min-width: $screen-lg) {
+        font-size: 23px;
+      }
+    }
+
+  }
+
 }
 
 .intro {
