@@ -2,7 +2,7 @@
   <div v-bind:id="'page-' + page.idName" class="section page-intro">
     <div class="inner">
       <div class="page-info">
-        <p class="page-name">{{ page.pageName }}</p>
+        <h2 class="page-name">{{ page.pageName }}</h2>
         <p class="page-label"><span>{{ page.pageLabel }}</span>Public transportation</p>
         <p class="page-text" v-html="page.pageText"></p>
       </div>

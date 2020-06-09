@@ -11,11 +11,14 @@
         <Service        :page="pages[4]" />
         <Others         :page="pages[5]" />
       </div>
+      <Popup :detail="pointDetail" />
     </div>
   </div>
 </template>
 
 <script>
+
+// import Vue from 'vue'
 
 import Intro            from './components/Intro'
 import Header           from './components/Header'
@@ -25,6 +28,7 @@ import Security         from './components/Security'
 import Infrastructure   from './components/Infrastructure'
 import Service          from './components/Service'
 import Others           from './components/Others'
+import Popup            from './components/Popup'
 
 import "normalize.css"
 
@@ -36,6 +40,11 @@ export default {
     return {
       isMobile: false,
       wrapPosition: 'fixed',
+      pointDetail: {
+        name: null,
+        text: null,
+        link: null
+      },
       pages: [
         {
           idName: 'index',
@@ -49,7 +58,24 @@ export default {
           pageName: 'Smart Automation',
           pageLabel: 'Manufacturing',
           pageText: 'Factories can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/'
+          moreLink: 'https://www.google.com/',
+          points: [
+            {
+              'name': 'Human Machine Interface (HMI)',
+              'text': 'HMI devices provide invaluable data and features to workers in smart factories and are critical to maintain speed and precision along assembly lines.<br>HMI devices must deliver high performance and unparalleled stability in challenging manufacturing settings—leaving little room for error.',
+              'link': 'https://www.google.com/'
+            },
+            {
+              'name': 'Industrial Robot',
+              'text': 'Industrial robots are one of the core parts of the smart factories of tomorrow and already constitute key equipment along modern assembly lines.<br>Expected to provide uninterrupted exceptional performance in harsh industrial conditions, industrial robots demand the best components and smartest features to operate at an optimal level.',
+              'link': 'https://www.google.com/'
+            },
+            {
+              'name': 'Conveyor System',
+              'text': 'Conveyor systems need to keep a rapid pace and maintain perfect coordination with all the other fast-moving equipment and workers on the factory floor. If it stops, everything stops.<br>Conveyor systems need to withstand the tough and challenging conditions present everywhere along an assembly line without even the slightest hiccup in performance.',
+              'link': 'https://www.google.com/'
+            }
+          ]
         },
         {
           idName: 'security',
@@ -197,7 +223,8 @@ export default {
     Security,
     Infrastructure,
     Service,
-    Others
+    Others,
+    Popup
   },
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -244,6 +271,18 @@ export default {
           // console.log(anchorLink);
           // console.log(index);
           document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
+          console.log(anchorLink);
+          if (anchorLink == 'automation') {
+            // Vue.$animeJS({
+            //   targets: '#automation-point-1 path',
+            //   strokeDashoffset: [Vue.$animeJS.setDashoffset, 0],
+            //   easing: 'easeInOutQuad',
+            //   duration: 750,
+            //   direction: 'normal',
+            //   complete: function() {}
+            // });
+
+          }
           // var result = self.pages.filter(function(item) { // , index, array
           //   return item.idName == anchorLink;
           // });
@@ -251,6 +290,21 @@ export default {
           // result[0].pageIntro = false;
         }
       });
+    },
+
+    showPointDetail(pageName, pointIndex) {
+
+      var self = this;
+      
+      if (pageName) {
+
+        var result = self.pages.filter(function(item) { return item.idName == pageName; });
+        self.pointDetail.name = result[0].points[pointIndex].name;
+        self.pointDetail.text = result[0].points[pointIndex].text;
+        self.pointDetail.link = result[0].points[pointIndex].link;
+
+      }
+
     },
 
     randomDelay(index) {
@@ -322,7 +376,7 @@ p {margin: 0;}
   // }
 }
 
-#main {position: relative;}
+#main {position: relative; z-index: 1;}
 
 .section {
 
@@ -390,6 +444,7 @@ p {margin: 0;}
       font-size: 48px;
       font-weight: 300;
       line-height: 1;
+      margin-top: 0;
       margin-bottom: 6px;
       transition-delay: .0s;
       @media (min-width: $screen-lg) {
@@ -519,6 +574,14 @@ p {margin: 0;}
       position: absolute;
     }
 
+    .line {
+
+      svg path {
+        // stroke-dasharray: 100;
+      }
+
+    }
+
     .label {
       position: absolute;
       color: #fff;
@@ -598,6 +661,11 @@ p {margin: 0;}
 .fade-enter, 
 .fade-leave-to {
   opacity: 0;
+}
+
+.text-hide {
+  font-size: 0;
+  text-indent: -5000px;
 }
 
 </style>

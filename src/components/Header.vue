@@ -51,7 +51,7 @@ export default {
   width: 70px;
   height: 100%;
   background: rgba(255, 255, 255, 0.85);
-  z-index: 2;
+  z-index: 3;
 
   .menu-toggle {
     position: absolute;
