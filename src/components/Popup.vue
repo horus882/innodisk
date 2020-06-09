@@ -1,12 +1,12 @@
 <template>
-  <div id="pop">
+  <div id="pop" class="intro" v-show="show"> <!-- v-bind:class="{'intro': !show}" -->
     <div class="pop-container">
       <div id="pop-pointDetail" class="pop-main">
         <div class="inner">
           <h3 class="title">{{ detail.name }}</h3>
           <p class="text" v-html="detail.text"></p>
           <a class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">more</a>
-          <a class="pop-close text-hide" href="#" title="Close">Close</a>
+          <a class="pop-close text-hide" href="#" title="Close" v-on:click.prevent="hidePointDetail">Close</a>
         </div>
       </div>
     </div>
@@ -24,11 +24,15 @@ export default {
     }
   },
   props: {
-    detail: Object
+    detail: Object,
+    show: Boolean
   },
   mounted() {
   },
   methods: {
+    hidePointDetail() {
+      this.$parent.hidePointDetail();
+    }
   }
 }
 
@@ -38,7 +42,7 @@ export default {
 
 #pop {
 
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +50,7 @@ export default {
   height: 100%;
   background: rgba($color: #fff, $alpha: 0);
   z-index: 2;
-  pointer-events: none;
+  // pointer-events: none;
 
   .pop-container {
     position: absolute;
@@ -73,15 +77,28 @@ export default {
     height: 40px;
     background: url(../assets/images/common/pop-close.svg) center center no-repeat;
     background-size: 27px 27px;
+    @media (min-width: $screen-lg) {}
+    width: 60px;
+    height: 60px;
+    background-size: 40px 40px;
   }
 
   #pop-pointDetail {
     width: 100%;
     padding: 30px 0 30px 70px;
     background: #fff;
+    transition: transform .3s ease-out 0s;
+    @media (min-width: $screen-lg) {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
 
     .inner {
       width: 530px;
+      transition: opacity .5s ease-out .25s;
+      @media (min-width: $screen-lg) {
+        width: 724px;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -91,6 +108,12 @@ export default {
         height: 31px;
         background: url(../assets/images/common/pop-pointDetail-deco.png) 0 0 no-repeat;
         background-size: contain;
+        @media (min-width: $screen-lg) {
+          top: -5px;
+          left: -55px;
+          width: 11px;
+          height: 43px;
+        }
       }
     }
 
@@ -99,6 +122,10 @@ export default {
       font-size: 18px;
       margin: 0 auto;
       padding: 15px 0;
+      @media (min-width: $screen-lg) {
+        font-size: 25px;
+        padding-top: 35px;
+      }
     }
 
     .text {
@@ -107,6 +134,10 @@ export default {
       text-align: justify;
       line-height: 1.71428;
       margin: 0 auto 0;
+      @media (min-width: $screen-lg) {
+        font-size: 19px;
+        font-weight: 400;
+      }
     }
 
     .link {
@@ -120,6 +151,12 @@ export default {
       margin-top: 15px;
       background: url(../assets/images/common/pop-pointDetail-more.svg) 0 0 no-repeat;
       background-size: contain;
+      @media (min-width: $screen-lg) {
+        width: 91px;
+        height: 22px;
+        font-size: 18px;
+        line-height: 16px;
+      }
       &::after {
         content: '';
         display: inline-block;
@@ -130,14 +167,34 @@ export default {
         border-width: 3px 0 3px 5px;
         border-color: transparent transparent transparent #fff;
         vertical-align: middle;
+        @media (min-width: $screen-lg) {
+          border-width: 4px 0 4px 6px;
+        }
       }
     }
 
     .pop-close {
       top: -20px;
       right: -60px;
+      @media (min-width: $screen-lg) {
+        top: -16px;
+        right: -60px;
+      }
     }
 
+  }
+
+  &.intro {
+    opacity: 1;
+    pointer-events: auto;
+    #pop-pointDetail {
+      transform: scaleY(0);
+      // .title,
+      // .text,
+      .inner {
+        opacity: 0;
+      }
+    }
   }
 
 }

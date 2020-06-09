@@ -11,7 +11,7 @@
         <Service        :page="pages[4]" />
         <Others         :page="pages[5]" />
       </div>
-      <Popup :detail="pointDetail" />
+      <Popup :detail="pointDetail" :show="showPopup" />
     </div>
   </div>
 </template>
@@ -40,6 +40,7 @@ export default {
     return {
       isMobile: false,
       wrapPosition: 'fixed',
+      showPopup: false,
       pointDetail: {
         name: null,
         text: null,
@@ -261,10 +262,10 @@ export default {
         // scrollOverflowOptions: {
         //   disablePointer: true
         // },
-        onLeave: function(origin, destination, direction) {
-          console.log(origin);
-          console.log(destination);
-          console.log(direction);
+        onLeave: function() { // origin, destination, direction
+          // console.log(origin);
+          // console.log(destination);
+          // console.log(direction);
           this[0].classList.add('page-intro');
         },
         afterLoad: function(anchorLink) { //, index
@@ -295,6 +296,7 @@ export default {
     showPointDetail(pageName, pointIndex) {
 
       var self = this;
+      if (self.showPopup == true) return false;
       
       if (pageName) {
 
@@ -302,9 +304,27 @@ export default {
         self.pointDetail.name = result[0].points[pointIndex].name;
         self.pointDetail.text = result[0].points[pointIndex].text;
         self.pointDetail.link = result[0].points[pointIndex].link;
+        self.showPopup = true;
+        $.fn.fullpage.setMouseWheelScrolling(false);
+        $.fn.fullpage.setAllowScrolling(false);
+        setTimeout(function() {
+          document.querySelector('#pop').classList.remove('intro');
+        }, 100);
 
       }
 
+    },
+
+    hidePointDetail() {
+
+      var self = this;
+      document.querySelector('#pop').classList.add('intro');
+      $.fn.fullpage.setMouseWheelScrolling(true);
+      $.fn.fullpage.setAllowScrolling(true);
+      setTimeout(function() {
+        self.showPopup = false;
+      }, 700);
+      
     },
 
     randomDelay(index) {
