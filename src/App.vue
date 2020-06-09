@@ -458,13 +458,15 @@ p {margin: 0;}
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 56px;
-      height: 56px;
+      width: calc(100vh * 0.08);
+      height: 8%;
+      // width: 56px;
+      // height: 56px;
 
-      @media (min-width: $screen-lg) {
-        width: 78px;
-        height: 78px;
-      }
+      // @media (min-width: $screen-lg) {
+      //   width: 78px;
+      //   height: 78px;
+      // }
 
       cursor: pointer;
 
@@ -513,7 +515,7 @@ p {margin: 0;}
 
     }
 
-    .line {
+    .info {
       position: absolute;
     }
 
@@ -525,7 +527,20 @@ p {margin: 0;}
       background-repeat: no-repeat;
       background-size: contain;
       @media (min-width: $screen-lg) {
-        font-size: 23px;
+        font-size: 22px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border: $primary-color 3px solid;
+        border-radius: 50%;
+        @media (min-width: $screen-lg) {
+          width: 10px;
+          height: 10px;
+          border-width: 4px;
+        }
       }
     }
 
