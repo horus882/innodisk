@@ -64,17 +64,20 @@ export default {
             {
               'name': 'Human Machine Interface (HMI)',
               'text': 'HMI devices provide invaluable data and features to workers in smart factories and are critical to maintain speed and precision along assembly lines.<br>HMI devices must deliver high performance and unparalleled stability in challenging manufacturing settings—leaving little room for error.',
-              'link': 'https://www.google.com/'
+              'link': 'https://www.google.com/',
+              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke="#16272e" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
             },
             {
               'name': 'Industrial Robot',
               'text': 'Industrial robots are one of the core parts of the smart factories of tomorrow and already constitute key equipment along modern assembly lines.<br>Expected to provide uninterrupted exceptional performance in harsh industrial conditions, industrial robots demand the best components and smartest features to operate at an optimal level.',
-              'link': 'https://www.google.com/'
+              'link': 'https://www.google.com/',
+              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke="#16272e" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
             },
             {
               'name': 'Conveyor System',
               'text': 'Conveyor systems need to keep a rapid pace and maintain perfect coordination with all the other fast-moving equipment and workers on the factory floor. If it stops, everything stops.<br>Conveyor systems need to withstand the tough and challenging conditions present everywhere along an assembly line without even the slightest hiccup in performance.',
-              'link': 'https://www.google.com/'
+              'link': 'https://www.google.com/',
+              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke="#1D313A" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
             }
           ]
         },

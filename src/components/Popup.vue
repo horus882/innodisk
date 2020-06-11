@@ -77,10 +77,11 @@ export default {
     height: 40px;
     background: url(../assets/images/common/pop-close.svg) center center no-repeat;
     background-size: 27px 27px;
-    @media (min-width: $screen-lg) {}
-    width: 60px;
-    height: 60px;
-    background-size: 40px 40px;
+    @media (min-width: $screen-lg) {
+      width: 60px;
+      height: 60px;
+      background-size: 40px 40px;
+    }
   }
 
   #pop-pointDetail {
