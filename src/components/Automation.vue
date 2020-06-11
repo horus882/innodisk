@@ -48,7 +48,6 @@ export default {
 #page-automation {
 
   &::before {
-  // &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -66,8 +65,9 @@ export default {
       bottom: 92%;
       left: 50%;
       transform: translateX(-2px);
-      // @media (min-width: $screen-lg) { bottom: 92%; }
-      svg { @media (min-width: $screen-lg) { width: 30px; height: 82px; } }
+      @media (min-width: $screen-lg) {
+        svg { width: 30px; height: 82px; }
+      }
     }
     .label {
       top: -54px;
@@ -103,8 +103,10 @@ export default {
       top: 96%;
       right: 50%;
       transform: translateX(4px);
-      @media (min-width: $screen-lg) { transform: translateX(2px); } // top: 96%; 
-      svg { @media (min-width: $screen-lg) { width: 27px; height: 95px; } }
+      @media (min-width: $screen-lg) {
+        transform: translateX(2px);
+        svg { width: 27px; height: 95px; }
+      }
     }
     .label {
       top: 77px;
@@ -136,8 +138,9 @@ export default {
       bottom: 50%;
       right: 96%;
       transform: translateY(4px);
-      // @media (min-width: $screen-lg) { top: -92px; left: 36px; }
-      svg { @media (min-width: $screen-lg) { width: 82px; height: 22px; } }
+      @media (min-width: $screen-lg) {
+        svg { width: 82px; height: 22px; }
+      }
     }
     .label {
       top: -46px;

@@ -62,22 +62,22 @@ export default {
           moreLink: 'https://www.google.com/',
           points: [
             {
-              'name': 'Human Machine Interface (HMI)',
-              'text': 'HMI devices provide invaluable data and features to workers in smart factories and are critical to maintain speed and precision along assembly lines.<br>HMI devices must deliver high performance and unparalleled stability in challenging manufacturing settings—leaving little room for error.',
-              'link': 'https://www.google.com/',
-              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke="#16272e" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
+              name: 'Human Machine Interface (HMI)',
+              text: 'HMI devices provide invaluable data and features to workers in smart factories and are critical to maintain speed and precision along assembly lines.<br>HMI devices must deliver high performance and unparalleled stability in challenging manufacturing settings—leaving little room for error.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
             },
             {
-              'name': 'Industrial Robot',
-              'text': 'Industrial robots are one of the core parts of the smart factories of tomorrow and already constitute key equipment along modern assembly lines.<br>Expected to provide uninterrupted exceptional performance in harsh industrial conditions, industrial robots demand the best components and smartest features to operate at an optimal level.',
-              'link': 'https://www.google.com/',
-              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke="#16272e" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
+              name: 'Industrial Robot',
+              text: 'Industrial robots are one of the core parts of the smart factories of tomorrow and already constitute key equipment along modern assembly lines.<br>Expected to provide uninterrupted exceptional performance in harsh industrial conditions, industrial robots demand the best components and smartest features to operate at an optimal level.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
             },
             {
-              'name': 'Conveyor System',
-              'text': 'Conveyor systems need to keep a rapid pace and maintain perfect coordination with all the other fast-moving equipment and workers on the factory floor. If it stops, everything stops.<br>Conveyor systems need to withstand the tough and challenging conditions present everywhere along an assembly line without even the slightest hiccup in performance.',
-              'link': 'https://www.google.com/',
-              'svg':  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke="#1D313A" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
+              name: 'Conveyor System',
+              text: 'Conveyor systems need to keep a rapid pace and maintain perfect coordination with all the other fast-moving equipment and workers on the factory floor. If it stops, everything stops.<br>Conveyor systems need to withstand the tough and challenging conditions present everywhere along an assembly line without even the slightest hiccup in performance.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
             }
           ]
         },
@@ -86,21 +86,81 @@ export default {
           pageName: 'Smart Security',
           pageLabel: 'Facial recognition applications',
           pageText: 'Facial recognition can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/'
+          moreLink: 'https://www.google.com/',
+          points: [
+            {
+              name: 'Smart Camera',
+              text: 'Smart camera identification systems need to be able to process biometric information without delay and without error to provide users with the convenience and security they require.<br>Processing complex data sets at a rapid pace puts extreme performance and stability requirements on components used in smart cameras. Further, they are required to maintain perfect uptime and record video without any interruption in diverse applications and environments.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28.037px" height="24.509px" viewBox="0 0 28.037 24.509" enable-background="new 0 0 28.037 24.509"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M27.384,0.758 L0.691,23.735"/></svg>'
+            },
+            {
+              name: 'Panel PC',
+              text: 'Panel PCs used in surveillance applications need to provide security guards and other stakeholders instant access to video feeds from vast numbers of connected devices.<br>Security-focused panel PCs need to provide performance and flexibility while also allowing system operators to manage and maintain connected devices.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12.92px" height="62.63px" viewBox="0 0 12.92 62.63" enable-background="new 0 0 12.92 62.63"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M6.459,0v62.632"/></svg>'
+            },
+            {
+              name: 'Network Video Recorder (NVR)',
+              text: 'Surveillance applications generate enormous amounts of data every second, thereby requiring high-performance video recording and data processing capabilities that make surveillance data actionable.<br>Network video recorders (NVRs) used in surveillance applications have some of the highest requirements for performance and reliability in the industry, meaning that all hardware and components need to be up for the task.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="89.478px" height="26.083px" viewBox="0 0 89.478 26.083" enable-background="new 0 0 89.478 26.083"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M89.479,25.083H21.905 L0.85,0.809"/></svg>'
+            },
+            {
+              name: 'Entrance Gate',
+              text: 'Entrance gates serve as the last barrier before granting users access to protected areas. While seemingly simple, entrance gates need to work in perfect tandem with other parts of the security system, providing instant access as soon users have proven their identity.<br>Expected to make no mistakes while also providing instant processing and high throughput, entrance gates require excellent communications, high performance, and minimum downtime.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
+            }
+          ]
         },
         {
           idName: 'infrastructure',
           pageName: 'Smart Infrastructure',
           pageLabel: 'Road infrastructure',
           pageText: 'Road infrastructure can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/'
+          moreLink: 'https://www.google.com/',
+          points: [
+            {
+              name: 'Electronic Toll Collection System',
+              text: 'Electronic toll collection (ETC) systems need to process vehicles at a rapid pace while also providing critical traffic data to operators or AI systems for further processing.<br>ETC systems serve vital parts of road infrastructure and must remain operational at an optimal level even in the toughest outdoor climate and weather conditions, e.g., during heatwaves and cold snaps.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
+            },
+            {
+              name: 'Roadside Monitoring Station',
+              text: 'Roadside monitoring stations provide and process critical data such as traffic data, weather information, and information from nearby infrastructure.<br>Exposed to year-round outside climates, pollution, and other roadside challenges such as shocks and vibrations, roadside monitoring stations require extreme ruggedness. To allow efficient maintenance and management, they also need to provide sophisticated remote management functionality.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="58.151px" height="15.186px" viewBox="0 0 58.151 15.186" enable-background="new 0 0 58.151 15.186"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.809,14.516L12.353,1 h45.8"/></svg>'
+            }
+          ]
         },
         {
           idName: 'service',
           pageName: 'Smart Service',
           pageLabel: 'Healthcare',
           pageText: 'Healthcare can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/'
+          moreLink: 'https://www.google.com/',
+          points: [
+            {
+              name: 'MRI Machine',
+              text: 'MRI machines generate an extraordinary amount of highly sensitive data that must be processed expediently and securely in a way that makes information quickly actionable by physicians and medical experts.<br>MRI machines need to transmit and store data without any interruption or threats to data integrity despite high levels of electromagnetic interference, all while providing excellent performance for rapid processing.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="62.632px" height="12.921px" viewBox="0 0 62.632 12.921" enable-background="new 0 0 62.632 12.921"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0,6.461h62.632"/></svg>'
+            },
+            {
+              name: 'Smart Medical Cart',
+              text: 'Medical carts provide medical professionals with important patient information and data processing abilities where they are needed the most.<br>Processing sensitive information in sensitive settings leaves little room for performance lapses or data security issues.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28.037px" height="24.509px" viewBox="0 0 28.037 24.509" enable-background="new 0 0 28.037 24.509"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M27.384,0.758 L0.691,23.735"/></svg>'
+            },
+            {
+              name: 'Medical All-in-one PC',
+              text: 'Medical all-in-one PCs provide healthcare professionals with actionable real-time information from sensors and equipment, ensuring that they make the right decisions at the ideal time.<br>Medical all-in-one PCs have no margin for error, require the highest possible reliability and system stability—all while providing critical information to professionals at a rapid pace.',
+              link: 'https://www.google.com/',
+              svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
+            }
+          ]
         },
         {
           // pageIntro: true,
@@ -600,6 +660,7 @@ p {margin: 0;}
     .line {
 
       svg path {
+        stroke: $primary-color;
         // stroke-dasharray: 100;
       }
 
