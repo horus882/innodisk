@@ -168,4 +168,13 @@ export default {
 
 }
 
+.mobile #page-automation {
+
+  &::before {
+    background-image: url(../assets/images/automation/m-bg.jpg);
+    background-position: center top;
+  }
+
+}
+
 </style>

@@ -213,4 +213,13 @@ export default {
 
 }
 
+.mobile #page-security {
+
+  &::before {
+    background-image: url(../assets/images/security/m-bg.jpg);
+    background-position: center top;
+  }
+
+}
+
 </style>

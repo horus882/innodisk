@@ -691,75 +691,22 @@ p {margin: 0;}
   &#page-security .inner,
   &#page-infrastructure .inner,
   &#page-service .inner {
-    padding: 0 0;
+    padding: 0 30px;
   }
 
   &#page-others .inner {
     width: auto;
     padding: 0 50px;
-    // overflow: hidden;
-    // display: flex;
-    // justify-content: center;
-    // flex-direction: column;
-    // @media (min-width: $screen-lg) {
-    //   width: 1220px;
-    // }
   }
 
   .page-info {
 
-    // padding-top: 30px;
+    padding-top: 93px;
 
     &::before {
       content: none;
     }
 
-    .page-name {
-      // font-size: 48px;
-      // font-weight: 300;
-      // line-height: 1;
-      // margin-top: 0;
-      // margin-bottom: 6px;
-      // transition-delay: .0s;
-      // @media (min-width: $screen-lg) {
-      //   font-size: 67px;
-      //   margin-bottom: 10px;
-      // }
-    }
-
-    .page-label {
-      // font-size: 20px;
-      // font-weight: 600;
-      // line-height: 26px;
-      // margin-bottom: 12px;
-      // transition-delay: .1s;
-      // @media (min-width: $screen-lg) {
-      //   font-size: 28px;
-      //   line-height: 38px;
-      //   margin-bottom: 14px;
-      // }
-      // span {
-      //   display: inline-block;
-      //   color: #fff;
-      //   padding: 0 5px;
-      //   margin-right: 10px;
-      //   background: #17282f;
-      //   @media (min-width: $screen-lg) {
-      //     padding: 0 8px;
-      //   }
-      // }
-    }
-    
-    .page-text {
-      // font-size: 15px;
-      // font-weight: 600;
-      // line-height: 1.33;
-      // transition-delay: .2s;
-      // @media (min-width: $screen-lg) {
-      //   font-size: 21px;
-      // }
-    }
-    
   }
 
 }

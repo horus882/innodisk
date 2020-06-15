@@ -138,4 +138,13 @@ export default {
 
 }
 
+.mobile #page-infrastructure {
+
+  &::before {
+    background-image: url(../assets/images/infrastructure/m-bg.jpg);
+    background-position: right top;
+  }
+
+}
+
 </style>

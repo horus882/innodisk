@@ -177,4 +177,13 @@ export default {
 
 }
 
+.mobile #page-service {
+
+  &::before {
+    background-image: url(../assets/images/service/m-bg.jpg);
+    background-position: right top;
+  }
+
+}
+
 </style>
