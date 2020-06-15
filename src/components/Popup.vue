@@ -121,6 +121,7 @@ export default {
     .title {
       color: $primary-color;
       font-size: 18px;
+      font-weight: 800;
       margin: 0 auto;
       padding: 15px 0;
       @media (min-width: $screen-lg) {

@@ -51,7 +51,6 @@ export default {
 #page-others {
 
   &::before {
-  // &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -199,6 +198,114 @@ export default {
       transform: translateY(100px) rotateX(50deg);
       opacity: 0;
     }
+  }
+
+}
+
+.mobile #page-others {
+
+  &::before {
+    background-image: url(../assets/images/others/m-bg.jpg);
+    background-position: center top;
+  }
+
+  .page-info {
+    padding-top: 110px;
+  }
+
+  .page-text {
+    font-size: 41px;
+  }
+
+  .applications {
+
+    // font-size: 0;
+    // text-align: left;
+    padding-top: 16px;
+    padding-bottom: 105px;
+
+    ul {
+      margin: 0 -7px;
+    }
+
+    li {
+      // display: inline-block;
+      width: 213px;
+      height: 133px;
+      margin: 7px 7px;
+      // vertical-align: top;
+      // transition: transform .75s ease-out, opacity .75s ease-out;
+    }
+
+    // .item {
+    //   position: relative;
+    //   display: block;
+    //   width: 100%;
+    //   height: 100%;
+    //   color: #fff;
+    //   padding: 7px 14px 22px;
+    //   box-sizing: border-box;
+    //   background-color: $primary-color;
+    //   background-position: center center;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   cursor: pointer;
+    //   overflow: hidden;
+    //   &::before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: $primary-color;
+    //     opacity: 0.4;
+    //     z-index: 1;
+    //   }
+    //   &:hover {
+    //     .item-image {
+    //       opacity: 0.6;
+    //       transform: scale(1.1);
+    //     }
+    //   }
+    // }
+
+    // .item-image {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 0;
+    //   object-fit: cover;
+    //   transition: .35s cubic-bezier(0.5, 1, 0.89, 1);
+    // }
+
+    // .item-name {
+    //   position: relative;
+    //   font-size: 21px;
+    //   z-index: 2;
+    // }
+
+    // .item-extra {
+    //   position: absolute;
+    //   left: 14px;
+    //   bottom: 8px;
+    //   font-size: 12px;
+    //   line-height: 15px;
+    //   z-index: 2;
+    //   &::after {
+    //     content: '';
+    //     display: inline-block;
+    //     width: 0;
+    //     height: 0;
+    //     margin-left: 5px;
+    //     border-style: solid;
+    //     border-width: 3px 0 3px 7px;
+    //     border-color: transparent transparent transparent #fff;
+    //   }
+    // }
+
   }
 
 }

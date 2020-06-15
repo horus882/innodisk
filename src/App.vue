@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class="{mobile: isMobile}">
     <Intro />
     <div id="wrap" v-bind:style="{position: wrapPosition}">
       <Header />
@@ -293,21 +293,21 @@ export default {
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       const metaViewPort = document.querySelector('head meta[name="viewport"]');
-      metaViewPort.setAttribute('content', 'width=320, user-scalable=no');
+      metaViewPort.setAttribute('content', 'width=540, user-scalable=no');
+      this.isMobile = true;
       console.log('[Mobile]');
+      document.body.classList.add('mobile');
     } else {
+      this.isMobile = false;
       console.log('[Desktop]');
+      document.body.classList.remove('mobile');
     }
   },
   mounted() {
 
     // fullpage.js 初始化
     this.initFullpage();
-    // this.randomOthersItems();
-    for (let i = 0; i < this.pages[5].apps.length; i++) {
-      this.othersItemsArray.push(i);
-    }
-
+    for (let i = 0; i < this.pages[5].apps.length; i++) { this.othersItemsArray.push(i); }
     this.shuffle(this.othersItemsArray);
 
   },
@@ -321,22 +321,16 @@ export default {
         navigation: true,            // 顯示導行列
         navigationPosition: 'left',  // 導行列位置
         anchors: ['index', 'automation', 'security', 'infrastructure', 'service', 'others'],
-        // scrollOverflow: true,
-        // scrollOverflowOptions: {
-        //   disablePointer: true
-        // },
+        scrollOverflow: true,
+        // scrollOverflowOptions: {disablePointer: true},
         onLeave: function() { // origin, destination, direction
-          // console.log(origin);
-          // console.log(destination);
-          // console.log(direction);
           this[0].classList.add('page-intro');
         },
         afterLoad: function(anchorLink) { //, index
-          // console.log(anchorLink);
-          // console.log(index);
           document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
           console.log(anchorLink);
           if (anchorLink == 'automation') {
+
             // Vue.$animeJS({
             //   targets: '#automation-point-1 path',
             //   strokeDashoffset: [Vue.$animeJS.setDashoffset, 0],
@@ -352,10 +346,12 @@ export default {
           // });
           // console.log(result);
           // result[0].pageIntro = false;
+          
         }
       });
     },
 
+    // 開啟 Point 資訊
     showPointDetail(pageName, pointIndex) {
 
       var self = this;
@@ -368,38 +364,38 @@ export default {
         self.pointDetail.text = result[0].points[pointIndex].text;
         self.pointDetail.link = result[0].points[pointIndex].link;
         self.showPopup = true;
-        $.fn.fullpage.setMouseWheelScrolling(false);
-        $.fn.fullpage.setAllowScrolling(false);
-        setTimeout(function() {
-          document.querySelector('#pop').classList.remove('intro');
-        }, 100);
+        self.toggleFullpageScrolling(false);
+        setTimeout(function() { document.querySelector('#pop').classList.remove('intro'); }, 100);
 
       }
 
     },
 
+    // 關閉 Point 資訊
     hidePointDetail() {
 
       var self = this;
       document.querySelector('#pop').classList.add('intro');
-      $.fn.fullpage.setMouseWheelScrolling(true);
-      $.fn.fullpage.setAllowScrolling(true);
-      setTimeout(function() {
-        self.showPopup = false;
-      }, 700);
+      self.toggleFullpageScrolling(true);
+      setTimeout(function() { self.showPopup = false; }, 600);
       
     },
 
-    randomDelay(index) {
-      return this.othersItemsArray[index] * 0.025;
-    },
+    // 隨機延遲
+    randomDelay(index) { return this.othersItemsArray[index] * 0.025; },
 
+    // 陣列亂數排序
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
           [a[i], a[j]] = [a[j], a[i]];
         }
       return a;
+    },
+
+    toggleFullpageScrolling(bool) {
+      $.fn.fullpage.setMouseWheelScrolling(bool);
+      $.fn.fullpage.setAllowScrolling(bool);
     }
 
   }
@@ -414,6 +410,9 @@ export default {
 body {
   min-width: 1000px;
   background: #efefef;
+  &.mobile {
+    min-width: 0;
+  }
 }
 
 a, a:hover {
@@ -457,6 +456,10 @@ p {margin: 0;}
   //   max-width: 1660px;
   //   width: 100%;
   // }
+}
+
+.mobile .inner {
+  width: 100%;
 }
 
 #main {position: relative; z-index: 1;}
@@ -598,14 +601,6 @@ p {margin: 0;}
       left: 50%;
       width: calc(100vh * 0.08);
       height: 8%;
-      // width: 56px;
-      // height: 56px;
-
-      // @media (min-width: $screen-lg) {
-      //   width: 78px;
-      //   height: 78px;
-      // }
-
       cursor: pointer;
 
     }
@@ -658,12 +653,7 @@ p {margin: 0;}
     }
 
     .line {
-
-      svg path {
-        stroke: $primary-color;
-        // stroke-dasharray: 100;
-      }
-
+      svg path { stroke: $primary-color; }
     }
 
     .label {
@@ -695,10 +685,91 @@ p {margin: 0;}
 
 }
 
+.mobile .section {
+
+  &#page-automation .inner,
+  &#page-security .inner,
+  &#page-infrastructure .inner,
+  &#page-service .inner {
+    padding: 0 0;
+  }
+
+  &#page-others .inner {
+    width: auto;
+    padding: 0 50px;
+    // overflow: hidden;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    // @media (min-width: $screen-lg) {
+    //   width: 1220px;
+    // }
+  }
+
+  .page-info {
+
+    // padding-top: 30px;
+
+    &::before {
+      content: none;
+    }
+
+    .page-name {
+      // font-size: 48px;
+      // font-weight: 300;
+      // line-height: 1;
+      // margin-top: 0;
+      // margin-bottom: 6px;
+      // transition-delay: .0s;
+      // @media (min-width: $screen-lg) {
+      //   font-size: 67px;
+      //   margin-bottom: 10px;
+      // }
+    }
+
+    .page-label {
+      // font-size: 20px;
+      // font-weight: 600;
+      // line-height: 26px;
+      // margin-bottom: 12px;
+      // transition-delay: .1s;
+      // @media (min-width: $screen-lg) {
+      //   font-size: 28px;
+      //   line-height: 38px;
+      //   margin-bottom: 14px;
+      // }
+      // span {
+      //   display: inline-block;
+      //   color: #fff;
+      //   padding: 0 5px;
+      //   margin-right: 10px;
+      //   background: #17282f;
+      //   @media (min-width: $screen-lg) {
+      //     padding: 0 8px;
+      //   }
+      // }
+    }
+    
+    .page-text {
+      // font-size: 15px;
+      // font-weight: 600;
+      // line-height: 1.33;
+      // transition-delay: .2s;
+      // @media (min-width: $screen-lg) {
+      //   font-size: 21px;
+      // }
+    }
+    
+  }
+
+}
+
 .intro {
   opacity: 0;
   pointer-events: none;
 }
+
+.mobile #fp-nav { display: none; }
 
 #fp-nav.left {left: 30px;}
 #fp-nav ul li,

@@ -241,4 +241,94 @@ export default {
 
 }
 
+.mobile #page-index {
+
+  &::before { background-image: url(../assets/images/index/m-bg.jpg); background-position: center top; }
+  &::after { content: none; }
+
+  nav, .anchors {
+    height: 100%;
+  }
+
+  .anchors {
+    padding: 144px 0 0 129px;
+    background: url(../assets/images/index/m-extra-bg.png) center 20px no-repeat;
+    background-size: 100% auto;
+  }
+
+  .anchor {
+    position: relative;
+    top: 0;
+    left: 0;
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .page-name {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 43px;
+    margin: 0 0 2.5px;
+    padding-left: 12px;
+    background: rgba($color: #fff, $alpha: 0.7);
+  }
+
+  .page-label {
+    position: relative;
+    font-size: 16.5px;
+    font-weight: 800;
+    line-height: 23px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    background: rgba($color: #fff, $alpha: 0.7);
+    a {
+      position: absolute;
+      right: -64px;
+      width: 64px;
+      height: 23px;
+      font-size: 14px;
+      line-height: 22px;
+      margin-left: 0;
+      padding-left: 14px;
+      background-image: url(../assets/images/index/m-btn-more.svg);
+    }
+  }
+
+  .anchor-automation {
+    width: 289px;
+    margin: 0 0 44px;
+    .page-label {
+      width: 225px;
+    }
+  }
+  .anchor-security {
+    width: 320px;
+    margin: 0 0 54px;
+    .page-label {
+      width: 258px;
+    }
+  }
+  .anchor-infrastructure {
+    width: 304px;
+    margin: 0 0 57px;
+    .page-label {
+      width: 241px;
+    }
+  }
+  .anchor-service {
+    width: 213px;
+    margin: 0 0 49px;
+    .page-label {
+      width: 150px;
+    }
+  }
+  .anchor-others {
+    width: 130px;
+    margin: 0 0 0;
+  }
+
+}
+
 </style>

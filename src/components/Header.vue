@@ -123,4 +123,61 @@ export default {
 
 }
 
+.mobile {
+
+  &.fp-viewing-others {
+    #header {
+      .menu-toggle {
+        span {
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  #header {
+
+    width: 100%;
+    height: 0;
+    background: none;
+
+    .menu-toggle {
+
+      top: 10px;
+      left: 20px;
+
+      span {
+        left: 12.5px;
+        width: 45px;
+        height: 2px;
+        &:nth-child(1) {top: 20px;}
+        &:nth-child(2),
+        &:nth-child(3) {top: 34px;}
+        &:nth-child(4) {top: 48px;}
+      }
+
+      &.open span {
+        &:nth-child(1) {top: 34px;}
+        &:nth-child(4) {top: 34px;}
+      }
+
+    }
+
+    .logo {
+
+      top: 22.5px;
+      right: 13px;
+      width: 157px;
+      height: 37px;
+
+    }
+
+    .language {
+      display: none;
+    }
+
+  }
+
+}
+
 </style>
