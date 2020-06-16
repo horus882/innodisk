@@ -201,4 +201,49 @@ export default {
 
 }
 
+.mobile #pop {
+
+  #pop-pointDetail {
+    padding: 53px 56px 80px;
+
+    .inner {
+      width: auto;
+      margin: 0;
+      &::before {
+        display: none;
+      }
+    }
+
+    .title {
+      font-size: 24px;
+      padding: 27px 0;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .link {
+      width: 86px;
+      height: 22px;
+      font-size: 15px;
+      text-indent: 10px;
+      line-height: 16px;
+      &::after {
+        content: '';
+        margin-left: 5px;
+        border-width: 4px 0 4px 7px;
+      }
+    }
+
+    .pop-close {
+      top: -40px;
+      right: -40px;
+    }
+
+  }
+
+}
+
 </style>

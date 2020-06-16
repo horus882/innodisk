@@ -709,6 +709,67 @@ p {margin: 0;}
 
   }
 
+  .points {
+
+    .point {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      transform: none!important;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+    }
+
+    .ring { display: none; }
+    .info {
+      position: static;
+      transform: none!important;
+    }
+    .line { display: none; }
+
+    .label {
+      position: relative;
+      display: inline-block;
+      top: auto!important;
+      right: auto!important;
+      bottom: auto!important;
+      left: auto!important;
+      width: auto!important;
+      height: auto!important;
+      font-size: 20px;
+      padding: 11px 20px 13px 10px;
+      text-indent: 0!important;
+      line-height: 1!important;
+      background: rgba(22, 39, 46, 0.85)!important;
+      clip-path: polygon(0% 0%, 0% 0%, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0% 0, 0% 0);
+    //   color: #fff;
+    //   font-size: 16px;
+    //   background-position: 0 0;
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+      &::before {
+        content: none;
+    //     position: absolute;
+    //     width: 7px;
+    //     height: 7px;
+    //     border: $primary-color 3px solid;
+    //     border-radius: 50%;
+      }
+    }
+
+  }
+
 }
 
 .intro {

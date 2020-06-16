@@ -220,6 +220,70 @@ export default {
     background-position: center top;
   }
 
+  #security-point-1 {
+    top: 305px;
+    left: 96px;
+    &::before {
+      top: -35px;
+      left: -57px;
+      width: 27px;
+      height: 75px;
+      background-image: url(../assets/images/security/m-point-1-label-before.png);
+    }
+    &::after {
+      top: -12px;
+      right: -25px;
+      width: 8px;
+      height: 29px;
+      background-image: url(../assets/images/security/m-point-1-label-after.png);
+    }
+  }
+
+  #security-point-2 {
+    top: 503px;
+    left: 96px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      top: 15px;
+      right: -190px;
+      width: 70px;
+      height: 31px;
+      background-image: url(../assets/images/security/m-point-2-label-after.png);
+    }
+  }
+
+  #security-point-3 {
+    top: 603px;
+    left: 96px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      top: 55px;
+      right: 10px;
+      width: 8px;
+      height: 28px;
+      background-image: url(../assets/images/security/m-point-3-label-after.png);
+    }
+  }
+
+  #security-point-4 {
+    top: 402px;
+    left: 96px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      top: 55px;
+      right: -110px;
+      width: 59px;
+      height: 8px;
+      background-image: url(../assets/images/security/m-point-4-label-after.png);
+    }
+  }
+
 }
 
 </style>

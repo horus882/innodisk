@@ -175,6 +175,63 @@ export default {
     background-position: center top;
   }
 
+  #automation-point-1 {
+    top: 415px;
+    left: 80px;
+    &::before {
+      top: -6px;
+      left: -39px;
+      width: 22px;
+      height: 42px;
+      background-image: url(../assets/images/automation/m-point-1-label-before.png);
+    }
+    &::after {
+      top: 15px;
+      right: -49px;
+      width: 45px;
+      height: 8px;
+      background-image: url(../assets/images/automation/m-point-1-label-after.png);
+    }
+  }
+
+  #automation-point-2 {
+    top: 304px;
+    left: 80px;
+    &::before {
+      top: -34px;
+      left: -39px;
+      width: 27px;
+      height: 75px;
+      background-image: url(../assets/images/automation/m-point-2-label-before.png);
+    }
+    &::after {
+      top: 8px;
+      right: -68px;
+      width: 59px;
+      height: 8px;
+      background-image: url(../assets/images/automation/m-point-2-label-after.png);
+    }
+  }
+
+  #automation-point-3 {
+    top: 530px;
+    left: 80px;
+    &::before {
+      top: -8px;
+      left: -39px;
+      width: 22px;
+      height: 42px;
+      background-image: url(../assets/images/automation/m-point-3-label-before.png);
+    }
+    &::after {
+      top: 12px;
+      right: -21px;
+      width: 8px;
+      height: 80px;
+      background-image: url(../assets/images/automation/m-point-3-label-after.png);
+    }
+  }
+
 }
 
 </style>

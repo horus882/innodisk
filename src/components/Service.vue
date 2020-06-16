@@ -184,6 +184,55 @@ export default {
     background-position: right top;
   }
 
+  #service-point-1 {
+    top: 304px;
+    left: 98px;
+    &::before {
+      top: -35px;
+      left: -57px;
+      width: 27px;
+      height: 75px;
+      background-image: url(../assets/images/service/m-point-1-label-before.png);
+    }
+    &::after {
+      top: 8px;
+      right: -75px;
+      width: 59px;
+      height: 8px;
+      background-image: url(../assets/images/service/m-point-1-label-after.png);
+    }
+  }
+
+  #service-point-2 {
+    top: 415px;
+    left: 98px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      top: 31px;
+      right: -92px;
+      width: 80px;
+      height: 8px;
+      background-image: url(../assets/images/service/m-point-2-label-after.png);
+    }
+  }
+
+  #service-point-3 {
+    top: 528px;
+    left: 98px;
+    &::before {
+      display: none;
+    }
+    &::after {
+      top: 62px;
+      right: 28px;
+      width: 8px;
+      height: 28px;
+      background-image: url(../assets/images/service/m-point-3-label-after.png);
+    }
+  }
+
 }
 
 </style>

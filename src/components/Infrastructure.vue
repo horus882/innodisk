@@ -145,6 +145,56 @@ export default {
     background-position: right top;
   }
 
+  .points {
+
+    .point {
+
+      .label {
+        // font-size: 18px;
+      }
+
+    }
+
+  }
+
+  #infrastructure-point-1 {
+    top: 416px;
+    left: 68px;
+    &::before {
+      top: -22px;
+      left: -47px;
+      width: 27px;
+      height: 75px;
+      background-image: url(../assets/images/infrastructure/m-point-1-label-before.png);
+    }
+    &::after {
+      top: -16px;
+      right: -80px;
+      width: 70px;
+      height: 31px;
+      background-image: url(../assets/images/infrastructure/m-point-1-label-after.png);
+    }
+  }
+
+  #infrastructure-point-2 {
+    top: 494px;
+    left: 68px;
+    &::before {
+      top: 18px;
+      left: -47px;
+      width: 22px;
+      height: 42px;
+      background-image: url(../assets/images/infrastructure/m-point-2-label-before.png);
+    }
+    &::after {
+      top: 5px;
+      right: -97px;
+      width: 80px;
+      height: 8px;
+      background-image: url(../assets/images/infrastructure/m-point-2-label-after.png);
+    }
+  }
+
 }
 
 </style>
