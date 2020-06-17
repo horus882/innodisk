@@ -55,8 +55,9 @@ export default {
   .pop-container {
     position: absolute;
     width: 100%;
-    height: auto;
-    min-height: 100vh;
+    // height: auto;
+    // min-height: 100vh;
+    height: 100%;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;

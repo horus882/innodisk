@@ -11,8 +11,8 @@
         <Service        :page="pages[4]" />
         <Others         :page="pages[5]" />
       </div>
-      <Popup :detail="pointDetail" :show="showPopup" />
     </div>
+    <Popup :detail="pointDetail" :show="showPopup" />
     <Menu :pages="pages" :show="showMenu" />
   </div>
 </template>
