@@ -176,8 +176,9 @@ export default {
   }
 
   #automation-point-1 {
-    top: 415px;
+    // top: 415px;
     left: 80px;
+    margin-top: 10px;
     &::before {
       top: -6px;
       left: -39px;
@@ -195,8 +196,9 @@ export default {
   }
 
   #automation-point-2 {
-    top: 304px;
+    // top: 304px;
     left: 80px;
+    margin-top: -96px;
     &::before {
       top: -34px;
       left: -39px;
@@ -214,8 +216,9 @@ export default {
   }
 
   #automation-point-3 {
-    top: 530px;
+    // top: 530px;
     left: 80px;
+    margin-top: 128px;
     &::before {
       top: -8px;
       left: -39px;

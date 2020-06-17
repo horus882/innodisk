@@ -221,8 +221,9 @@ export default {
   }
 
   #security-point-1 {
-    top: 305px;
+    // top: 305px;
     left: 96px;
+    margin-top: -102px;
     &::before {
       top: -35px;
       left: -57px;
@@ -240,7 +241,8 @@ export default {
   }
 
   #security-point-2 {
-    top: 503px;
+    // top: 503px;
+    margin-top: 100px;
     left: 96px;
     &::before {
       display: none;
@@ -255,8 +257,9 @@ export default {
   }
 
   #security-point-3 {
-    top: 603px;
+    // top: 603px;
     left: 96px;
+    margin-top: 202px;
     &::before {
       display: none;
     }
@@ -270,8 +273,9 @@ export default {
   }
 
   #security-point-4 {
-    top: 402px;
+    // top: 402px;
     left: 96px;
+    margin-top: -6px;
     &::before {
       display: none;
     }

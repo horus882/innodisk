@@ -733,7 +733,7 @@ p {margin: 0;}
     .point {
 
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       width: auto;
       height: auto;

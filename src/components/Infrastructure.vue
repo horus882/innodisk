@@ -158,8 +158,9 @@ export default {
   }
 
   #infrastructure-point-1 {
-    top: 416px;
+    // top: 416px;
     left: 68px;
+    margin-top: 4px;
     &::before {
       top: -22px;
       left: -47px;
@@ -177,8 +178,9 @@ export default {
   }
 
   #infrastructure-point-2 {
-    top: 494px;
+    // top: 494px;
     left: 68px;
+    margin-top: 84px;
     &::before {
       top: 18px;
       left: -47px;

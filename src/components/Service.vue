@@ -185,8 +185,9 @@ export default {
   }
 
   #service-point-1 {
-    top: 304px;
+    // top: 304px;
     left: 98px;
+    margin-top: -100px;
     &::before {
       top: -35px;
       left: -57px;
@@ -204,8 +205,9 @@ export default {
   }
 
   #service-point-2 {
-    top: 415px;
+    // top: 415px;
     left: 98px;
+    margin-top: 8px;
     &::before {
       display: none;
     }
@@ -219,8 +221,9 @@ export default {
   }
 
   #service-point-3 {
-    top: 528px;
+    // top: 528px;
     left: 98px;
+    margin-top: 124px;
     &::before {
       display: none;
     }
