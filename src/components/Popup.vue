@@ -1,7 +1,7 @@
 <template>
-  <div id="pop" class="intro" v-show="show"> <!-- v-bind:class="{'intro': !show}" -->
+  <div id="pop" class="intro" v-show="show" v-on:click="hidePointDetail"> <!-- v-bind:class="{'intro': !show}" -->
     <div class="pop-container">
-      <div id="pop-pointDetail" class="pop-main">
+      <div id="pop-pointDetail" class="pop-main" v-on:click.stop>
         <div class="inner">
           <h3 class="title">{{ detail.name }}</h3>
           <p class="text" v-html="detail.text"></p>
@@ -221,6 +221,7 @@ export default {
 
     .text {
       font-size: 16px;
+      font-weight: 400;
       line-height: 1.75;
     }
 

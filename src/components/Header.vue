@@ -1,18 +1,22 @@
 <template>
   <header id="header">
-    <div class="logo"><a href="./#index"></a></div>
-    <a class="menu-toggle" v-on:click="menuToggle" v-bind:class="{open: menuOpen}">
+    <transition name="fade">
+      <div class="logo" v-show="!show"><a href="./#index"></a></div>
+    </transition>
+    <a class="menu-toggle" v-on:click="menuToggle" v-bind:class="{open: show}">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
     </a>
-    <div class="language">
-      <ul>
-        <li><a href="#">中</a></li>
-        <li><a href="#">Eg</a></li>
-      </ul>
-    </div>
+    <transition name="fade">
+      <div class="language" v-show="!show">
+        <ul>
+          <li><a href="#">中</a></li>
+          <li><a href="#">Eg</a></li>
+        </ul>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -24,17 +28,17 @@ export default {
   name: 'Header',
   data: function() {
     return {
-      menuOpen: false
+      // menuOpen: false
     }
   },
   props: {
-
+    show: Boolean
   },
   mounted() {
   },
   methods: {
     menuToggle: function() {
-      this.menuOpen = !this.menuOpen;
+      this.$parent.menuToggle();
     }
   }
 }
@@ -178,6 +182,20 @@ export default {
 
   }
 
+}
+
+.show-menu {
+  .mobile {
+    &.fp-viewing-others {
+      #header {
+        .menu-toggle {
+          span {
+            background: $primary-color;
+          }
+        }
+      }
+    }
+  }
 }
 
 </style>

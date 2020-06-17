@@ -1,8 +1,8 @@
 <template>
   <div id="app" v-bind:class="{mobile: isMobile}">
     <Intro />
+    <Header :show="showMenu" />
     <div id="wrap" v-bind:style="{position: wrapPosition}">
-      <Header />
       <div id="main">
         <Index          :pages="pages" />
         <Automation     :page="pages[1]" />
@@ -13,6 +13,7 @@
       </div>
       <Popup :detail="pointDetail" :show="showPopup" />
     </div>
+    <Menu :pages="pages" :show="showMenu" />
   </div>
 </template>
 
@@ -29,6 +30,7 @@ import Infrastructure   from './components/Infrastructure'
 import Service          from './components/Service'
 import Others           from './components/Others'
 import Popup            from './components/Popup'
+import Menu             from './components/Menu'
 
 import "normalize.css"
 
@@ -41,6 +43,7 @@ export default {
       isMobile: false,
       wrapPosition: 'fixed',
       showPopup: false,
+      showMenu: false,
       pointDetail: {
         name: null,
         text: null,
@@ -288,7 +291,8 @@ export default {
     Infrastructure,
     Service,
     Others,
-    Popup
+    Popup,
+    Menu
   },
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -356,7 +360,8 @@ export default {
 
       var self = this;
       if (self.showPopup == true) return false;
-      
+      document.querySelector('html').classList.add('show-pop');
+
       if (pageName) {
 
         var result = self.pages.filter(function(item) { return item.idName == pageName; });
@@ -378,6 +383,7 @@ export default {
       document.querySelector('#pop').classList.add('intro');
       self.toggleFullpageScrolling(true);
       setTimeout(function() { self.showPopup = false; }, 600);
+      document.querySelector('html').classList.remove('show-pop');
       
     },
 
@@ -396,6 +402,16 @@ export default {
     toggleFullpageScrolling(bool) {
       $.fn.fullpage.setMouseWheelScrolling(bool);
       $.fn.fullpage.setAllowScrolling(bool);
+    },
+
+    menuToggle() {
+      this.showMenu = !this.showMenu;
+      this.toggleFullpageScrolling(!this.showMenu);
+      if (this.showMenu) {
+        document.querySelector('html').classList.add('show-menu');
+      } else {
+        document.querySelector('html').classList.remove('show-menu');
+      }
     }
 
   }
@@ -463,6 +479,9 @@ p {margin: 0;}
 }
 
 #main {position: relative; z-index: 1;}
+.show-pop #main {
+  opacity: 0.5;
+}
 
 .section {
 
@@ -778,6 +797,14 @@ p {margin: 0;}
 }
 
 .mobile #fp-nav { display: none; }
+.show-menu #fp-nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#fp-nav {
+  transition: opacity .5s;
+}
 
 #fp-nav.left {left: 30px;}
 #fp-nav ul li,
