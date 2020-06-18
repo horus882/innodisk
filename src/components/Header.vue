@@ -1,23 +1,25 @@
 <template>
-  <header id="header">
-    <transition name="fade">
-      <div class="logo" v-show="!show"><a href="./#index"></a></div>
-    </transition>
-    <a class="menu-toggle" v-on:click="menuToggle" v-bind:class="{open: show}">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-    <transition name="fade">
-      <div class="language" v-show="!show">
-        <ul>
-          <li><a href="#">中</a></li>
-          <li><a href="#">Eg</a></li>
-        </ul>
-      </div>
-    </transition>
-  </header>
+  <transition name="fade">
+    <header id="header" v-show="!showHeader">
+      <transition name="fade">
+        <div class="logo" v-show="!showMenu"><a href="./#index"></a></div>
+      </transition>
+      <a class="menu-toggle" v-on:click="toggleMenu" v-bind:class="{open: showMenu}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <transition name="fade">
+        <div class="language" v-show="!showMenu">
+          <ul>
+            <li><a href="#">中</a></li>
+            <li><a href="#">Eg</a></li>
+          </ul>
+        </div>
+      </transition>
+    </header>
+  </transition>
 </template>
 
 <script>
@@ -32,13 +34,14 @@ export default {
     }
   },
   props: {
-    show: Boolean
+    showMenu: Boolean,
+    showHeader: Boolean
   },
   mounted() {
   },
   methods: {
-    menuToggle: function() {
-      this.$parent.menuToggle();
+    toggleMenu: function() {
+      this.$parent.toggleMenu();
     }
   }
 }

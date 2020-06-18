@@ -71,7 +71,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 #page-index {
 
@@ -246,12 +246,18 @@ export default {
   &::before { background-image: url(../assets/images/index/m-bg.jpg); background-position: center top; }
   &::after { content: none; }
 
-  nav, .anchors {
+  nav, .fp-scroller, .anchors {
     height: 100%;
+    box-sizing: border-box;
   }
 
   .anchors {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: auto;
     padding: 144px 0 0 129px;
+    transform: translateY(-60%);
     background: url(../assets/images/index/m-extra-bg.png) center 20px no-repeat;
     background-size: 100% auto;
   }

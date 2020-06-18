@@ -78,6 +78,7 @@ export default {
       text-indent: 17px;
       line-height: 34px;
       background-image: url(../assets/images/infrastructure/point-1-label-md.png);
+      transition-delay: .1s;
       @media (min-width: $screen-lg) {
         top: 94px;
         right: 30px;
@@ -116,6 +117,7 @@ export default {
       text-indent: 16px;
       line-height: 60px;
       background-image: url(../assets/images/infrastructure/point-2-label-md.png);
+      transition-delay: .2s;
       @media (min-width: $screen-lg) {
         top: 16px;
         right: 86px;

@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div id="intro" v-show="introShow">
+    <div id="intro" v-show="show">
       <transition name="fade">
         <div class="part-1 part" v-show="part1Show">
           <div class="inner">
@@ -78,14 +78,14 @@ export default {
   name: 'Intro',
   data: function() {
     return {
-      introShow: true,
+      // introShow: true,
       subheadingIntro: true,
       part1Show: true,
       part2Show: false
     }
   },
   props: {
-
+    show: Boolean
   },
   mounted() {
 
@@ -114,17 +114,17 @@ export default {
 
         setTimeout(function() { self.part1Show = false; }, 1500);
         setTimeout(function() { self.part2Show = true;  }, 2000);
-        setTimeout(function() { 
-          self.introShow = false;
-          // self.initFullpage();
-        }, 5700);
+        // setTimeout(self.toggleIntro, 5700);
+        // setTimeout(self.toggleFullpageScrolling, 6450);
         
       }
     });
 
   },
   methods: {
-    initFullpage() {this.$parent.initFullpage();}
+    initFullpage() {this.$parent.initFullpage();},
+    toggleIntro() {this.$parent.toggleIntro();},
+    toggleFullpageScrolling() {this.$parent.toggleFullpageScrolling(true);}
   }
 }
 
@@ -141,7 +141,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../assets/images/intro/bg.jpg) center center no-repeat;
+  background: url(../assets/images/intro/bg.jpg) #fff center center no-repeat;
   background-size: cover;
   z-index: 3;
 
@@ -200,6 +200,33 @@ export default {
     line-height: 48px;
     text-align: center;
     margin: 0;
+  }
+
+}
+
+.mobile #intro {
+
+  .part-1 {
+    .inner {
+      text-align: center;
+    }
+  }
+
+  .brand {
+    svg {
+      width: 400px;
+    }
+  }
+
+  .subheading {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .text {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8125;
   }
 
 }

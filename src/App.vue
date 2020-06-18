@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-bind:class="{mobile: isMobile}">
-    <Intro />
-    <Header :show="showMenu" />
+    <Intro :show="showIntro" />
+    <Header :showMenu="showMenu" :showHeader="showIntro" />
     <div id="wrap" v-bind:style="{position: wrapPosition}">
       <div id="main">
         <Index          :pages="pages" />
@@ -42,6 +42,7 @@ export default {
     return {
       isMobile: false,
       wrapPosition: 'fixed',
+      showIntro: true,
       showPopup: false,
       showMenu: false,
       pointDetail: {
@@ -306,11 +307,15 @@ export default {
       console.log('[Desktop]');
       document.body.classList.remove('mobile');
     }
+    document.querySelector('html').classList.add('show-intro');
   },
   mounted() {
 
     // fullpage.js 初始化
     this.initFullpage();
+    // this.toggleFullpageScrolling(false);
+    this.toggleIntro();
+    this.toggleFullpageScrolling(true);
     for (let i = 0; i < this.pages[5].apps.length; i++) { this.othersItemsArray.push(i); }
     this.shuffle(this.othersItemsArray);
 
@@ -404,13 +409,20 @@ export default {
       $.fn.fullpage.setAllowScrolling(bool);
     },
 
-    menuToggle() {
+    toggleMenu() {
       this.showMenu = !this.showMenu;
       this.toggleFullpageScrolling(!this.showMenu);
       if (this.showMenu) {
         document.querySelector('html').classList.add('show-menu');
       } else {
         document.querySelector('html').classList.remove('show-menu');
+      }
+    },
+
+    toggleIntro() {
+      this.showIntro = !this.showIntro;
+      if (!this.showIntro) {
+        document.querySelector('html').classList.remove('show-intro');
       }
     }
 
@@ -746,6 +758,7 @@ p {margin: 0;}
         background-position: 0 0;
         background-repeat: no-repeat;
         background-size: contain;
+        pointer-events: none;
       }
 
     }
@@ -772,21 +785,20 @@ p {margin: 0;}
       line-height: 1!important;
       background: rgba(22, 39, 46, 0.85)!important;
       clip-path: polygon(0% 0%, 0% 0%, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0% 0, 0% 0);
-    //   color: #fff;
-    //   font-size: 16px;
-    //   background-position: 0 0;
-    //   background-repeat: no-repeat;
-    //   background-size: contain;
+      transition-duration: .5s;
+      transition-timing-function: ease-out;
       &::before {
         content: none;
-    //     position: absolute;
-    //     width: 7px;
-    //     height: 7px;
-    //     border: $primary-color 3px solid;
-    //     border-radius: 50%;
       }
     }
 
+  }
+
+  &.page-intro {
+    .label {
+      opacity: 0;
+      transform: translateY(30px);
+    }
   }
 
 }
@@ -797,7 +809,8 @@ p {margin: 0;}
 }
 
 .mobile #fp-nav { display: none; }
-.show-menu #fp-nav {
+.show-menu #fp-nav,
+.show-intro #fp-nav {
   opacity: 0;
   pointer-events: none;
 }

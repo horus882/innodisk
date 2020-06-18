@@ -77,6 +77,7 @@ export default {
       text-indent: 8px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-1-label-md.png);
+      transition-delay: .1s;
       @media (min-width: $screen-lg) {
         top: -55px;
         left: 91px;
@@ -116,6 +117,7 @@ export default {
       text-indent: 15px;
       line-height: 36px;
       background-image: url(../assets/images/service/point-2-label-md.png);
+      transition-delay: .2s;
       @media (min-width: $screen-lg) {
         top: 34px;
         right: 40px;
@@ -155,6 +157,7 @@ export default {
       text-indent: 14px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-3-label-md.png);
+      transition-delay: .3s;
       @media (min-width: $screen-lg) {
         top: -68px;
         right: 82px;
