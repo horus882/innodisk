@@ -89,17 +89,23 @@ export default {
   }
 
   &::after {
+    transition-property: transform, opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
     background-image: url(../assets/images/index/light_md.png);
     background-size: 1200px 675px;
   }
 
-  @media (min-width: $screen-lg) {
+  &.page-intro::after {
+    transform: translateY(30px);
+    opacity: 0;
+  }
 
+  @media (min-width: $screen-lg) {
     &::after {
       background-image: url(../assets/images/index/light_lg.png);
       background-size: 1900px 950px;
     }
-
   }
 
   .anchor {
@@ -108,20 +114,9 @@ export default {
     left: 50%;
     white-space: nowrap;
     cursor: pointer;
-  }
-
-  .anchor-automation { margin: -165px 0 0 350px; }
-  .anchor-security { margin: -98px 0 0 56px; }
-  .anchor-infrastructure { margin: -250px 0 0 -46px; }
-  .anchor-service { margin: -156px 0 0 -292px; }
-  .anchor-others { margin: -88px 0 0 -458px; }
-
-  @media (min-width: $screen-lg) {
-    .anchor-automation { margin: -262px 0 0 528px; }
-    .anchor-security { margin: -178px 0 0 72px; }
-    .anchor-infrastructure { margin: -374px 0 0 -38px; }
-    .anchor-service { margin: -254px 0 0 -382px; }
-    .anchor-others { margin: -158px 0 0 -618px; }
+    transition-property: transform, opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
   }
 
   .anchor::before,
@@ -135,6 +130,10 @@ export default {
     border: #fff 1px solid;
     border-radius: 50%;
     box-shadow: rgba(255, 255, 255, 0.75) 0 0 15px, rgba(255, 255, 255, 0.75) 0 0 15px;
+    transition-property: transform, opacity;
+    transition-delay: 0.5s;
+    transition-duration: .75s;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
     @media (min-width: $screen-lg) {
       width: 35px;
       height: 35px;
@@ -157,8 +156,10 @@ export default {
   }
 
   .anchor-automation {
-    &::before {bottom: -48px; left: -15px;}
-    &::after {bottom: -40px; left: -7px;}
+    margin: -165px 0 0 350px;
+    transition-delay: .3s;
+    &::before {bottom: -48px; left: -15px; transition-delay: .9s;}
+    &::after {bottom: -40px; left: -7px; transition-delay: .9s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -51px; left: -8px;}
       &::after {bottom: -40px; left: 3px;}
@@ -166,6 +167,10 @@ export default {
   }
 
   .anchor-security {
+    margin: -98px 0 0 56px;
+    transition-delay: .2s;
+    &::before {transition-delay: .7s;}
+    &::after {transition-delay: .7s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -19px; left: -46px;}
       &::after {bottom: -8px; left: -35px;}
@@ -173,8 +178,10 @@ export default {
   }
 
   .anchor-infrastructure {
-    &::before {bottom: -46px; left: -35px;}
-    &::after {bottom: -38px; left: -27px;}
+    margin: -250px 0 0 -46px;
+    transition-delay: .1s;
+    &::before {bottom: -46px; left: -35px; transition-delay: .5s;}
+    &::after {bottom: -38px; left: -27px; transition-delay: .5s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -42px; left: -42px;}
       &::after {bottom: -31px; left: -31px;}
@@ -182,8 +189,10 @@ export default {
   }
 
   .anchor-service {
-    &::before {bottom: -25px; left: -35px;}
-    &::after {bottom: -17px; left: -27px;}
+    margin: -156px 0 0 -292px;
+    transition-delay: .15s;
+    &::before {bottom: -25px; left: -35px; transition-delay: .6s;}
+    &::after {bottom: -17px; left: -27px; transition-delay: .6s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -34px; left: -50px;}
       &::after {bottom: -23px; left: -39px;}
@@ -191,11 +200,31 @@ export default {
   }
 
   .anchor-others {
-    &::before {bottom: -40px; left: -35px;}
-    &::after {bottom: -32px; left: -27px;}
+    margin: -88px 0 0 -458px;
+    transition-delay: .25s;
+    &::before {bottom: -40px; left: -35px; transition-delay: .8s;}
+    &::after {bottom: -32px; left: -27px; transition-delay: .8s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -52px; left: -28px;}
       &::after {bottom: -41px; left: -17px;}
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .anchor-automation { margin: -262px 0 0 528px; }
+    .anchor-security { margin: -178px 0 0 72px; }
+    .anchor-infrastructure { margin: -374px 0 0 -38px; }
+    .anchor-service { margin: -254px 0 0 -382px; }
+    .anchor-others { margin: -158px 0 0 -618px; }
+  }
+
+  &.page-intro .anchor {
+    transform: translateY(50px);
+    opacity: 0;
+    &::before,
+    &::after {
+      transform: scale(0.5);
+      opacity: 0;
     }
   }
 
@@ -262,22 +291,20 @@ export default {
     background-size: 100% auto;
     perspective: 500px;
     li {
-      transition-duration: .5s;
-      transition-timing-function: ease-out;
-      &:nth-child(1) { transition-delay: .1s; }
-      &:nth-child(2) { transition-delay: .2s; }
-      &:nth-child(3) { transition-delay: .3s; }
-      &:nth-child(4) { transition-delay: .4s; }
-      &:nth-child(5) { transition-delay: .5s; }
+      // transition-duration: .5s;
+      // transition-timing-function: ease-out;
+      // &:nth-child(1) { transition-delay: .1s; }
+      // &:nth-child(2) { transition-delay: .2s; }
+      // &:nth-child(3) { transition-delay: .3s; }
+      // &:nth-child(4) { transition-delay: .4s; }
+      // &:nth-child(5) { transition-delay: .5s; }
     }
   }
 
   &.page-intro {
-    .anchors {
-      li {
-        transform: translateY(30px) rotateX(90deg);
-        opacity: 0;
-      }
+    .anchor {
+      transform: translateY(-50px) rotateX(90deg);
+      opacity: 0;
     }
   }
 
@@ -324,6 +351,7 @@ export default {
   .anchor-automation {
     width: 289px;
     margin: 0 0 44px;
+    transition-delay: .1s;
     .page-label {
       width: 225px;
     }
@@ -331,6 +359,7 @@ export default {
   .anchor-security {
     width: 320px;
     margin: 0 0 54px;
+    transition-delay: .2s;
     .page-label {
       width: 258px;
     }
@@ -338,6 +367,7 @@ export default {
   .anchor-infrastructure {
     width: 304px;
     margin: 0 0 57px;
+    transition-delay: .3s;
     .page-label {
       width: 241px;
     }
@@ -345,6 +375,7 @@ export default {
   .anchor-service {
     width: 213px;
     margin: 0 0 49px;
+    transition-delay: .4s;
     .page-label {
       width: 150px;
     }
@@ -352,6 +383,7 @@ export default {
   .anchor-others {
     width: 130px;
     margin: 0 0 0;
+    transition-delay: .5s;
   }
 
 }

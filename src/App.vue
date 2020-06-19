@@ -2,7 +2,7 @@
   <div id="app" v-bind:class="{mobile: isMobile}">
     <Intro :show="showIntro" />
     <Header :showMenu="showMenu" :showHeader="showIntro" />
-    <div id="wrap" v-bind:style="{position: wrapPosition}">
+    <div id="wrap"> <!-- v-bind:style="{position: wrapPosition}" -->
       <div id="main">
         <Index          :pages="pages" />
         <Automation     :page="pages[1]" />
@@ -41,10 +41,11 @@ export default {
   data: function() {
     return {
       isMobile: false,
-      wrapPosition: 'fixed',
+      // wrapPosition: 'fixed',
       showIntro: true,
       showPopup: false,
       showMenu: false,
+      afterIntro: null,
       pointDetail: {
         name: null,
         text: null,
@@ -183,13 +184,13 @@ export default {
             {
               name: 'Construction',
               image: require('./assets/images/others/item-pic-2.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Delivery Services',
               image: require('./assets/images/others/item-pic-3.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
@@ -201,19 +202,19 @@ export default {
             {
               name: 'Logistics',
               image: require('./assets/images/others/item-pic-5.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Public services',
               image: require('./assets/images/others/item-pic-6.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Surveillance',
               image: require('./assets/images/others/item-pic-7.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
@@ -225,19 +226,19 @@ export default {
             {
               name: 'Security<br>check points',
               image: require('./assets/images/others/item-pic-9.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Mining and Drilling',
               image: require('./assets/images/others/item-pic-10.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Oli and Gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
@@ -249,31 +250,31 @@ export default {
             {
               name: 'Automated Machines',
               image: require('./assets/images/others/item-pic-13.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Aviation',
               image: require('./assets/images/others/item-pic-14.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Power',
               image: require('./assets/images/others/item-pic-15.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Defense',
               image: require('./assets/images/others/item-pic-16.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
             {
               name: 'Border Security',
               image: require('./assets/images/others/item-pic-17.jpg'),
-              link: 'https://www.google.com/',
+              link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             }
           ]
@@ -302,9 +303,9 @@ export default {
 
     // fullpage.js 初始化
     this.initFullpage();
-    // this.toggleFullpageScrolling(false);
-    this.toggleIntro();
-    this.toggleFullpageScrolling(true);
+    this.toggleFullpageScrolling(false);
+    // this.toggleIntro();
+    // this.toggleFullpageScrolling(true);
     for (let i = 0; i < this.pages[5].apps.length; i++) { this.othersItemsArray.push(i); }
     this.shuffle(this.othersItemsArray);
 
@@ -313,7 +314,8 @@ export default {
 
     // fullpage.js 初始化
     initFullpage() {
-      this.wrapPosition = 'relative';
+      var self = this;
+      // self.wrapPosition = 'relative';
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
         navigationPosition: 'left',  // 導行列位置
@@ -324,7 +326,11 @@ export default {
           this[0].classList.add('page-intro');
         },
         afterLoad: function(anchorLink) { //, index
-          document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
+          if (!self.showIntro) {
+            document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
+          } else {
+            self.afterIntro = anchorLink;
+          }
         }
       });
     },
@@ -385,6 +391,7 @@ export default {
       this.toggleFullpageScrolling(!this.showMenu);
       if (this.showMenu) {
         document.querySelector('html').classList.add('show-menu');
+        this.hidePointDetail();
       } else {
         document.querySelector('html').classList.remove('show-menu');
       }
@@ -393,7 +400,12 @@ export default {
     // 開啟或關閉 Intro
     toggleIntro() {
       this.showIntro = !this.showIntro;
-      if (!this.showIntro) { document.querySelector('html').classList.remove('show-intro'); }
+      if (!this.showIntro) {
+        document.querySelector('html').classList.remove('show-intro');
+        setTimeout(() => {
+          document.querySelector('#page-' + this.afterIntro).classList.remove('page-intro');
+        }, 250);
+      }
     }
 
   }
@@ -777,7 +789,7 @@ p {margin: 0;}
   &.page-intro {
     .label {
       opacity: 0;
-      transform: translateY(30px) rotateX(90deg)!important;
+      transform: translateY(-30px) rotateX(90deg)!important;
     }
   }
 
@@ -790,6 +802,7 @@ p {margin: 0;}
 
 .mobile #fp-nav { display: none; }
 .show-menu #fp-nav,
+.show-pop #fp-nav,
 .show-intro #fp-nav {
   opacity: 0;
   pointer-events: none;
