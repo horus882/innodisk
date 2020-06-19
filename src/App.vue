@@ -797,7 +797,7 @@ p {margin: 0;}
   &.page-intro {
     .label {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(30px) rotateX(90deg);
     }
   }
 

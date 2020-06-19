@@ -5,7 +5,7 @@
         <nav>
           <ul>
             <li v-for="(item, index) in pages.slice(1, 6)" v-bind:key="index">
-              <a class="item" tabindex="0" v-bind:class="'item-' + item.idName" v-bind:href="'#' + item.idName" v-on:click="menuToggle">
+              <a class="item" tabindex="0" v-bind:class="'item-' + item.idName" v-bind:href="'#' + item.idName" v-on:click="toggleMenu">
                 {{ item.pageName }}
               </a>
             </li>
@@ -39,8 +39,8 @@ export default {
   mounted() {
   },
   methods: {
-    menuToggle: function() {
-      this.$parent.menuToggle();
+    toggleMenu: function() {
+      this.$parent.toggleMenu();
     }
   }
 }

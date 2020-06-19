@@ -260,6 +260,25 @@ export default {
     transform: translateY(-60%);
     background: url(../assets/images/index/m-extra-bg.png) center 20px no-repeat;
     background-size: 100% auto;
+    perspective: 500px;
+    li {
+      transition-duration: .5s;
+      transition-timing-function: ease-out;
+      &:nth-child(1) { transition-delay: .1s; }
+      &:nth-child(2) { transition-delay: .2s; }
+      &:nth-child(3) { transition-delay: .3s; }
+      &:nth-child(4) { transition-delay: .4s; }
+      &:nth-child(5) { transition-delay: .5s; }
+    }
+  }
+
+  &.page-intro {
+    .anchors {
+      li {
+        transform: translateY(30px) rotateX(90deg);
+        opacity: 0;
+      }
+    }
   }
 
   .anchor {
