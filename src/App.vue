@@ -283,18 +283,7 @@ export default {
     }
   },
   props: {},
-  components: {
-    Intro,
-    Header,
-    Index,
-    Automation,
-    Security,
-    Infrastructure,
-    Service,
-    Others,
-    Popup,
-    Menu
-  },
+  components: { Intro, Header, Index, Automation, Security, Infrastructure, Service, Others, Popup, Menu },
   created() {
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       const metaViewPort = document.querySelector('head meta[name="viewport"]');
@@ -325,7 +314,6 @@ export default {
     // fullpage.js 初始化
     initFullpage() {
       this.wrapPosition = 'relative';
-      // var self = this;
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
         navigationPosition: 'left',  // 導行列位置
@@ -337,25 +325,6 @@ export default {
         },
         afterLoad: function(anchorLink) { //, index
           document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
-          console.log(anchorLink);
-          if (anchorLink == 'automation') {
-
-            // Vue.$animeJS({
-            //   targets: '#automation-point-1 path',
-            //   strokeDashoffset: [Vue.$animeJS.setDashoffset, 0],
-            //   easing: 'easeInOutQuad',
-            //   duration: 750,
-            //   direction: 'normal',
-            //   complete: function() {}
-            // });
-
-          }
-          // var result = self.pages.filter(function(item) { // , index, array
-          //   return item.idName == anchorLink;
-          // });
-          // console.log(result);
-          // result[0].pageIntro = false;
-          
         }
       });
     },
@@ -404,11 +373,13 @@ export default {
       return a;
     },
 
+    // 開啟或關閉 Fullpage 捲動
     toggleFullpageScrolling(bool) {
       $.fn.fullpage.setMouseWheelScrolling(bool);
       $.fn.fullpage.setAllowScrolling(bool);
     },
 
+    // 開啟或關閉 Menu
     toggleMenu() {
       this.showMenu = !this.showMenu;
       this.toggleFullpageScrolling(!this.showMenu);
@@ -419,11 +390,10 @@ export default {
       }
     },
 
+    // 開啟或關閉 Intro
     toggleIntro() {
       this.showIntro = !this.showIntro;
-      if (!this.showIntro) {
-        document.querySelector('html').classList.remove('show-intro');
-      }
+      if (!this.showIntro) { document.querySelector('html').classList.remove('show-intro'); }
     }
 
   }
@@ -661,21 +631,13 @@ p {margin: 0;}
       }
 
       @keyframes ringRotateCW {
-        0% {
-          transform: rotate(0deg)
-        }
-        100% {
-          transform: rotate(360deg)
-        }
+        0% { transform: rotate(0deg) }
+        100% { transform: rotate(360deg) }
       }
 
       @keyframes ringRotateCCW {
-        0% {
-          transform: rotate(0deg)
-        }
-        100% {
-          transform: rotate(-360deg)
-        }
+        0% { transform: rotate(0deg) }
+        100% { transform: rotate(-360deg) }
       }
 
     }
@@ -699,6 +661,7 @@ p {margin: 0;}
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: contain;
+      transition-property: transform, opacity;
       transition-duration: .5s;
       transition-timing-function: ease-out;
       @media (min-width: $screen-lg) {
