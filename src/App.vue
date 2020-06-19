@@ -640,6 +640,7 @@ p {margin: 0;}
       position: absolute;
       width: 100%;
       height: 100%;
+      transition: .75s cubic-bezier(0.34, 1.56, 0.64, 1);
 
       &::before,
       &::after {
@@ -684,7 +685,11 @@ p {margin: 0;}
     }
 
     .line {
-      svg path { stroke: $primary-color; }
+      svg path {
+        stroke: $primary-color;
+        stroke-dashoffset: 0;
+        transition: .75s ease-out;
+      }
     }
 
     .label {
@@ -694,6 +699,8 @@ p {margin: 0;}
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: contain;
+      transition-duration: .5s;
+      transition-timing-function: ease-out;
       @media (min-width: $screen-lg) {
         font-size: 22px;
       }
@@ -712,6 +719,16 @@ p {margin: 0;}
       }
     }
 
+  }
+
+  &.page-intro .points {
+    .ring {
+      transform: scale(0);
+      opacity: 0;
+    }
+    .label {
+      opacity: 0;
+    }
   }
 
 }
@@ -797,7 +814,7 @@ p {margin: 0;}
   &.page-intro {
     .label {
       opacity: 0;
-      transform: translateY(30px) rotateX(90deg);
+      transform: translateY(30px) rotateX(90deg)!important;
     }
   }
 

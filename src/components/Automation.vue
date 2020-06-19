@@ -61,10 +61,12 @@ export default {
 
   #automation-point-1 {
     transform: translateX(370%) translateY(-280%);
+    .ring { transition-delay: .1s; }
     .info {
       bottom: 92%;
       left: 50%;
       transform: translateX(-2px);
+      svg path { stroke-dasharray: 65; transition-delay: .45s; }
       @media (min-width: $screen-lg) {
         svg { width: 30px; height: 82px; }
       }
@@ -77,7 +79,7 @@ export default {
       text-indent: 8px;
       line-height: 64px;
       background-image: url(../assets/images/automation/point-1-label-md.png);
-      transition-delay: .2s;
+      transition-delay: .8s;
       @media (min-width: $screen-lg) {
         top: -74px;
         left: 30px;
@@ -100,10 +102,12 @@ export default {
 
   #automation-point-2 {
     transform: translateX(-320%) translateY(-220%);
+    .ring { transition-delay: .25s; }
     .info {
       top: 96%;
       right: 50%;
       transform: translateX(4px);
+      svg path { stroke-dasharray: 75; transition-delay: .6s; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 27px; height: 95px; }
@@ -117,7 +121,7 @@ export default {
       text-indent: 17px;
       line-height: 35px;
       background-image: url(../assets/images/automation/point-2-label-md.png);
-      transition-delay: .1s;
+      transition-delay: .95s;
       @media (min-width: $screen-lg) {
         top: 92px;
         left: -200px;
@@ -136,10 +140,12 @@ export default {
 
   #automation-point-3 {
     transform: translateX(-500%) translateY(360%);
+    .ring { transition-delay: .4s; }
     .info {
       bottom: 50%;
       right: 96%;
       transform: translateY(4px);
+      svg path { stroke-dasharray: 64; transition-delay: .75s; }
       @media (min-width: $screen-lg) {
         svg { width: 82px; height: 22px; }
       }
@@ -152,7 +158,7 @@ export default {
       text-indent: 18px;
       line-height: 55px;
       background-image: url(../assets/images/automation/point-3-label-md.png);
-      transition-delay: .3s;
+      transition-delay: 1.1s;
       @media (min-width: $screen-lg) {
         top: -64px;
         left: -210px;
@@ -167,6 +173,12 @@ export default {
         bottom: -2px;
       }
     }
+  }
+
+  &.page-intro {
+    #automation-point-1 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
+    #automation-point-2 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
+    #automation-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
@@ -196,6 +208,9 @@ export default {
       height: 8px;
       background-image: url(../assets/images/automation/m-point-1-label-after.png);
     }
+    .label {
+      transition-delay: .2s;
+    }
   }
 
   #automation-point-2 {
@@ -216,6 +231,9 @@ export default {
       height: 8px;
       background-image: url(../assets/images/automation/m-point-2-label-after.png);
     }
+    .label {
+      transition-delay: .1s;
+    }
   }
 
   #automation-point-3 {
@@ -235,6 +253,9 @@ export default {
       width: 8px;
       height: 80px;
       background-image: url(../assets/images/automation/m-point-3-label-after.png);
+    }
+    .label {
+      transition-delay: .3s;
     }
   }
 

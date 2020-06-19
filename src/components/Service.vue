@@ -61,10 +61,12 @@ export default {
 
   #service-point-1 {
     transform: translateX(390%) translateY(-280%);
+    .ring { transition-delay: .1s; }
     .info {
       top: 50%;
       left: 96%;
       transform: translateY(-9px);
+      svg path { stroke-dasharray: 63; transition-delay: .45s; }
       @media (min-width: $screen-lg) {
         svg { width: 86px; height: 18px; }
       }
@@ -77,7 +79,7 @@ export default {
       text-indent: 8px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-1-label-md.png);
-      transition-delay: .1s;
+      transition-delay: .8s;
       @media (min-width: $screen-lg) {
         top: -55px;
         left: 91px;
@@ -100,10 +102,12 @@ export default {
 
   #service-point-2 {
     transform: translateX(-490%) translateY(70%);
+    .ring { transition-delay: .25s; }
     .info {
       top: 82%;
       right: 82%;
       transform: translateX(4px);
+      svg path { stroke-dasharray: 35; transition-delay: .6s; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 38px; height: 34px; }
@@ -117,7 +121,7 @@ export default {
       text-indent: 15px;
       line-height: 36px;
       background-image: url(../assets/images/service/point-2-label-md.png);
-      transition-delay: .2s;
+      transition-delay: .95s;
       @media (min-width: $screen-lg) {
         top: 34px;
         right: 40px;
@@ -140,10 +144,12 @@ export default {
 
   #service-point-3 {
     transform: translateX(580%) translateY(490%);
+    .ring { transition-delay: .4s; transition-delay: .75s; }
     .info {
       top: 50%;
       right: 96%;
       transform: translateY(-14px);
+      svg path { stroke-dasharray: 64; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 82px; height: 22px; }
@@ -157,7 +163,7 @@ export default {
       text-indent: 14px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-3-label-md.png);
-      transition-delay: .3s;
+      transition-delay: 1.1s;
       @media (min-width: $screen-lg) {
         top: -68px;
         right: 82px;
@@ -176,6 +182,12 @@ export default {
         }
       }
     }
+  }
+
+  &.page-intro {
+    #service-point-1 { svg path { stroke-dashoffset: 63; } .label { transform: translateX(-10px); } }
+    #service-point-2 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
+    #service-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
@@ -205,6 +217,9 @@ export default {
       height: 8px;
       background-image: url(../assets/images/service/m-point-1-label-after.png);
     }
+    .label {
+      transition-delay: .1s;
+    }
   }
 
   #service-point-2 {
@@ -221,6 +236,9 @@ export default {
       height: 8px;
       background-image: url(../assets/images/service/m-point-2-label-after.png);
     }
+    .label {
+      transition-delay: .2s;
+    }
   }
 
   #service-point-3 {
@@ -236,6 +254,9 @@ export default {
       width: 8px;
       height: 28px;
       background-image: url(../assets/images/service/m-point-3-label-after.png);
+    }
+    .label {
+      transition-delay: .3s;
     }
   }
 

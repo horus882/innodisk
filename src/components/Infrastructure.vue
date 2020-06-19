@@ -61,10 +61,12 @@ export default {
 
   #infrastructure-point-1 {
     transform: translateX(-156%) translateY(-198%);
+    .ring { transition-delay: .1s; }
     .info {
       top: 96%;
       right: 50%;
       transform: translateX(4px);
+      svg path { stroke-dasharray: 75; transition-delay: .45s; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 27px; height: 95px; }
@@ -78,7 +80,7 @@ export default {
       text-indent: 17px;
       line-height: 34px;
       background-image: url(../assets/images/infrastructure/point-1-label-md.png);
-      transition-delay: .1s;
+      transition-delay: .8s;
       @media (min-width: $screen-lg) {
         top: 94px;
         right: 30px;
@@ -101,9 +103,11 @@ export default {
 
   #infrastructure-point-2 {
     transform: translateX(800%) translateY(78%);
+    .ring { transition-delay: .25s; }
     .info {
       top: 50%;
       right: 96%;
+      svg path { stroke-dasharray: 64; transition-delay: .6s; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 82px; height: 22px; }
@@ -117,7 +121,7 @@ export default {
       text-indent: 16px;
       line-height: 60px;
       background-image: url(../assets/images/infrastructure/point-2-label-md.png);
-      transition-delay: .2s;
+      transition-delay: .95s;
       @media (min-width: $screen-lg) {
         top: 16px;
         right: 86px;
@@ -136,6 +140,11 @@ export default {
         }
       }
     }
+  }
+
+  &.page-intro {
+    #infrastructure-point-1 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
+    #infrastructure-point-2 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
@@ -177,6 +186,9 @@ export default {
       height: 31px;
       background-image: url(../assets/images/infrastructure/m-point-1-label-after.png);
     }
+    .label {
+      transition-delay: .1s;
+    }
   }
 
   #infrastructure-point-2 {
@@ -196,6 +208,9 @@ export default {
       width: 80px;
       height: 8px;
       background-image: url(../assets/images/infrastructure/m-point-2-label-after.png);
+    }
+    .label {
+      transition-delay: .2s;
     }
   }
 

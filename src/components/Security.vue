@@ -61,9 +61,11 @@ export default {
 
   #security-point-1 {
     transform: translateX(-240%) translateY(-250%);
+    .ring { transition-delay: .1s; }
     .info {
       top: 80%;
       right: 80%;
+      svg path { stroke-dasharray: 35; transition-delay: .45s; }
       @media (min-width: $screen-lg) {
         svg { width: 38px; height: 34px; }
       }
@@ -76,7 +78,7 @@ export default {
       text-indent: 20px;
       line-height: 34px;
       background-image: url(../assets/images/security/point-1-label-md.png);
-      transition-delay: .1s;
+      transition-delay: .8s;
       @media (min-width: $screen-lg) {
         top: 33px;
         right: 38px;
@@ -99,10 +101,12 @@ export default {
 
   #security-point-2 {
     transform: translateX(550%) translateY(40%);
+    .ring { transition-delay: .25s; }
     .info {
       bottom: 92%;
       left: 50%;
       transform: translateX(-6px);
+      svg path { stroke-dasharray: 63; transition-delay: .6s; }
       @media (min-width: $screen-lg) {
         transform: translateX(-9px);
         svg { width: 20px; height: 90px; }
@@ -116,7 +120,7 @@ export default {
       text-indent: 13px;
       line-height: 58px;
       background-image: url(../assets/images/security/point-2-label-md.png);
-      transition-delay: .3s;
+      transition-delay: .95s;
       @media (min-width: $screen-lg) {
         top: -72px;
         left: 8px;
@@ -139,10 +143,12 @@ export default {
 
   #security-point-3 {
     transform: translateX(510%) translateY(480%);
+    .ring { transition-delay: .4s; }
     .info {
       right: 96%;
       bottom: 50%;
       transform: translateY(6px);
+      svg path { stroke-dasharray: 100; transition-delay: .75s; }
       @media (min-width: $screen-lg) {
         svg { width: 126px; height: 37px; }
       }
@@ -155,7 +161,7 @@ export default {
       text-indent: 24px;
       line-height: 58px;
       background-image: url(../assets/images/security/point-3-label-md.png);
-      transition-delay: .4s;
+      transition-delay: 1.1s;
       @media (min-width: $screen-lg) {
         top: -66px;
         right: 126px;
@@ -178,10 +184,12 @@ export default {
 
   #security-point-4 {
     transform: translateX(130%) translateY(116%);
+    .ring { transition-delay: .55s; }
     .info {
       bottom: 92%;
       left: 50%;
       transform: translateX(-2px);
+      svg path { stroke-dasharray: 65; transition-delay: .9s; }
       @media (min-width: $screen-lg) {
         svg { width: 30px; height: 82px; }
       }
@@ -194,7 +202,7 @@ export default {
       text-indent: 12px;
       line-height: 64px;
       background-image: url(../assets/images/security/point-4-label-md.png);
-      transition-delay: .2s;
+      transition-delay: 1.25s;
       @media (min-width: $screen-lg) {
         top: -72px;
         left: 32px;
@@ -213,6 +221,13 @@ export default {
         }
       }
     }
+  }
+
+  &.page-intro {
+    #security-point-1 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
+    #security-point-2 { svg path { stroke-dashoffset: -63; } .label { transform: translateX(-10px); } }
+    #security-point-3 { svg path { stroke-dashoffset: 100; } .label { transform: translateX(10px); } }
+    #security-point-4 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
   }
 
 }
@@ -242,6 +257,9 @@ export default {
       height: 29px;
       background-image: url(../assets/images/security/m-point-1-label-after.png);
     }
+    .label {
+      transition-delay: .1s;
+    }
   }
 
   #security-point-2 {
@@ -257,6 +275,9 @@ export default {
       width: 70px;
       height: 31px;
       background-image: url(../assets/images/security/m-point-2-label-after.png);
+    }
+    .label {
+      transition-delay: .3s;
     }
   }
 
@@ -274,6 +295,9 @@ export default {
       height: 28px;
       background-image: url(../assets/images/security/m-point-3-label-after.png);
     }
+    .label {
+      transition-delay: .4s;
+    }
   }
 
   #security-point-4 {
@@ -289,6 +313,9 @@ export default {
       width: 59px;
       height: 8px;
       background-image: url(../assets/images/security/m-point-4-label-after.png);
+    }
+    .label {
+      transition-delay: .2s;
     }
   }
 
