@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 
-#page-service {
+#page-healthcare {
 
   &::before {
     content: '';
@@ -59,7 +59,7 @@ export default {
     z-index: -1;
   }
 
-  #service-point-1 {
+  #healthcare-point-1 {
     transform: translateX(390%) translateY(-280%);
     .ring { transition-delay: .1s; }
     .info {
@@ -76,7 +76,7 @@ export default {
       left: 66px;
       width: 122px;
       height: 48px;
-      text-indent: 8px;
+      text-indent: 10px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-1-label-md.png);
       transition-delay: .8s;
@@ -85,7 +85,7 @@ export default {
         left: 91px;
         width: 171px;
         height: 68px;
-        text-indent: 13px;
+        text-indent: 18px;
         line-height: 78px;
         background-image: url(../assets/images/service/point-1-label-lg.png);
       }
@@ -100,7 +100,7 @@ export default {
     }
   }
 
-  #service-point-2 {
+  #healthcare-point-2 {
     transform: translateX(-490%) translateY(70%);
     .ring { transition-delay: .25s; }
     .info {
@@ -118,7 +118,7 @@ export default {
       right: 29px;
       width: 156px;
       height: 47px;
-      text-indent: 15px;
+      text-indent: 18px;
       line-height: 36px;
       background-image: url(../assets/images/service/point-2-label-md.png);
       transition-delay: .95s;
@@ -127,7 +127,7 @@ export default {
         right: 40px;
         width: 219px;
         height: 66px;
-        text-indent: 22px;
+        text-indent: 29px;
         line-height: 50px;
         background-image: url(../assets/images/service/point-2-label-lg.png);
       }
@@ -142,7 +142,7 @@ export default {
     }
   }
 
-  #service-point-3 {
+  #healthcare-point-3 {
     transform: translateX(580%) translateY(490%);
     .ring { transition-delay: .4s; transition-delay: .75s; }
     .info {
@@ -160,7 +160,7 @@ export default {
       right: 60px;
       width: 174px;
       height: 48px;
-      text-indent: 14px;
+      text-indent: 20px;
       line-height: 56px;
       background-image: url(../assets/images/service/point-3-label-md.png);
       transition-delay: 1.1s;
@@ -169,7 +169,7 @@ export default {
         right: 82px;
         width: 244px;
         height: 68px;
-        text-indent: 20px;
+        text-indent: 32px;
         line-height: 80px;
         background-image: url(../assets/images/service/point-3-label-lg.png);
       }
@@ -185,21 +185,21 @@ export default {
   }
 
   &.page-intro {
-    #service-point-1 { svg path { stroke-dashoffset: 63; } .label { transform: translateX(-10px); } }
-    #service-point-2 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
-    #service-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
+    #healthcare-point-1 { svg path { stroke-dashoffset: 63; } .label { transform: translateX(-10px); } }
+    #healthcare-point-2 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
+    #healthcare-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
 
-.mobile #page-service {
+.mobile #page-healthcare {
 
   &::before {
     background-image: url(../assets/images/service/m-bg.jpg);
     background-position: right top;
   }
 
-  #service-point-1 {
+  #healthcare-point-1 {
     // top: 304px;
     left: 98px;
     margin-top: -100px;
@@ -222,7 +222,7 @@ export default {
     }
   }
 
-  #service-point-2 {
+  #healthcare-point-2 {
     // top: 415px;
     left: 98px;
     margin-top: 8px;
@@ -241,7 +241,7 @@ export default {
     }
   }
 
-  #service-point-3 {
+  #healthcare-point-3 {
     // top: 528px;
     left: 98px;
     margin-top: 124px;

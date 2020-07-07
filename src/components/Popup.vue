@@ -134,7 +134,7 @@ export default {
     .text {
       font-size: 14px;
       font-weight: 600;
-      text-align: justify;
+      // text-align: justify;
       line-height: 1.71428;
       margin: 0 auto 0;
       @media (min-width: $screen-lg) {

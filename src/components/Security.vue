@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 
-#page-security {
+#page-facialRecognition {
 
   &::before {
     content: '';
@@ -59,7 +59,7 @@ export default {
     z-index: -1;
   }
 
-  #security-point-1 {
+  #facialRecognition-point-1 {
     transform: translateX(-240%) translateY(-250%);
     .ring { transition-delay: .1s; }
     .info {
@@ -75,7 +75,7 @@ export default {
       right: 28px;
       width: 131px;
       height: 47px;
-      text-indent: 20px;
+      text-indent: 22px;
       line-height: 34px;
       background-image: url(../assets/images/security/point-1-label-md.png);
       transition-delay: .8s;
@@ -84,7 +84,7 @@ export default {
         right: 38px;
         width: 184px;
         height: 66px;
-        text-indent: 28px;
+        text-indent: 34px;
         line-height: 50px;
         background-image: url(../assets/images/security/point-1-label-lg.png);
       }
@@ -99,7 +99,7 @@ export default {
     }
   }
 
-  #security-point-2 {
+  #facialRecognition-point-2 {
     transform: translateX(550%) translateY(40%);
     .ring { transition-delay: .25s; }
     .info {
@@ -117,7 +117,7 @@ export default {
       left: 6px;
       width: 98px;
       height: 49px;
-      text-indent: 13px;
+      text-indent: 15px;
       line-height: 58px;
       background-image: url(../assets/images/security/point-2-label-md.png);
       transition-delay: .95s;
@@ -126,7 +126,7 @@ export default {
         left: 8px;
         width: 138px;
         height: 69px;
-        text-indent: 20px;
+        text-indent: 24px;
         line-height: 82px;
         background-image: url(../assets/images/security/point-2-label-lg.png);
       }
@@ -141,7 +141,7 @@ export default {
     }
   }
 
-  #security-point-3 {
+  #facialRecognition-point-3 {
     transform: translateX(510%) translateY(480%);
     .ring { transition-delay: .4s; }
     .info {
@@ -158,7 +158,7 @@ export default {
       right: 90px;
       width: 257px;
       height: 49px;
-      text-indent: 24px;
+      text-indent: 30px;
       line-height: 58px;
       background-image: url(../assets/images/security/point-3-label-md.png);
       transition-delay: 1.1s;
@@ -167,7 +167,7 @@ export default {
         right: 126px;
         width: 360px;
         height: 69px;
-        text-indent: 36px;
+        text-indent: 48px;
         line-height: 82px;
         background-image: url(../assets/images/security/point-3-label-lg.png);
       }
@@ -182,7 +182,7 @@ export default {
     }
   }
 
-  #security-point-4 {
+  #facialRecognition-point-4 {
     transform: translateX(130%) translateY(116%);
     .ring { transition-delay: .55s; }
     .info {
@@ -199,7 +199,7 @@ export default {
       left: 22px;
       width: 134px;
       height: 52px;
-      text-indent: 12px;
+      text-indent: 14px;
       line-height: 64px;
       background-image: url(../assets/images/security/point-4-label-md.png);
       transition-delay: 1.25s;
@@ -208,7 +208,7 @@ export default {
         left: 32px;
         width: 186px;
         height: 74px;
-        text-indent: 20px;
+        text-indent: 25px;
         line-height: 92px;
         background-image: url(../assets/images/security/point-4-label-lg.png);
       }
@@ -224,22 +224,22 @@ export default {
   }
 
   &.page-intro {
-    #security-point-1 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
-    #security-point-2 { svg path { stroke-dashoffset: -63; } .label { transform: translateX(-10px); } }
-    #security-point-3 { svg path { stroke-dashoffset: 100; } .label { transform: translateX(10px); } }
-    #security-point-4 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
+    #facialRecognition-point-1 { svg path { stroke-dashoffset: 35; } .label { transform: translateX(10px); } }
+    #facialRecognition-point-2 { svg path { stroke-dashoffset: -63; } .label { transform: translateX(-10px); } }
+    #facialRecognition-point-3 { svg path { stroke-dashoffset: 100; } .label { transform: translateX(10px); } }
+    #facialRecognition-point-4 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
   }
 
 }
 
-.mobile #page-security {
+.mobile #page-facialRecognition {
 
   &::before {
     background-image: url(../assets/images/security/m-bg.jpg);
     background-position: center top;
   }
 
-  #security-point-1 {
+  #facialRecognition-point-1 {
     // top: 305px;
     left: 96px;
     margin-top: -102px;
@@ -262,7 +262,7 @@ export default {
     }
   }
 
-  #security-point-2 {
+  #facialRecognition-point-2 {
     // top: 503px;
     margin-top: 100px;
     left: 96px;
@@ -281,7 +281,7 @@ export default {
     }
   }
 
-  #security-point-3 {
+  #facialRecognition-point-3 {
     // top: 603px;
     left: 96px;
     margin-top: 202px;
@@ -300,7 +300,7 @@ export default {
     }
   }
 
-  #security-point-4 {
+  #facialRecognition-point-4 {
     // top: 402px;
     left: 96px;
     margin-top: -6px;

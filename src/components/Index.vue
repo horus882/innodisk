@@ -6,7 +6,8 @@
           <li v-for="(item, index) in anchors" v-bind:key="index">
             <div class="anchor" tabindex="0" v-bind:class="'anchor-' + item.idName" v-on:click="moveToPage(item.idName)" v-on:keyup.enter="moveToPage(item.idName)">
               <p class="page-name">{{ item.pageName }}</p>
-              <p class="page-label">{{ item.pageLabel }} <a v-if="item.link" v-on:click.stop v-bind:href="item.link" target="_blank">more</a></p>
+              <!-- <p class="page-label">{{ item.pageLabel }} <a v-if="item.link" v-on:click.stop v-bind:href="item.link" target="_blank">more</a></p> -->
+              <p class="page-label">{{ item.pageLabel }} <a v-if="item.more">more</a></p>
             </div>
           </li>
         </ul>
@@ -28,31 +29,31 @@ export default {
           idName: this.pages[1].idName,
           pageName: this.pages[1].pageName,
           pageLabel: this.pages[1].pageLabel,
-          link: this.pages[1].moreLink
+          more: this.pages[1].more
         },
         {
           idName: this.pages[2].idName,
           pageName: this.pages[2].pageName,
           pageLabel: this.pages[2].pageLabel,
-          link: this.pages[2].moreLink
+          more: this.pages[2].more
         },
         {
           idName: this.pages[3].idName,
           pageName: this.pages[3].pageName,
           pageLabel: this.pages[3].pageLabel,
-          link: this.pages[3].moreLink
+          more: this.pages[3].more
         },
         {
           idName: this.pages[4].idName,
           pageName: this.pages[4].pageName,
           pageLabel: this.pages[4].pageLabel,
-          link: this.pages[4].moreLink
+          more: this.pages[4].more
         },
         {
           idName: this.pages[5].idName,
           pageName: this.pages[5].pageName,
           pageLabel: this.pages[5].pageLabel,
-          link: this.pages[5].moreLink
+          more: this.pages[5].more
         },
       ]
     }
@@ -155,7 +156,7 @@ export default {
     }
   }
 
-  .anchor-automation {
+  .anchor-manufacturing {
     margin: -165px 0 0 350px;
     transition-delay: .3s;
     &::before {bottom: -48px; left: -15px; transition-delay: .9s;}
@@ -166,7 +167,7 @@ export default {
     }
   }
 
-  .anchor-security {
+  .anchor-facialRecognition {
     margin: -98px 0 0 56px;
     transition-delay: .2s;
     &::before {transition-delay: .7s;}
@@ -177,7 +178,7 @@ export default {
     }
   }
 
-  .anchor-infrastructure {
+  .anchor-roadInfrastructure {
     margin: -250px 0 0 -46px;
     transition-delay: .1s;
     &::before {bottom: -46px; left: -35px; transition-delay: .5s;}
@@ -188,7 +189,7 @@ export default {
     }
   }
 
-  .anchor-service {
+  .anchor-healthcare {
     margin: -156px 0 0 -292px;
     transition-delay: .15s;
     &::before {bottom: -25px; left: -35px; transition-delay: .6s;}
@@ -211,10 +212,10 @@ export default {
   }
 
   @media (min-width: $screen-lg) {
-    .anchor-automation { margin: -262px 0 0 528px; }
-    .anchor-security { margin: -178px 0 0 72px; }
-    .anchor-infrastructure { margin: -374px 0 0 -38px; }
-    .anchor-service { margin: -254px 0 0 -382px; }
+    .anchor-manufacturing { margin: -262px 0 0 528px; }
+    .anchor-facialRecognition { margin: -178px 0 0 72px; }
+    .anchor-roadInfrastructure { margin: -374px 0 0 -38px; }
+    .anchor-healthcare { margin: -254px 0 0 -382px; }
     .anchor-others { margin: -158px 0 0 -618px; }
   }
 
@@ -254,7 +255,7 @@ export default {
       font-weight: 300;
       line-height: 13px;
       margin-left: 2px;
-      padding-left: 10px;
+      padding-left: 12px;
       background: url(../assets/images/index/btn-more.svg) 0 0 no-repeat;
       background-size: contain;
       box-sizing: border-box;
@@ -263,6 +264,7 @@ export default {
         height: 18px;
         font-size: 18px;
         line-height: 14px;
+        padding-left: 16px;
         vertical-align: middle;
       }
     }
@@ -348,7 +350,7 @@ export default {
     }
   }
 
-  .anchor-automation {
+  .anchor-manufacturing {
     width: 289px;
     margin: 0 0 44px;
     transition-delay: .1s;
@@ -356,7 +358,7 @@ export default {
       width: 225px;
     }
   }
-  .anchor-security {
+  .anchor-facialRecognition {
     width: 320px;
     margin: 0 0 54px;
     transition-delay: .2s;
@@ -364,7 +366,7 @@ export default {
       width: 258px;
     }
   }
-  .anchor-infrastructure {
+  .anchor-roadInfrastructure {
     width: 304px;
     margin: 0 0 57px;
     transition-delay: .3s;
@@ -372,7 +374,7 @@ export default {
       width: 241px;
     }
   }
-  .anchor-service {
+  .anchor-healthcare {
     width: 213px;
     margin: 0 0 49px;
     transition-delay: .4s;

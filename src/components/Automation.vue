@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 
-#page-automation {
+#page-manufacturing {
 
   &::before {
     content: '';
@@ -59,7 +59,7 @@ export default {
     z-index: -1;
   }
 
-  #automation-point-1 {
+  #manufacturing-point-1 {
     transform: translateX(370%) translateY(-280%);
     .ring { transition-delay: .1s; }
     .info {
@@ -76,7 +76,7 @@ export default {
       left: 22px;
       width: 251px;
       height: 52px;
-      text-indent: 8px;
+      text-indent: 16px;
       line-height: 64px;
       background-image: url(../assets/images/automation/point-1-label-md.png);
       transition-delay: .8s;
@@ -85,7 +85,7 @@ export default {
         left: 30px;
         width: 352px;
         height: 74px;
-        text-indent: 14px;
+        text-indent: 28px;
         line-height: 90px;
         background-image: url(../assets/images/automation/point-1-label-lg.png);
       }
@@ -100,7 +100,7 @@ export default {
     }
   }
 
-  #automation-point-2 {
+  #manufacturing-point-2 {
     transform: translateX(-320%) translateY(-220%);
     .ring { transition-delay: .25s; }
     .info {
@@ -118,7 +118,7 @@ export default {
       left: -141px;
       width: 143px;
       height: 47px;
-      text-indent: 17px;
+      text-indent: 21px;
       line-height: 35px;
       background-image: url(../assets/images/automation/point-2-label-md.png);
       transition-delay: .95s;
@@ -127,7 +127,7 @@ export default {
         left: -200px;
         width: 200px;
         height: 66px;
-        text-indent: 26px;
+        text-indent: 32px;
         line-height: 52px;
         background-image: url(../assets/images/automation/point-2-label-lg.png);
       }
@@ -138,7 +138,7 @@ export default {
     }
   }
 
-  #automation-point-3 {
+  #manufacturing-point-3 {
     transform: translateX(-500%) translateY(360%);
     .ring { transition-delay: .4s; }
     .info {
@@ -155,7 +155,7 @@ export default {
       left: -152px;
       width: 151px;
       height: 48px;
-      text-indent: 18px;
+      text-indent: 22px;
       line-height: 55px;
       background-image: url(../assets/images/automation/point-3-label-md.png);
       transition-delay: 1.1s;
@@ -164,7 +164,7 @@ export default {
         left: -210px;
         width: 212px;
         height: 68px;
-        text-indent: 26px;
+        text-indent: 34px;
         line-height: 80px;
         background-image: url(../assets/images/automation/point-3-label-lg.png);
       }
@@ -176,21 +176,21 @@ export default {
   }
 
   &.page-intro {
-    #automation-point-1 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
-    #automation-point-2 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
-    #automation-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
+    #manufacturing-point-1 { svg path { stroke-dashoffset: -65; } .label { transform: translateX(-10px); } }
+    #manufacturing-point-2 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
+    #manufacturing-point-3 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
 
-.mobile #page-automation {
+.mobile #page-manufacturing {
 
   &::before {
     background-image: url(../assets/images/automation/m-bg.jpg);
     background-position: center top;
   }
 
-  #automation-point-1 {
+  #manufacturing-point-1 {
     // top: 415px;
     left: 80px;
     margin-top: 10px;
@@ -213,7 +213,7 @@ export default {
     }
   }
 
-  #automation-point-2 {
+  #manufacturing-point-2 {
     // top: 304px;
     left: 80px;
     margin-top: -96px;
@@ -236,7 +236,7 @@ export default {
     }
   }
 
-  #automation-point-3 {
+  #manufacturing-point-3 {
     // top: 530px;
     left: 80px;
     margin-top: 128px;

@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss">
 
-#page-infrastructure {
+#page-roadInfrastructure {
 
   &::before {
     content: '';
@@ -59,7 +59,7 @@ export default {
     z-index: -1;
   }
 
-  #infrastructure-point-1 {
+  #roadInfrastructure-point-1 {
     transform: translateX(-156%) translateY(-198%);
     .ring { transition-delay: .1s; }
     .info {
@@ -77,7 +77,7 @@ export default {
       right: 28px;
       width: 254px;
       height: 46px;
-      text-indent: 17px;
+      text-indent: 23px;
       line-height: 34px;
       background-image: url(../assets/images/infrastructure/point-1-label-md.png);
       transition-delay: .8s;
@@ -86,7 +86,7 @@ export default {
         right: 30px;
         width: 356px;
         height: 64px;
-        text-indent: 28px;
+        text-indent: 40px;
         line-height: 50px;
         background-image: url(../assets/images/infrastructure/point-1-label-lg.png);
       }
@@ -101,7 +101,7 @@ export default {
     }
   }
 
-  #infrastructure-point-2 {
+  #roadInfrastructure-point-2 {
     transform: translateX(800%) translateY(78%);
     .ring { transition-delay: .25s; }
     .info {
@@ -118,7 +118,7 @@ export default {
       right: 61px;
       width: 224px;
       height: 49px;
-      text-indent: 16px;
+      text-indent: 22px;
       line-height: 60px;
       background-image: url(../assets/images/infrastructure/point-2-label-md.png);
       transition-delay: .95s;
@@ -127,7 +127,7 @@ export default {
         right: 86px;
         width: 314px;
         height: 69px;
-        text-indent: 24px;
+        text-indent: 36px;
         line-height: 84px;
         background-image: url(../assets/images/infrastructure/point-2-label-lg.png);
       }
@@ -143,13 +143,13 @@ export default {
   }
 
   &.page-intro {
-    #infrastructure-point-1 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
-    #infrastructure-point-2 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
+    #roadInfrastructure-point-1 { svg path { stroke-dashoffset: 75; } .label { transform: translateX(10px); } }
+    #roadInfrastructure-point-2 { svg path { stroke-dashoffset: -64; } .label { transform: translateX(10px); } }
   }
 
 }
 
-.mobile #page-infrastructure {
+.mobile #page-roadInfrastructure {
 
   &::before {
     background-image: url(../assets/images/infrastructure/m-bg.jpg);
@@ -168,7 +168,7 @@ export default {
 
   }
 
-  #infrastructure-point-1 {
+  #roadInfrastructure-point-1 {
     // top: 416px;
     left: 68px;
     margin-top: 4px;
@@ -191,7 +191,7 @@ export default {
     }
   }
 
-  #infrastructure-point-2 {
+  #roadInfrastructure-point-2 {
     // top: 494px;
     left: 68px;
     margin-top: 84px;

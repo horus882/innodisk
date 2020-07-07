@@ -1,6 +1,6 @@
 <template>
-  <div id="menu" v-bind:class="{show: show}">
-    <div class="menu-container">
+  <div id="menu" v-bind:class="{show: show}" v-on:click="toggleMenu">
+    <div class="menu-container" v-on:click.stop>
       <div class="menu-main">
         <nav>
           <ul>
@@ -70,7 +70,9 @@ export default {
 
   .menu-container {
     position: absolute;
-    width: 100%;
+    // width: 100%;
+    width: 33.3%;
+    min-width: 520px;
     height: 100%;
     // min-height: -webkit-fill-available;
     // min-height: -moz-fill-available;
@@ -123,6 +125,15 @@ export default {
       }
     }
 
+  }
+
+}
+
+.mobile #menu {
+
+  .menu-container {
+    width: 100%;
+    min-width: 0;
   }
 
 }

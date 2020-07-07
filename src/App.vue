@@ -60,11 +60,11 @@ export default {
           moreLink: null
         },
         {
-          idName: 'automation',
+          idName: 'manufacturing',
           pageName: 'Smart Automation',
           pageLabel: 'Manufacturing',
           pageText: 'Factories can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/',
+          more: true,
           points: [
             {
               name: 'Human Machine Interface (HMI)',
@@ -87,11 +87,11 @@ export default {
           ]
         },
         {
-          idName: 'security',
+          idName: 'facialRecognition',
           pageName: 'Smart Security',
           pageLabel: 'Facial recognition applications',
           pageText: 'Facial recognition can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/',
+          more: true,
           points: [
             {
               name: 'Smart Camera',
@@ -120,11 +120,11 @@ export default {
           ]
         },
         {
-          idName: 'infrastructure',
+          idName: 'roadInfrastructure',
           pageName: 'Smart Infrastructure',
           pageLabel: 'Road infrastructure',
           pageText: 'Road infrastructure can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/',
+          more: true,
           points: [
             {
               name: 'Electronic Toll Collection System',
@@ -141,11 +141,11 @@ export default {
           ]
         },
         {
-          idName: 'service',
+          idName: 'healthcare',
           pageName: 'Smart Service',
           pageLabel: 'Healthcare',
           pageText: 'Healthcare can be made smarter in countless ways.<br>Which solution interests you the most?',
-          moreLink: 'https://www.google.com/',
+          more: true,
           points: [
             {
               name: 'MRI Machine',
@@ -217,12 +217,12 @@ export default {
               link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
-            {
-              name: 'Security systems',
-              image: require('./assets/images/others/item-pic-8.jpg'),
-              link: 'https://www.google.com/',
-              extra: 'learn more'
-            },
+            // {
+            //   name: 'Security systems',
+            //   image: require('./assets/images/others/item-pic-8.jpg'),
+            //   link: 'https://www.google.com/',
+            //   extra: 'learn more'
+            // },
             {
               name: 'Security<br>check points',
               image: require('./assets/images/others/item-pic-9.jpg'),
@@ -319,7 +319,7 @@ export default {
       $('#main').fullpage({
         navigation: true,            // 顯示導行列
         navigationPosition: 'left',  // 導行列位置
-        anchors: ['index', 'automation', 'security', 'infrastructure', 'service', 'others'],
+        anchors: ['index', 'manufacturing', 'facialRecognition', 'roadInfrastructure', 'healthcare', 'others'],
         scrollOverflow: true,
         // scrollOverflowOptions: {disablePointer: true},
         onLeave: function() { // origin, destination, direction
@@ -472,17 +472,18 @@ p {margin: 0;}
   width: 100%;
 }
 
-#main {position: relative; z-index: 1;}
-.show-pop #main {
+#main {position: relative; z-index: 1; transition: all 700ms ease 0s;}
+.show-pop #main,
+.show-menu #main {
   opacity: 0.5;
 }
 
 .section {
 
-  &#page-automation .inner,
-  &#page-security .inner,
-  &#page-infrastructure .inner,
-  &#page-service .inner {
+  &#page-manufacturing .inner,
+  &#page-facialRecognition .inner,
+  &#page-roadInfrastructure .inner,
+  &#page-healthcare .inner {
     width: 100%;
     padding: 0 100px;
     box-sizing: border-box;
@@ -669,7 +670,7 @@ p {margin: 0;}
     .label {
       position: absolute;
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;
       background-position: 0 0;
       background-repeat: no-repeat;
       background-size: contain;
@@ -677,7 +678,7 @@ p {margin: 0;}
       transition-duration: .5s;
       transition-timing-function: ease-out;
       @media (min-width: $screen-lg) {
-        font-size: 22px;
+        font-size: 20px;
       }
       &::before {
         content: '';
@@ -710,10 +711,10 @@ p {margin: 0;}
 
 .mobile .section {
 
-  &#page-automation .inner,
-  &#page-security .inner,
-  &#page-infrastructure .inner,
-  &#page-service .inner {
+  &#page-manufacturing .inner,
+  &#page-facialRecognition .inner,
+  &#page-roadInfrastructure .inner,
+  &#page-healthcare .inner {
     padding: 0 30px;
   }
 
@@ -799,6 +800,8 @@ p {margin: 0;}
   opacity: 0;
   pointer-events: none;
 }
+
+.language {display: none;}
 
 .mobile #fp-nav { display: none; }
 .show-menu #fp-nav,
