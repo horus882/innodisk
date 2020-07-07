@@ -14,6 +14,7 @@
             <div class="label">{{ item.name }}</div>
           </div>
         </div>
+        <a class="learn-more" href="https://www.google.com" target="_blank">learn more</a>
       </div>
     </div>
   </div>

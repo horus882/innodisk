@@ -49,7 +49,8 @@ export default {
       pointDetail: {
         name: null,
         text: null,
-        link: null
+        link: null,
+        type: null
       },
       pages: [
         {
@@ -303,9 +304,9 @@ export default {
 
     // fullpage.js 初始化
     this.initFullpage();
-    this.toggleFullpageScrolling(false);
-    // this.toggleIntro();
-    // this.toggleFullpageScrolling(true);
+    // this.toggleFullpageScrolling(false);
+    this.toggleIntro();
+    this.toggleFullpageScrolling(true);
     for (let i = 0; i < this.pages[5].apps.length; i++) { this.othersItemsArray.push(i); }
     this.shuffle(this.othersItemsArray);
 
@@ -345,9 +346,17 @@ export default {
       if (pageName) {
 
         var result = self.pages.filter(function(item) { return item.idName == pageName; });
-        self.pointDetail.name = result[0].points[pointIndex].name;
-        self.pointDetail.text = result[0].points[pointIndex].text;
-        self.pointDetail.link = result[0].points[pointIndex].link;
+        if (pageName != 'others') {
+          self.pointDetail.name = result[0].points[pointIndex].name;
+          self.pointDetail.text = result[0].points[pointIndex].text;
+          self.pointDetail.link = result[0].points[pointIndex].link;
+          self.pointDetail.type = 'null';
+        } else {
+          self.pointDetail.name = result[0].apps[pointIndex].name.replace('<br>', ' ');
+          self.pointDetail.text = 'Innodisk offers AIoT solutions optimized for ' + result[0].apps[pointIndex].name + '.<br>Please do not hesitate to contact us to learn more.';
+          self.pointDetail.link = result[0].apps[pointIndex].link;
+          self.pointDetail.type = 'others';
+        }
         self.showPopup = true;
         self.toggleFullpageScrolling(false);
         setTimeout(function() { document.querySelector('#pop').classList.remove('intro'); }, 100);
@@ -705,6 +714,37 @@ p {margin: 0;}
     .label {
       opacity: 0;
     }
+  }
+
+  .learn-more {
+    position: absolute;
+    right: 55px;
+    bottom: 0;
+    width: 190px;
+    height: 42px;
+    color: #000000;
+    font-size: 16px;
+    text-indent: 30px;
+    line-height: 42px;
+    border: #000 1px solid;
+    border-bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.6) 0 0 6px;
+    transition: transform .5s ease-out, opacity .5s ease-out;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 43px;
+      height: 11px;
+      margin-left: 14px;
+      vertical-align: middle;
+      background: url(assets/images/common/learn-more-arrow.png) 0 0 no-repeat;
+    }
+  }
+
+  &.page-intro .learn-more {
+    transform: translateY(100%);
+    opacity: 0;
   }
 
 }

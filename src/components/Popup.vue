@@ -5,7 +5,8 @@
         <div class="inner">
           <h3 class="title">{{ detail.name }}</h3>
           <p class="text" v-html="detail.text"></p>
-          <a class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">more</a>
+          <a class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">{{ (detail.type == 'others') ? 'contact' : 'more'}}</a>
+          <a class="link" v-if="detail.type == 'others'" href="https://aiot.innodisk.com/" target="_blank">home</a>
           <a class="pop-close text-hide" href="#" title="Close" v-on:click.prevent="hidePointDetail">Close</a>
         </div>
       </div>
@@ -144,7 +145,7 @@ export default {
     }
 
     .link {
-      display: block;
+      display: inline-block;
       width: 65px;
       height: 17px;
       color: #fff;
@@ -152,6 +153,7 @@ export default {
       text-indent: 8px;
       line-height: 13px;
       margin-top: 15px;
+      margin-right: 15px;
       background: url(../assets/images/common/pop-pointDetail-more.svg) 0 0 no-repeat;
       background-size: contain;
       @media (min-width: $screen-lg) {

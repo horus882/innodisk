@@ -9,7 +9,12 @@
       <div class="applications">
         <ul>
           <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + randomDelay(index) + 's'">
-            <a class="item" v-bind:href="item.link" target="_blank">
+            <a class="item" v-bind:href="item.link" target="_blank" v-if="item.extra == 'learn more'">
+              <img class="item-image" v-bind:src="item.image">
+              <p class="item-name" v-html="item.name"></p>
+              <span class="item-extra">{{ item.extra }}</span>
+            </a>
+            <a class="item" v-on:click="showPointDetail(page.idName, index)" v-else-if="item.extra != 'learn more'">
               <img class="item-image" v-bind:src="item.image">
               <p class="item-name" v-html="item.name"></p>
               <span class="item-extra">{{ item.extra }}</span>
@@ -40,6 +45,9 @@ export default {
   methods: {
     randomDelay(index) {
       return this.$parent.randomDelay(index);
+    },
+    showPointDetail(pageName, pointIndex) {
+      this.$parent.showPointDetail(pageName, pointIndex);
     }
   }
 }

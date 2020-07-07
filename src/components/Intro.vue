@@ -114,8 +114,8 @@ export default {
 
         setTimeout(function() { self.part1Show = false; }, 1500);
         setTimeout(function() { self.part2Show = true;  }, 2000);
-        setTimeout(self.toggleIntro, 5700);
-        setTimeout(self.toggleFullpageScrolling, 6450);
+        // setTimeout(self.toggleIntro, 5700);
+        // setTimeout(self.toggleFullpageScrolling, 6450);
         
       }
     });
@@ -134,7 +134,7 @@ export default {
 
 #intro {
 
-  // display: none;
+  display: none;
 
   position: fixed;
   top: 0;
