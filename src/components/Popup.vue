@@ -1,5 +1,5 @@
 <template>
-  <div id="pop" class="intro" v-show="show" v-on:click="hidePointDetail"> <!-- v-bind:class="{'intro': !show}" -->
+  <div id="pop" class="intro" v-show="show" v-on:click="hidePointDetail('pop')"> <!-- v-bind:class="{'intro': !show}" -->
     <div class="pop-container">
       <div id="pop-pointDetail" class="pop-main" v-on:click.stop>
         <div class="inner">
@@ -31,8 +31,8 @@ export default {
   mounted() {
   },
   methods: {
-    hidePointDetail() {
-      this.$parent.hidePointDetail();
+    hidePointDetail(from) { // 和 fullpagejs 的 scrollOverflow 衝到的解法
+      this.$parent.hidePointDetail(from);
     }
   }
 }
@@ -146,12 +146,12 @@ export default {
 
     .link {
       display: inline-block;
-      width: 65px;
+      width: 69px;
       height: 17px;
       color: #fff;
       font-size: 13px;
       text-indent: 8px;
-      line-height: 13px;
+      line-height: 15px;
       margin-top: 15px;
       margin-right: 15px;
       background: url(../assets/images/common/pop-pointDetail-more.svg) 0 0 no-repeat;
@@ -160,7 +160,7 @@ export default {
         width: 91px;
         height: 22px;
         font-size: 18px;
-        line-height: 16px;
+        line-height: 18px;
       }
       &::after {
         content: '';

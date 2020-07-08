@@ -135,6 +135,7 @@ export default {
     transition-delay: 0.5s;
     transition-duration: .75s;
     transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: pointScale 2s ease-in-out infinite;
     @media (min-width: $screen-lg) {
       width: 35px;
       height: 35px;
@@ -159,8 +160,8 @@ export default {
   .anchor-manufacturing {
     margin: -165px 0 0 350px;
     transition-delay: .3s;
-    &::before {bottom: -48px; left: -15px; transition-delay: .9s;}
-    &::after {bottom: -40px; left: -7px; transition-delay: .9s;}
+    &::before {bottom: -48px; left: -15px; transition-delay: .9s; animation-delay: .35s;}
+    &::after {bottom: -40px; left: -7px; transition-delay: .9s; animation-delay: .35s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -51px; left: -8px;}
       &::after {bottom: -40px; left: 3px;}
@@ -170,8 +171,8 @@ export default {
   .anchor-facialRecognition {
     margin: -98px 0 0 56px;
     transition-delay: .2s;
-    &::before {transition-delay: .7s;}
-    &::after {transition-delay: .7s;}
+    &::before {transition-delay: .7s; animation-delay: .7s;}
+    &::after {transition-delay: .7s; animation-delay: .7s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -19px; left: -46px;}
       &::after {bottom: -8px; left: -35px;}
@@ -181,8 +182,8 @@ export default {
   .anchor-roadInfrastructure {
     margin: -250px 0 0 -46px;
     transition-delay: .1s;
-    &::before {bottom: -46px; left: -35px; transition-delay: .5s;}
-    &::after {bottom: -38px; left: -27px; transition-delay: .5s;}
+    &::before {bottom: -46px; left: -35px; transition-delay: .5s; animation-delay: 1.05s;}
+    &::after {bottom: -38px; left: -27px; transition-delay: .5s; animation-delay: 1.05s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -42px; left: -42px;}
       &::after {bottom: -31px; left: -31px;}
@@ -192,8 +193,8 @@ export default {
   .anchor-healthcare {
     margin: -156px 0 0 -292px;
     transition-delay: .15s;
-    &::before {bottom: -25px; left: -35px; transition-delay: .6s;}
-    &::after {bottom: -17px; left: -27px; transition-delay: .6s;}
+    &::before {bottom: -25px; left: -35px; transition-delay: .6s; animation-delay: 1.4s;}
+    &::after {bottom: -17px; left: -27px; transition-delay: .6s; animation-delay: 1.4s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -34px; left: -50px;}
       &::after {bottom: -23px; left: -39px;}
@@ -203,8 +204,8 @@ export default {
   .anchor-others {
     margin: -88px 0 0 -458px;
     transition-delay: .25s;
-    &::before {bottom: -40px; left: -35px; transition-delay: .8s;}
-    &::after {bottom: -32px; left: -27px; transition-delay: .8s;}
+    &::before {bottom: -40px; left: -35px; transition-delay: .8s; animation-delay: 1.75s;}
+    &::after {bottom: -32px; left: -27px; transition-delay: .8s; animation-delay: 1.75s;}
     @media (min-width: $screen-lg) {
       &::before {bottom: -52px; left: -28px;}
       &::after {bottom: -41px; left: -17px;}
@@ -389,5 +390,13 @@ export default {
   }
 
 }
+
+@keyframes pointScale {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.3) }
+  100% { transform: scale(1) }
+}
+
+
 
 </style>

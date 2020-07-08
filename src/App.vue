@@ -174,7 +174,7 @@ export default {
           pageName: 'Others',
           pageLabel: null,
           pageText: 'Which of the applications<br>interest you the most?',
-          moreLink: null,
+          more: false,
           apps: [
             {
               name: 'Agriculture',
@@ -304,9 +304,9 @@ export default {
 
     // fullpage.js 初始化
     this.initFullpage();
-    // this.toggleFullpageScrolling(false);
-    this.toggleIntro();
-    this.toggleFullpageScrolling(true);
+    this.toggleFullpageScrolling(false);
+    // this.toggleIntro();
+    // this.toggleFullpageScrolling(true);
     for (let i = 0; i < this.pages[5].apps.length; i++) { this.othersItemsArray.push(i); }
     this.shuffle(this.othersItemsArray);
 
@@ -366,7 +366,9 @@ export default {
     },
 
     // 關閉 Point 資訊
-    hidePointDetail() {
+    hidePointDetail(from) {
+
+      if (this.isMobile == true && from == 'pop') return false;
 
       var self = this;
       document.querySelector('#pop').classList.add('intro');
