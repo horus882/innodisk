@@ -90,7 +90,8 @@ export default {
         {
           idName: 'facialRecognition',
           pageName: 'Smart Security',
-          pageLabel: 'Facial recognition applications',
+          // pageLabel: 'Facial recognition applications',
+          pageLabel: 'Security systems',
           pageText: 'Facial recognition can be made smarter in countless ways.<br>Which solution interests you the most?',
           more: true,
           points: [
@@ -207,7 +208,7 @@ export default {
               extra: 'contact us'
             },
             {
-              name: 'Public services',
+              name: 'Public Services',
               image: require('./assets/images/others/item-pic-6.jpg'),
               link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
@@ -225,7 +226,7 @@ export default {
             //   extra: 'learn more'
             // },
             {
-              name: 'Security<br>check points',
+              name: 'Security<br>Check Points',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
@@ -266,12 +267,12 @@ export default {
               link: 'https://www.innodisk.com/tw/inquiry',
               extra: 'contact us'
             },
-            {
-              name: 'Defense',
-              image: require('./assets/images/others/item-pic-16.jpg'),
-              link: 'https://www.innodisk.com/tw/inquiry',
-              extra: 'contact us'
-            },
+            // {
+            //   name: 'Defense',
+            //   image: require('./assets/images/others/item-pic-16.jpg'),
+            //   link: 'https://www.innodisk.com/tw/inquiry',
+            //   extra: 'contact us'
+            // },
             {
               name: 'Border Security',
               image: require('./assets/images/others/item-pic-17.jpg'),

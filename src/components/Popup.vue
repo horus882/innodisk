@@ -5,7 +5,7 @@
         <div class="inner">
           <h3 class="title">{{ detail.name }}</h3>
           <p class="text" v-html="detail.text"></p>
-          <a class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">{{ (detail.type == 'others') ? 'contact' : 'more'}}</a>
+          <a :class="{ 'link-lg': detail.type == 'others' }" class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">{{ (detail.type == 'others') ? 'contact us' : 'more'}}</a>
           <a class="link" v-if="detail.type == 'others'" href="https://aiot.innodisk.com/" target="_blank">home</a>
           <a class="pop-close text-hide" href="#" title="Close" v-on:click.prevent="hidePointDetail">Close</a>
         </div>
@@ -154,13 +154,21 @@ export default {
       line-height: 15px;
       margin-top: 15px;
       margin-right: 15px;
+      vertical-align: top;
       background: url(../assets/images/common/pop-pointDetail-more.svg) 0 0 no-repeat;
       background-size: contain;
+      &.link-lg {
+        width: 92px;
+        background-image: url(../assets/images/common/pop-pointDetail-more_long.svg);
+      }
       @media (min-width: $screen-lg) {
         width: 91px;
         height: 22px;
         font-size: 18px;
         line-height: 18px;
+        &.link-lg {
+          width: 120px;
+        }
       }
       &::after {
         content: '';
@@ -234,6 +242,9 @@ export default {
       font-size: 15px;
       text-indent: 10px;
       line-height: 16px;
+      &.link-lg {
+        width: 120px;
+      }
       &::after {
         content: '';
         margin-left: 5px;

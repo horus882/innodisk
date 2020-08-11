@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="page-info">
         <h2 class="page-name">{{ page.pageName }}</h2>
-        <p class="page-label"><span>{{ page.pageLabel.replace('applications', '') }}</span>Security systems</p>
+        <p class="page-label"><span>{{ page.pageLabel.replace('applications', '') }}</span></p> <!-- Security systems -->
         <p class="page-text" v-html="page.pageText"></p>
       </div>
       <div class="points">
