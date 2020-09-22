@@ -14,8 +14,8 @@
             <div class="label">{{ item.name }}</div>
           </div>
         </div>
-        <a class="learn-more" href="https://www.google.com" target="_blank">learn more</a>
       </div>
+      <a class="learn-more" href="https://aiot.innodisk.com/solution-smart-services/" target="_blank">learn more</a>
     </div>
   </div>
 </template>
