@@ -226,7 +226,7 @@ export default {
             //   extra: 'learn more'
             // },
             {
-              name: 'Security<br>Check Points',
+              name: 'Security<br>Checkpoints',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
               extra: 'contact us'
@@ -238,7 +238,7 @@ export default {
               extra: 'contact us'
             },
             {
-              name: 'Oli and Gas',
+              name: 'Oil and Gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
               extra: 'contact us'

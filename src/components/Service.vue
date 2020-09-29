@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <a class="learn-more" href="https://aiot.innodisk.com/solution-smart-services/" target="_blank">learn more</a>
+      <a class="learn-more" href="https://aiot.innodisk.com/solution-smart-services/" target="_blank">Learn more</a>
     </div>
   </div>
 </template>
@@ -145,12 +145,12 @@ export default {
 
   #healthcare-point-3 {
     transform: translateX(580%) translateY(490%);
-    .ring { transition-delay: .4s; transition-delay: .75s; }
+    .ring { transition-delay: .4s; }
     .info {
       top: 50%;
       right: 96%;
       transform: translateY(-14px);
-      svg path { stroke-dasharray: 64; }
+      svg path { stroke-dasharray: 64; transition-delay: .75s; }
       @media (min-width: $screen-lg) {
         transform: translateX(2px);
         svg { width: 82px; height: 22px; }

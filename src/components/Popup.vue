@@ -39,7 +39,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 #pop {
 
@@ -138,6 +138,11 @@ export default {
       // text-align: justify;
       line-height: 1.71428;
       margin: 0 auto 0;
+      br {
+        content: '';
+        display: block;
+        margin: .65em 0;
+      }
       @media (min-width: $screen-lg) {
         font-size: 19px;
         font-weight: 400;

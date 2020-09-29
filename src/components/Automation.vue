@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <a class="learn-more" href="https://aiot.innodisk.com/solution-smart-automation/" target="_blank">learn more</a>
+      <a class="learn-more" href="https://aiot.innodisk.com/solution-smart-automation/" target="_blank">Learn more</a>
     </div>
   </div>
 </template>
