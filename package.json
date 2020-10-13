@@ -12,7 +12,9 @@
     "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
-    "vue-fullpage.js": "^0.1.5"
+    "vue-analytics": "^5.22.1",
+    "vue-fullpage.js": "^0.1.5",
+    "vue-gtag": "^1.9.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.0",

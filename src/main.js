@@ -1,10 +1,33 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueGtag from "vue-gtag"
+
 // import 'fullpage.js/vendors/scrolloverflow'
 // import VueFullPage from 'vue-fullpage.js'
 
+Vue.prototype.$trackPage = function(pageName) {
+  this.$gtag.pageview({
+    page_path: '/' + pageName,
+  })
+}
+
+Vue.prototype.$trackEvent = function(category, action, label) {
+  this.$gtag.event(action, {
+    'event_category': category,
+    'event_label': label
+  })
+}
+
 import VueAnime from './vue-anime';
 Vue.use(VueAnime);
+Vue.use(VueGtag, {
+  config: {
+    id: "UA-18316180-12",
+    params: {
+      // send_page_view: true
+    }
+  }
+});
 // Vue.use(VueFullPage);
 
 // import VueRouter from 'vue-router'

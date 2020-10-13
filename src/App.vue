@@ -328,6 +328,7 @@ export default {
           this[0].classList.add('page-intro');
         },
         afterLoad: function(anchorLink) { //, index
+          self.$trackPage(anchorLink);
           if (!self.showIntro) {
             document.querySelector('#page-' + anchorLink).classList.remove('page-intro');
           } else {
@@ -361,6 +362,8 @@ export default {
         self.showPopup = true;
         self.toggleFullpageScrolling(false);
         setTimeout(function() { document.querySelector('#pop').classList.remove('intro'); }, 100);
+
+        this.$trackEvent(self.pointDetail.name, 'click', pageName);
 
       }
 

@@ -9,7 +9,7 @@
       <div class="applications">
         <ul>
           <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + randomDelay(index) + 's'">
-            <a class="item" v-bind:href="item.link" target="_blank" v-if="item.extra == 'learn more'">
+            <a class="item" v-on:click="$trackEvent(item.name.replace('<br>', ' '), 'click', page.idName)" v-bind:href="item.link" target="_blank" v-if="item.extra == 'learn more'">
               <img class="item-image" v-bind:src="item.image">
               <p class="item-name" v-html="item.name"></p>
               <span class="item-extra">{{ item.extra }}</span>
