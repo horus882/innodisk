@@ -102,7 +102,7 @@ export default {
     opacity: 0;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
     &::after {
       background-image: url(../assets/images/index/light_lg.png);
       background-size: 1900px 950px;
@@ -136,7 +136,7 @@ export default {
     transition-duration: .75s;
     transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
     animation: pointScale 2s ease-in-out infinite;
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       width: 35px;
       height: 35px;
     }
@@ -149,7 +149,7 @@ export default {
     height: 11px;
     border: 0;
     background-color: #fff;
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       bottom: -24px;
       left: -24px;
       width: 15px;
@@ -162,7 +162,7 @@ export default {
     transition-delay: .3s;
     &::before {bottom: -48px; left: -15px; transition-delay: .9s; animation-delay: .35s;}
     &::after {bottom: -40px; left: -7px; transition-delay: .9s; animation-delay: .35s;}
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       &::before {bottom: -51px; left: -8px;}
       &::after {bottom: -40px; left: 3px;}
     }
@@ -173,7 +173,7 @@ export default {
     transition-delay: .2s;
     &::before {transition-delay: .7s; animation-delay: .7s;}
     &::after {transition-delay: .7s; animation-delay: .7s;}
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       &::before {bottom: -19px; left: -46px;}
       &::after {bottom: -8px; left: -35px;}
     }
@@ -184,7 +184,7 @@ export default {
     transition-delay: .1s;
     &::before {bottom: -46px; left: -35px; transition-delay: .5s; animation-delay: 1.05s;}
     &::after {bottom: -38px; left: -27px; transition-delay: .5s; animation-delay: 1.05s;}
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       &::before {bottom: -42px; left: -42px;}
       &::after {bottom: -31px; left: -31px;}
     }
@@ -195,7 +195,7 @@ export default {
     transition-delay: .15s;
     &::before {bottom: -25px; left: -35px; transition-delay: .6s; animation-delay: 1.4s;}
     &::after {bottom: -17px; left: -27px; transition-delay: .6s; animation-delay: 1.4s;}
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       &::before {bottom: -34px; left: -50px;}
       &::after {bottom: -23px; left: -39px;}
     }
@@ -206,13 +206,13 @@ export default {
     transition-delay: .25s;
     &::before {bottom: -40px; left: -35px; transition-delay: .8s; animation-delay: 1.75s;}
     &::after {bottom: -32px; left: -27px; transition-delay: .8s; animation-delay: 1.75s;}
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       &::before {bottom: -52px; left: -28px;}
       &::after {bottom: -41px; left: -17px;}
     }
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
     .anchor-manufacturing { margin: -262px 0 0 528px; }
     .anchor-facialRecognition { margin: -178px 0 0 72px; }
     .anchor-roadInfrastructure { margin: -374px 0 0 -38px; }
@@ -234,7 +234,7 @@ export default {
     font-size: 28px;
     font-weight: 400;
     margin: 0 0 5px;
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       font-size: 40px;
       font-weight: 300;
     }
@@ -243,7 +243,7 @@ export default {
   .page-label {
     font-size: 14px;
     font-weight: 800;
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
       font-size: 20px;
       font-weight: 700;
     }
@@ -260,7 +260,7 @@ export default {
       background: url(../assets/images/index/btn-more.svg) 0 0 no-repeat;
       background-size: contain;
       box-sizing: border-box;
-      @media (min-width: $screen-lg) {
+      @media (min-width: $screen-lg) and (min-height: $screen-lg-height) {
         width: 80px;
         height: 18px;
         font-size: 18px;

@@ -300,6 +300,9 @@ export default {
       document.body.classList.remove('mobile');
     }
     document.querySelector('html').classList.add('show-intro');
+    // if (window.devicePixelRatio >= 1) {
+    //   document.querySelector('html').classList.add('zoom-normal');
+    // }
   },
   mounted() {
 
