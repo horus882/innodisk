@@ -52,17 +52,14 @@
                 </g>
               </svg>
             </div>
-            <div class="subheading" v-bind:class="{intro: subheadingIntro}">Building an Intelligent World</div>
+            <div class="subheading" v-bind:class="{intro: subheadingIntro}">{{ $t('intro.subheading') }}</div>
           </div>
         </div>
       </transition>
       <transition name="fade">
         <div class="part-2 part" v-show="part2Show">
           <div class="inner">
-            <p class="text">
-              Welcome to the future of AIoT, powered by Innodisk<br>
-              Which industry or application do you want to make smarter?
-            </p>
+            <p class="text">{{ $t('intro.text') }}</p>
           </div>
         </div>
       </transition>
@@ -200,6 +197,7 @@ export default {
     line-height: 48px;
     text-align: center;
     margin: 0;
+    white-space: pre;
   }
 
 }
