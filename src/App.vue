@@ -850,7 +850,7 @@ p {margin: 0;}
   pointer-events: none;
 }
 
-.language {display: none;}
+// .language {display: none;}
 
 .mobile #fp-nav { display: none; }
 .show-menu #fp-nav,
