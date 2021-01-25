@@ -62,9 +62,9 @@ export default {
         },
         {
           idName: 'manufacturing',
-          pageName: 'Smart Automation',
-          pageLabel: 'Manufacturing',
-          pageText: 'Factories can be made smarter in countless ways.<br>Which solution interests you the most?',
+          pageName: 'manufacturing.pageName',
+          pageLabel: 'manufacturing.pageLabel',
+          pageText: 'manufacturing.pageText',
           more: true,
           points: [
             {
@@ -89,10 +89,9 @@ export default {
         },
         {
           idName: 'facialRecognition',
-          pageName: 'Smart Security',
-          // pageLabel: 'Facial recognition applications',
-          pageLabel: 'Security systems',
-          pageText: 'Facial recognition can be made smarter in countless ways.<br>Which solution interests you the most?',
+          pageName: 'facialRecognition.pageName',
+          pageLabel: 'facialRecognition.pageLabel',
+          pageText: 'facialRecognition.pageText',
           more: true,
           points: [
             {
@@ -123,8 +122,8 @@ export default {
         },
         {
           idName: 'roadInfrastructure',
-          pageName: 'Smart Infrastructure',
-          pageLabel: 'Road infrastructure',
+          pageName: 'roadInfrastructure.pageName',
+          pageLabel: 'roadInfrastructure.pageLabel',
           pageText: 'Road infrastructure can be made smarter in countless ways.<br>Which solution interests you the most?',
           more: true,
           points: [
@@ -144,8 +143,8 @@ export default {
         },
         {
           idName: 'healthcare',
-          pageName: 'Smart Service',
-          pageLabel: 'Healthcare',
+          pageName: 'healthcare.pageName',
+          pageLabel: 'healthcare.pageLabel',
           pageText: 'Healthcare can be made smarter in countless ways.<br>Which solution interests you the most?',
           more: true,
           points: [
@@ -172,7 +171,7 @@ export default {
         {
           // pageIntro: true,
           idName: 'others',
-          pageName: 'Others',
+          pageName: 'others.pageName',
           pageLabel: null,
           pageText: 'Which of the applications<br>interest you the most?',
           more: false,
@@ -599,6 +598,7 @@ p {margin: 0;}
       font-weight: 600;
       line-height: 1.33;
       transition-delay: .2s;
+      white-space: pre;
       @media (min-width: $screen-lg) {
         font-size: 21px;
       }

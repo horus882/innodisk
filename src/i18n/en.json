@@ -1,6 +1,35 @@
 {
+    "common": {
+        "more": "more"
+    },
     "intro": {
         "subheading": "Building an Intelligent World",
         "text": "Welcome to the future of AIoT, powered by Innodisk\nWhich industry or application do you want to make smarter?"
+    },
+    "index": {
+
+    },
+    "manufacturing": {
+        "pageName": "Smart Automation",
+        "pageLabel": "Manufacturing",
+        "pageSubLabel": "Agriculture",
+        "pageText": "Factories can be made smarter in countless ways.\nWhich solution interests you the most?"
+    },
+    "facialRecognition": {
+        "pageName": "Smart Security",
+        "pageLabel": "Security systems",
+        "pageText": "Facial recognition can be made smarter in countless ways.\nWhich solution interests you the most?"
+    },
+    "roadInfrastructure": {
+        "pageName": "Smart Infrastructure",
+        "pageLabel": "Road infrastructure"
+    },
+    "healthcare": {
+        "pageName": "Smart Service",
+        "pageLabel": "Healthcare"
+    },
+    "others": {
+        "pageName": "Others",
+        "pageLabel": null
     }
 }

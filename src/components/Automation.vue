@@ -2,9 +2,9 @@
   <div v-bind:id="'page-' + page.idName" class="section page-intro">
     <div class="inner">
       <div class="page-info">
-        <h2 class="page-name">{{ page.pageName }}</h2>
-        <p class="page-label"><span>{{ page.pageLabel }}</span>Agriculture</p>
-        <p class="page-text" v-html="page.pageText"></p>
+        <h2 class="page-name">{{ $t(page.pageName) }}</h2>
+        <p class="page-label"><span>{{ $t(page.pageLabel) }}</span>{{ $t('manufacturing.pageSubLabel')}}</p>
+        <p class="page-text">{{ $t(page.pageText) }}</p>
       </div>
       <div class="points">
         <div v-for="(item, index) in page.points" v-bind:key="index" v-bind:id="page.idName + '-point-' + (index + 1)" class="point" v-on:click="showPointDetail(page.idName, index)">

@@ -7,7 +7,7 @@
             <div class="anchor" tabindex="0" v-bind:class="'anchor-' + item.idName" v-on:click="moveToPage(item.idName)" v-on:keyup.enter="moveToPage(item.idName)">
               <p class="page-name">{{ item.pageName }}</p>
               <!-- <p class="page-label">{{ item.pageLabel }} <a v-if="item.link" v-on:click.stop v-bind:href="item.link" target="_blank">more</a></p> -->
-              <p class="page-label">{{ item.pageLabel }} <a v-if="item.more">more</a></p>
+              <p class="page-label">{{ item.pageLabel }} <a v-if="item.more">{{ $t('common.more') }}</a></p>
             </div>
           </li>
         </ul>
@@ -22,40 +22,76 @@ import $ from 'jquery'
 
 export default {
   name: 'Index',
-  data: function() {
-    return {
-      anchors: [
+  computed: {
+    anchors() {
+      return [
         {
           idName: this.pages[1].idName,
-          pageName: this.pages[1].pageName,
-          pageLabel: this.pages[1].pageLabel,
+          pageName: this.$t(this.pages[1].pageName),
+          pageLabel: this.$t(this.pages[1].pageLabel),
           more: this.pages[1].more
         },
         {
           idName: this.pages[2].idName,
-          pageName: this.pages[2].pageName,
-          pageLabel: this.pages[2].pageLabel,
+          pageName: this.$t(this.pages[2].pageName),
+          pageLabel: this.$t(this.pages[2].pageLabel),
           more: this.pages[2].more
         },
         {
           idName: this.pages[3].idName,
-          pageName: this.pages[3].pageName,
-          pageLabel: this.pages[3].pageLabel,
+          pageName: this.$t(this.pages[3].pageName),
+          pageLabel: this.$t(this.pages[3].pageLabel),
           more: this.pages[3].more
         },
         {
           idName: this.pages[4].idName,
-          pageName: this.pages[4].pageName,
-          pageLabel: this.pages[4].pageLabel,
+          pageName: this.$t(this.pages[4].pageName),
+          pageLabel: this.$t(this.pages[4].pageLabel),
           more: this.pages[4].more
         },
         {
           idName: this.pages[5].idName,
-          pageName: this.pages[5].pageName,
-          pageLabel: this.pages[5].pageLabel,
+          pageName: this.$t(this.pages[5].pageName),
+          pageLabel: this.$t(this.pages[5].pageLabel),
           more: this.pages[5].more
-        },
+        }
       ]
+    }
+  },
+  data: function() {
+    return {
+      // anchors: [
+      //   {
+      //     idName: this.pages[1].idName,
+      //     pageName: this.pages[1].pageName,
+      //     pageLabel: this.pages[1].pageLabel,
+      //     more: this.pages[1].more
+      //   },
+      //   {
+      //     idName: this.pages[2].idName,
+      //     pageName: this.pages[2].pageName,
+      //     pageLabel: this.pages[2].pageLabel,
+      //     more: this.pages[2].more
+      //   },
+      //   {
+      //     idName: this.pages[3].idName,
+      //     pageName: this.pages[3].pageName,
+      //     pageLabel: this.pages[3].pageLabel,
+      //     more: this.pages[3].more
+      //   },
+      //   {
+      //     idName: this.pages[4].idName,
+      //     pageName: this.pages[4].pageName,
+      //     pageLabel: this.pages[4].pageLabel,
+      //     more: this.pages[4].more
+      //   },
+      //   {
+      //     idName: this.pages[5].idName,
+      //     pageName: this.pages[5].pageName,
+      //     pageLabel: this.pages[5].pageLabel,
+      //     more: this.pages[5].more
+      //   },
+      // ]
     }
   },
   props: {

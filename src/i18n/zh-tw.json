@@ -1,6 +1,35 @@
 {
+    "common": {
+        "more": "更多"
+    },
     "intro": {
         "subheading": "開創智慧未來",
         "text": "歡迎來到宜鼎國際的AIoT智慧未來式\n您想讓哪個產業或應用更加智慧化呢？"
+    },
+    "index": {
+
+    },
+    "manufacturing": {
+        "pageName": "智慧自動化",
+        "pageLabel": "製造業",
+        "pageSubLabel": "農業",
+        "pageText": "我們可以透過各種方法讓工廠更聰明，\n哪種解決方案最讓您感興趣？"
+    },
+    "facialRecognition": {
+        "pageName": "智慧安全",
+        "pageLabel": "監視系統",
+        "pageText": "我們可以透過各種方法讓人臉辨識更聰明，\n哪種解決方案最讓您感興趣？"
+    },
+    "roadInfrastructure": {
+        "pageName": "智慧基礎建設",
+        "pageLabel": "道路基礎建設"
+    },
+    "healthcare": {
+        "pageName": "智慧服務",
+        "pageLabel": "醫療保健"
+    },
+    "others": {
+        "pageName": "其他應用市場",
+        "pageLabel": null
     }
 }
