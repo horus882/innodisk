@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" href="https://aiot.innodisk.com/solution-smart-security/" target="_blank">{{ $t('common.learn_more') }}</a>
+      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" :href="'https://aiot.innodisk.com/solution-smart-security/' + $t('common.param')" target="_blank">{{ $t('common.learn_more') }}</a>
     </div>
   </div>
 </template>

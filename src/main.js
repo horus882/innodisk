@@ -4,7 +4,7 @@ import store from './store/'
 import VueGtag from "vue-gtag"
 
 import VueI18n from 'vue-i18n'  // 引入 Vue I18n
-import zh_tw from './i18n/zh-tw'      // 存放中文語系檔
+import zh_hant from './i18n/zh-hant'      // 存放中文語系檔
 import en from './i18n/en'      // 存放英文語系檔
 
 Vue.use(VueI18n)
@@ -23,7 +23,7 @@ if (localStorage.getItem('site-lang')) {
 const i18n = new VueI18n({
   locale: locale,
   messages: {
-    'zh-tw': zh_tw,
+    'zh-hant': zh_hant,
     'en': en
   }
 });

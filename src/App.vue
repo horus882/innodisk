@@ -45,8 +45,9 @@ export default {
   },
   provide() {
     return {
+      // langParam: (this.langCSS == 'zh-tw') ? '?lang=zh-hant' : null,
       langOptions: [
-        {text: '中', value: 'zh-tw'},
+        {text: '中', value: 'zh-hant'},
         {text: 'Eg', value: 'en'},
       ]
     }
@@ -193,43 +194,43 @@ export default {
               name: 'others.apps.agriculture',
               image: require('./assets/images/others/item-pic-1.jpg'),
               link: 'https://aiot.innodisk.com/solution-agriculture/',
-              extra: 'common.learn_more'
+              extra: 'learn more'
             },
             {
               name: 'others.apps.construction',
               image: require('./assets/images/others/item-pic-2.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.delivery_services',
               image: require('./assets/images/others/item-pic-3.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.public_transportation',
               image: require('./assets/images/others/item-pic-4.jpg'),
               link: 'https://aiot.innodisk.com/solution-transportation/',
-              extra: 'common.learn_more'
+              extra: 'learn more'
             },
             {
               name: 'others.apps.logistics',
               image: require('./assets/images/others/item-pic-5.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.public_services',
               image: require('./assets/images/others/item-pic-6.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.surveillance',
               image: require('./assets/images/others/item-pic-7.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             // {
             //   name: 'Security systems',
@@ -241,43 +242,43 @@ export default {
               name: 'others.apps.security_checkpoints',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.mining_and_drilling',
               image: require('./assets/images/others/item-pic-10.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.oil_and_gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.retail',
               image: require('./assets/images/others/item-pic-12.jpg'),
               link: 'https://aiot.innodisk.com/solution-retail/',
-              extra: 'common.learn_more'
+              extra: 'learn more'
             },
             {
               name: 'others.apps.automated_machines',
               image: require('./assets/images/others/item-pic-13.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.aviation',
               image: require('./assets/images/others/item-pic-14.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             {
               name: 'others.apps.power',
               image: require('./assets/images/others/item-pic-15.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             },
             // {
             //   name: 'Defense',
@@ -289,7 +290,7 @@ export default {
               name: 'others.apps.border_security',
               image: require('./assets/images/others/item-pic-17.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'common.contact_us'
+              extra: 'contact us'
             }
           ]
         }

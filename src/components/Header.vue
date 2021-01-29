@@ -2,7 +2,7 @@
   <transition name="fade">
     <header id="header" v-show="!showHeader">
       <transition name="fade">
-        <div class="logo" v-show="!showMenu"><a href="https://aiot.innodisk.com/" target="_blank"></a></div>
+        <div class="logo" v-show="!showMenu"><a :href="'https://aiot.innodisk.com/' + $t('common.param')" target="_blank"></a></div>
       </transition>
       <a class="menu-toggle" v-on:click="toggleMenu" v-bind:class="{open: showMenu}">
         <span></span>

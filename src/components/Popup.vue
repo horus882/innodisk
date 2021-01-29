@@ -5,8 +5,8 @@
         <div class="inner">
           <h3 class="title">{{ $t(detail.name) }}</h3>
           <p class="text">{{ $t(detail.text) }}</p>
-          <a :class="{ 'link-lg': detail.type == 'others' }" class="link" v-if="detail.link" v-bind:href="detail.link" target="_blank">{{ (detail.type == 'others') ? $t('common.contact_us') : $t('common.more')}}</a>
-          <a class="link" v-if="detail.type == 'others'" href="https://aiot.innodisk.com/" target="_blank">{{ $t('common.home')}}</a>
+          <a :class="{ 'link-lg': detail.type == 'others' }" class="link" v-if="detail.link" v-bind:href="detail.link + $t('common.param')" target="_blank">{{ (detail.type == 'others') ? $t('common.contact_us') : $t('common.more')}}</a>
+          <a class="link" v-if="detail.type == 'others'" v-bind:href="'https://aiot.innodisk.com/' + $t('common.param')" target="_blank">{{ $t('common.home')}}</a>
           <a class="pop-close text-hide" href="#" title="Close" v-on:click.prevent="hidePointDetail">Close</a>
         </div>
       </div>

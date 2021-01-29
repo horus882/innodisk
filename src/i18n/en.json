@@ -3,7 +3,8 @@
         "more": "more",
         "contact_us": "contact us",
         "learn_more": "learn more",
-        "home": "home"
+        "home": "home",
+        "param": ""
     },
     "intro": {
         "subheading": "Building an Intelligent World",

@@ -9,15 +9,15 @@
       <div class="applications">
         <ul>
           <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + randomDelay(index) + 's'">
-            <a class="item" v-on:click="$trackEvent(item.name.replace('<br>', ' '), 'click', page.idName)" v-bind:href="item.link" target="_blank" v-if="item.extra == 'learn more'">
+            <a class="item" v-on:click="$trackEvent(item.name.replace('<br>', ' '), 'click', page.idName)" v-bind:href="item.link + $t('common.param')" target="_blank" v-if="item.extra == 'learn more'">
               <img class="item-image" v-bind:src="item.image">
               <p class="item-name">{{ $t(item.name) }}</p>
-              <span class="item-extra">{{ $t(item.extra) }}</span>
+              <span class="item-extra">{{ $t('common.learn_more') }}</span>
             </a>
             <a class="item" v-on:click="showPointDetail(page.idName, index)" v-else-if="item.extra != 'learn more'">
               <img class="item-image" v-bind:src="item.image">
               <p class="item-name">{{ $t(item.name) }}</p>
-              <span class="item-extra">{{ $t(item.extra) }}</span>
+              <span class="item-extra">{{ $t('common.contact_us') }}</span>
             </a>
           </li>
         </ul>
