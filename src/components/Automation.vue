@@ -11,11 +11,11 @@
           <div class="ring"></div>
           <div class="info">
             <div class="line" v-html="item.svg"></div>
-            <div class="label">{{ item.name }}</div>
+            <div class="label">{{ $t(item.name) }}</div>
           </div>
         </div>
       </div>
-      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" href="https://aiot.innodisk.com/solution-smart-automation/" target="_blank">Learn more</a>
+      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" href="https://aiot.innodisk.com/solution-smart-automation/" target="_blank">{{ $t('common.learn_more') }}</a>
     </div>
   </div>
 </template>

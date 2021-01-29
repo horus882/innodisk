@@ -6,15 +6,16 @@
           <ul>
             <li v-for="(item, index) in pages.slice(1, 6)" v-bind:key="index">
               <a class="item" tabindex="0" v-bind:class="'item-' + item.idName" v-bind:href="'#' + item.idName" v-on:click="toggleMenu">
-                {{ item.pageName }}
+                {{ $t(item.pageName) }}
               </a>
             </li>
           </ul>
         </nav>
         <div class="language">
           <ul>
-            <li><a href="#">中</a></li>
-            <li><a href="#">Eg</a></li>
+            <li v-for="(item, index) in langOptions" v-bind:key="index">
+              <a v-on:click="$setLang(item.value)">{{ item.text }}</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -28,8 +29,13 @@
 
 export default {
   name: 'Menu',
+  inject: ['langOptions'],
   data: function() {
     return {
+      // langOptions: [
+      //   {text: '中', value: 'zh-tw'},
+      //   {text: 'Eg', value: 'en'},
+      // ]
     }
   },
   props: {

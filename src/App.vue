@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-bind:class="{mobile: isMobile}">
+  <div id="app" v-bind:class="[{mobile: isMobile}, langCSS]">
     <Intro :show="showIntro" />
     <Header :showMenu="showMenu" :showHeader="showIntro" />
     <div id="wrap"> <!-- v-bind:style="{position: wrapPosition}" -->
@@ -38,6 +38,19 @@ import $ from 'jquery'
 
 export default {
   name: 'App',
+  computed: {
+    langCSS() {
+      return this.$i18n.locale;
+    }
+  },
+  provide() {
+    return {
+      langOptions: [
+        {text: '中', value: 'zh-tw'},
+        {text: 'Eg', value: 'en'},
+      ]
+    }
+  },
   data: function() {
     return {
       isMobile: false,
@@ -68,20 +81,20 @@ export default {
           more: true,
           points: [
             {
-              name: 'Human Machine Interface (HMI)',
-              text: 'HMI devices provide invaluable data and features to workers in smart factories and are critical to maintain speed and precision along assembly lines.<br>HMI devices must deliver high performance and unparalleled stability in challenging manufacturing settings—leaving little room for error.',
+              name: 'manufacturing.points[0].name',
+              text: 'manufacturing.points[0].text',
               link: 'https://aiot.innodisk.com/solutions-manufacturing/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
             },
             {
-              name: 'Industrial Robot',
-              text: 'Industrial robots are one of the core parts of the smart factories of tomorrow and already constitute key equipment along modern assembly lines.<br>Expected to provide uninterrupted exceptional performance in harsh industrial conditions, industrial robots demand the best components and smartest features to operate at an optimal level.',
+              name: 'manufacturing.points[1].name',
+              text: 'manufacturing.points[1].text',
               link: 'https://aiot.innodisk.com/solutions-manufacturing/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
             },
             {
-              name: 'Conveyor System',
-              text: 'Conveyor systems need to keep a rapid pace and maintain perfect coordination with all the other fast-moving equipment and workers on the factory floor. If it stops, everything stops.<br>Conveyor systems need to withstand the tough and challenging conditions present everywhere along an assembly line without even the slightest hiccup in performance.',
+              name: 'manufacturing.points[2].name',
+              text: 'manufacturing.points[2].text',
               link: 'https://aiot.innodisk.com/solutions-manufacturing/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
             }
@@ -95,26 +108,26 @@ export default {
           more: true,
           points: [
             {
-              name: 'Smart Camera',
-              text: 'Smart camera identification systems need to be able to process biometric information without delay and without error to provide users with the convenience and security they require.<br>Processing complex data sets at a rapid pace puts extreme performance and stability requirements on components used in smart cameras. Further, they are required to maintain perfect uptime and record video without any interruption in diverse applications and environments.',
+              name: 'facialRecognition.points[0].name',
+              text: 'facialRecognition.points[0].text',
               link: 'https://aiot.innodisk.com/solution-security-systems/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28.037px" height="24.509px" viewBox="0 0 28.037 24.509" enable-background="new 0 0 28.037 24.509"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M27.384,0.758 L0.691,23.735"/></svg>'
             },
             {
-              name: 'Panel PC',
-              text: 'Panel PCs used in surveillance applications need to provide security guards and other stakeholders instant access to video feeds from vast numbers of connected devices.<br>Security-focused panel PCs need to provide performance and flexibility while also allowing system operators to manage and maintain connected devices.',
+              name: 'facialRecognition.points[1].name',
+              text: 'facialRecognition.points[1].text',
               link: 'https://aiot.innodisk.com/solution-security-systems/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12.92px" height="62.63px" viewBox="0 0 12.92 62.63" enable-background="new 0 0 12.92 62.63"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M6.459,0v62.632"/></svg>'
             },
             {
-              name: 'Network Video Recorder (NVR)',
-              text: 'Surveillance applications generate enormous amounts of data every second, thereby requiring high-performance video recording and data processing capabilities that make surveillance data actionable.<br>Network video recorders (NVRs) used in surveillance applications have some of the highest requirements for performance and reliability in the industry, meaning that all hardware and components need to be up for the task.',
+              name: 'facialRecognition.points[2].name',
+              text: 'facialRecognition.points[2].text',
               link: 'https://aiot.innodisk.com/solution-security-systems/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="89.478px" height="26.083px" viewBox="0 0 89.478 26.083" enable-background="new 0 0 89.478 26.083"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M89.479,25.083H21.905 L0.85,0.809"/></svg>'
             },
             {
-              name: 'Entrance Gate',
-              text: 'Entrance gates serve as the last barrier before granting users access to protected areas. While seemingly simple, entrance gates need to work in perfect tandem with other parts of the security system, providing instant access as soon users have proven their identity.<br>Expected to make no mistakes while also providing instant processing and high throughput, entrance gates require excellent communications, high performance, and minimum downtime.',
+              name: 'facialRecognition.points[3].name',
+              text: 'facialRecognition.points[3].text',
               link: 'https://aiot.innodisk.com/solution-security-systems/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="58px" viewBox="0 0 20.938 57.5" enable-background="new 0 0 20.938 57.5"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M20.204,0.751L1,19.771V57.5"/></svg>'
             }
@@ -124,18 +137,18 @@ export default {
           idName: 'roadInfrastructure',
           pageName: 'roadInfrastructure.pageName',
           pageLabel: 'roadInfrastructure.pageLabel',
-          pageText: 'Road infrastructure can be made smarter in countless ways.<br>Which solution interests you the most?',
+          pageText: 'roadInfrastructure.pageText',
           more: true,
           points: [
             {
-              name: 'Electronic Toll Collection System',
-              text: 'Electronic toll collection (ETC) systems need to process vehicles at a rapid pace while also providing critical traffic data to operators or AI systems for further processing.<br>ETC systems serve vital parts of road infrastructure and must remain operational at an optimal level even in the toughest outdoor climate and weather conditions, e.g., during heatwaves and cold snaps.',
+              name: 'roadInfrastructure.points[0].name',
+              text: 'roadInfrastructure.points[0].text',
               link: 'https://aiot.innodisk.com/solutions-road-infrastructure/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30px" height="77px" viewBox="0 0 20.335 68.326" enable-background="new 0 0 20.335 68.326"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M19.335,0v49 L0.838,67.554"/></svg>'
             },
             {
-              name: 'Roadside Monitoring Station',
-              text: 'Roadside monitoring stations provide and process critical data such as traffic data, weather information, and information from nearby infrastructure.<br>Exposed to year-round outside climates, pollution, and other roadside challenges such as shocks and vibrations, roadside monitoring stations require extreme ruggedness. To allow efficient maintenance and management, they also need to provide sophisticated remote management functionality.',
+              name: 'roadInfrastructure.points[1].name',
+              text: 'roadInfrastructure.points[1].text',
               link: 'https://aiot.innodisk.com/solutions-road-infrastructure/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="58.151px" height="15.186px" viewBox="0 0 58.151 15.186" enable-background="new 0 0 58.151 15.186"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.809,14.516L12.353,1 h45.8"/></svg>'
             }
@@ -145,24 +158,24 @@ export default {
           idName: 'healthcare',
           pageName: 'healthcare.pageName',
           pageLabel: 'healthcare.pageLabel',
-          pageText: 'Healthcare can be made smarter in countless ways.<br>Which solution interests you the most?',
+          pageText: 'healthcare.pageText',
           more: true,
           points: [
             {
-              name: 'MRI Machine',
-              text: 'MRI machines generate an extraordinary amount of highly sensitive data that must be processed expediently and securely in a way that makes information quickly actionable by physicians and medical experts.<br>MRI machines need to transmit and store data without any interruption or threats to data integrity despite high levels of electromagnetic interference, all while providing excellent performance for rapid processing.',
+              name: 'healthcare.points[0].name',
+              text: 'healthcare.points[0].text',
               link: 'https://aiot.innodisk.com/solution-healthcare/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="62.632px" height="12.921px" viewBox="0 0 62.632 12.921" enable-background="new 0 0 62.632 12.921"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0,6.461h62.632"/></svg>'
             },
             {
-              name: 'Smart Medical Cart',
-              text: 'Medical carts provide medical professionals with important patient information and data processing abilities where they are needed the most.<br>Processing sensitive information in sensitive settings leaves little room for performance lapses or data security issues.',
+              name: 'healthcare.points[1].name',
+              text: 'healthcare.points[1].text',
               link: 'https://aiot.innodisk.com/solution-healthcare/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28.037px" height="24.509px" viewBox="0 0 28.037 24.509" enable-background="new 0 0 28.037 24.509"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M27.384,0.758 L0.691,23.735"/></svg>'
             },
             {
-              name: 'Medical All-in-one PC',
-              text: 'Medical all-in-one PCs provide healthcare professionals with actionable real-time information from sensors and equipment, ensuring that they make the right decisions at the ideal time.<br>Medical all-in-one PCs have no margin for error, require the highest possible reliability and system stability—all while providing critical information to professionals at a rapid pace.',
+              name: 'healthcare.points[2].name',
+              text: 'healthcare.points[2].text',
               link: 'https://aiot.innodisk.com/solution-healthcare/',
               svg:  '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="59px" height="16px" viewBox="0 0 58.156 15.219" enable-background="new 0 0 58.156 15.219"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M0.781,0.704 l11.544,13.515h45.8"/></svg>'
             }
@@ -173,50 +186,50 @@ export default {
           idName: 'others',
           pageName: 'others.pageName',
           pageLabel: null,
-          pageText: 'Which of the applications<br>interest you the most?',
+          pageText: 'others.pageText',
           more: false,
           apps: [
             {
-              name: 'Agriculture',
+              name: 'others.apps.agriculture',
               image: require('./assets/images/others/item-pic-1.jpg'),
               link: 'https://aiot.innodisk.com/solution-agriculture/',
-              extra: 'learn more'
+              extra: 'common.learn_more'
             },
             {
-              name: 'Construction',
+              name: 'others.apps.construction',
               image: require('./assets/images/others/item-pic-2.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Delivery Services',
+              name: 'others.apps.delivery_services',
               image: require('./assets/images/others/item-pic-3.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Public<br>Transportation',
+              name: 'others.apps.public_transportation',
               image: require('./assets/images/others/item-pic-4.jpg'),
               link: 'https://aiot.innodisk.com/solution-transportation/',
-              extra: 'learn more'
+              extra: 'common.learn_more'
             },
             {
-              name: 'Logistics',
+              name: 'others.apps.logistics',
               image: require('./assets/images/others/item-pic-5.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Public Services',
+              name: 'others.apps.public_services',
               image: require('./assets/images/others/item-pic-6.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Surveillance',
+              name: 'others.apps.surveillance',
               image: require('./assets/images/others/item-pic-7.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             // {
             //   name: 'Security systems',
@@ -225,46 +238,46 @@ export default {
             //   extra: 'learn more'
             // },
             {
-              name: 'Security<br>Checkpoints',
+              name: 'others.apps.security_checkpoints',
               image: require('./assets/images/others/item-pic-9.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Mining and Drilling',
+              name: 'others.apps.mining_and_drilling',
               image: require('./assets/images/others/item-pic-10.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Oil and Gas',
+              name: 'others.apps.oil_and_gas',
               image: require('./assets/images/others/item-pic-11.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Retail',
+              name: 'others.apps.retail',
               image: require('./assets/images/others/item-pic-12.jpg'),
               link: 'https://aiot.innodisk.com/solution-retail/',
-              extra: 'learn more'
+              extra: 'common.learn_more'
             },
             {
-              name: 'Automated Machines',
+              name: 'others.apps.automated_machines',
               image: require('./assets/images/others/item-pic-13.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Aviation',
+              name: 'others.apps.aviation',
               image: require('./assets/images/others/item-pic-14.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             {
-              name: 'Power',
+              name: 'others.apps.power',
               image: require('./assets/images/others/item-pic-15.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             },
             // {
             //   name: 'Defense',
@@ -273,10 +286,10 @@ export default {
             //   extra: 'contact us'
             // },
             {
-              name: 'Border Security',
+              name: 'others.apps.border_security',
               image: require('./assets/images/others/item-pic-17.jpg'),
               link: 'https://aiot.innodisk.com/contact/',
-              extra: 'contact us'
+              extra: 'common.contact_us'
             }
           ]
         }
@@ -357,7 +370,7 @@ export default {
           self.pointDetail.type = 'null';
         } else {
           self.pointDetail.name = result[0].apps[pointIndex].name.replace('<br>', ' ');
-          self.pointDetail.text = 'Innodisk offers AIoT solutions optimized for ' + result[0].apps[pointIndex].name + '.<br>Please do not hesitate to contact us to learn more.';
+          self.pointDetail.text = 'Innodisk offers AIoT solutions optimized for ' + self.$t(result[0].apps[pointIndex].name) + '.\nPlease do not hesitate to contact us to learn more.';
           self.pointDetail.link = result[0].apps[pointIndex].link;
           self.pointDetail.type = 'others';
         }
@@ -598,7 +611,7 @@ p {margin: 0;}
       font-weight: 600;
       line-height: 1.33;
       transition-delay: .2s;
-      white-space: pre;
+      white-space: pre-line;
       @media (min-width: $screen-lg) {
         font-size: 21px;
       }
@@ -735,6 +748,7 @@ p {margin: 0;}
     font-size: 16px;
     text-indent: 30px;
     line-height: 42px;
+    text-transform: capitalize;
     border: #000 1px solid;
     border-bottom: 0;
     background: rgba(255, 255, 255, 0.9);

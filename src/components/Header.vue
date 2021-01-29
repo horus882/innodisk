@@ -14,7 +14,7 @@
         <div class="language" v-show="!showMenu">
           <ul>
             <li v-for="(item, index) in langOptions" v-bind:key="index">
-              <a v-on:click="setLang(item.value)">{{ item.text }}</a>
+              <a v-on:click="$setLang(item.value)">{{ item.text }}</a>
             </li>
             <!-- <li><a href="#">中</a></li>
             <li><a href="#">Eg</a></li> -->
@@ -31,13 +31,10 @@
 
 export default {
   name: 'Header',
+  inject: ['langOptions'],
   data: function() {
     return {
       // menuOpen: false
-      langOptions: [
-        {text: '中', value: 'zh-tw'},
-        {text: 'Eg', value: 'en'},
-      ]
     }
   },
   props: {
@@ -51,12 +48,11 @@ export default {
       this.$parent.toggleMenu();
     },
     // 儲存切換的語系
-    setLang (value) {
-      console.log(value);
-      this.$store.commit('setLang', value);
-      this.$i18n.locale = value;
-      localStorage.setItem('site-lang', value);
-    }
+    // setLang (value) {
+    //   this.$store.commit('setLang', value);
+    //   this.$i18n.locale = value;
+    //   localStorage.setItem('site-lang', value);
+    // }
   }
 }
 

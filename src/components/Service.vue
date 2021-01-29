@@ -2,20 +2,20 @@
   <div v-bind:id="'page-' + page.idName" class="section page-intro">
     <div class="inner">
       <div class="page-info">
-        <h2 class="page-name">{{ page.pageName }}</h2>
-        <p class="page-label"><span>{{ page.pageLabel }}</span></p>
-        <p class="page-text" v-html="page.pageText"></p>
+        <h2 class="page-name">{{ $t(page.pageName) }}</h2>
+        <p class="page-label"><span>{{ $t(page.pageLabel) }}</span></p>
+        <p class="page-text">{{ $t(page.pageText) }}</p>
       </div>
       <div class="points">
         <div v-for="(item, index) in page.points" v-bind:key="index" v-bind:id="page.idName + '-point-' + (index + 1)" class="point" v-on:click="showPointDetail(page.idName, index)">
           <div class="ring"></div>
           <div class="info">
             <div class="line" v-html="item.svg"></div>
-            <div class="label">{{ item.name }}</div>
+            <div class="label">{{ $t(item.name) }}</div>
           </div>
         </div>
       </div>
-      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" href="https://aiot.innodisk.com/solution-smart-services/" target="_blank">Learn more</a>
+      <a class="learn-more" v-on:click="$trackEvent('Learn More', 'click', page.idName)" href="https://aiot.innodisk.com/solution-smart-services/" target="_blank">{{ $t('common.learn_more') }}</a>
     </div>
   </div>
 </template>

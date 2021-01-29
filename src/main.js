@@ -31,6 +31,12 @@ const i18n = new VueI18n({
 // import 'fullpage.js/vendors/scrolloverflow'
 // import VueFullPage from 'vue-fullpage.js'
 
+Vue.prototype.$setLang = function(value) {
+  this.$store.commit('setLang', value);
+  this.$i18n.locale = value;
+  localStorage.setItem('site-lang', value);
+}
+
 Vue.prototype.$trackPage = function(pageName) {
   this.$gtag.pageview({
     page_path: '/' + pageName,

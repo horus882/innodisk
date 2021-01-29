@@ -4,20 +4,20 @@
       <div class="page-info">
         <h2 class="page-name">{{ page.pageName }}</h2>
         <p class="page-label"><span>{{ page.pageLabel }}</span></p>
-        <p class="page-text" v-html="page.pageText"></p>
+        <p class="page-text">{{ $t(page.pageText) }}</p>
       </div>
       <div class="applications">
         <ul>
           <li v-for="(item, index) in page.apps" v-bind:key="index" v-bind:style="'transition-delay: ' + randomDelay(index) + 's'">
             <a class="item" v-on:click="$trackEvent(item.name.replace('<br>', ' '), 'click', page.idName)" v-bind:href="item.link" target="_blank" v-if="item.extra == 'learn more'">
               <img class="item-image" v-bind:src="item.image">
-              <p class="item-name" v-html="item.name"></p>
-              <span class="item-extra">{{ item.extra }}</span>
+              <p class="item-name">{{ $t(item.name) }}</p>
+              <span class="item-extra">{{ $t(item.extra) }}</span>
             </a>
             <a class="item" v-on:click="showPointDetail(page.idName, index)" v-else-if="item.extra != 'learn more'">
               <img class="item-image" v-bind:src="item.image">
-              <p class="item-name" v-html="item.name"></p>
-              <span class="item-extra">{{ item.extra }}</span>
+              <p class="item-name">{{ $t(item.name) }}</p>
+              <span class="item-extra">{{ $t(item.extra) }}</span>
             </a>
           </li>
         </ul>
@@ -165,6 +165,7 @@ export default {
       position: relative;
       font-size: 21px;
       z-index: 2;
+      white-space: pre-line;
       @media (min-width: $screen-lg) {
         font-size: 26px;
         font-weight: 600;
