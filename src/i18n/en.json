@@ -64,11 +64,11 @@
         "points": [
             {
                 "name": "Electronic Toll Collection System",
-                "text": "Electronic toll collection (ETC) systems need to process vehicles at a rapid pace while also providing critical traffic data to operators or AI systems for further processing.<br>ETC systems serve vital parts of road infrastructure and must remain operational at an optimal level even in the toughest outdoor climate and weather conditions, e.g., during heatwaves and cold snaps."
+                "text": "Electronic toll collection (ETC) systems need to process vehicles at a rapid pace while also providing critical traffic data to operators or AI systems for further processing.\nETC systems serve vital parts of road infrastructure and must remain operational at an optimal level even in the toughest outdoor climate and weather conditions, e.g., during heatwaves and cold snaps."
             },
             {
                 "name": "Roadside Monitoring Station",
-                "text": "Roadside monitoring stations provide and process critical data such as traffic data, weather information, and information from nearby infrastructure.<br>Exposed to year-round outside climates, pollution, and other roadside challenges such as shocks and vibrations, roadside monitoring stations require extreme ruggedness. To allow efficient maintenance and management, they also need to provide sophisticated remote management functionality."
+                "text": "Roadside monitoring stations provide and process critical data such as traffic data, weather information, and information from nearby infrastructure.\nExposed to year-round outside climates, pollution, and other roadside challenges such as shocks and vibrations, roadside monitoring stations require extreme ruggedness. To allow efficient maintenance and management, they also need to provide sophisticated remote management functionality."
             }
         ]
     },
@@ -79,15 +79,15 @@
         "points": [
             {
                 "name": "MRI Machine",
-                "text": "MRI machines generate an extraordinary amount of highly sensitive data that must be processed expediently and securely in a way that makes information quickly actionable by physicians and medical experts.<br>MRI machines need to transmit and store data without any interruption or threats to data integrity despite high levels of electromagnetic interference, all while providing excellent performance for rapid processing."
+                "text": "MRI machines generate an extraordinary amount of highly sensitive data that must be processed expediently and securely in a way that makes information quickly actionable by physicians and medical experts.\nMRI machines need to transmit and store data without any interruption or threats to data integrity despite high levels of electromagnetic interference, all while providing excellent performance for rapid processing."
             },
             {
                 "name": "Smart Medical Cart",
-                "text": "Medical carts provide medical professionals with important patient information and data processing abilities where they are needed the most.<br>Processing sensitive information in sensitive settings leaves little room for performance lapses or data security issues."
+                "text": "Medical carts provide medical professionals with important patient information and data processing abilities where they are needed the most.\nProcessing sensitive information in sensitive settings leaves little room for performance lapses or data security issues."
             },
             {
                 "name": "Medical All-in-one PC",
-                "text": "Medical all-in-one PCs provide healthcare professionals with actionable real-time information from sensors and equipment, ensuring that they make the right decisions at the ideal time.<br>Medical all-in-one PCs have no margin for error, require the highest possible reliability and system stability—all while providing critical information to professionals at a rapid pace."
+                "text": "Medical all-in-one PCs provide healthcare professionals with actionable real-time information from sensors and equipment, ensuring that they make the right decisions at the ideal time.\nMedical all-in-one PCs have no margin for error, require the highest possible reliability and system stability—all while providing critical information to professionals at a rapid pace."
             }
         ]
     },

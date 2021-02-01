@@ -70,6 +70,10 @@ export default {
   background: rgba(255, 255, 255, 0.85);
   z-index: 3;
 
+  @at-root {
+    .show-pop #header {opacity: 0.75; pointer-events: none;}
+  }
+
   .menu-toggle {
     position: absolute;
     top: 23px;
