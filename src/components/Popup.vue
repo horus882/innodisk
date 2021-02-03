@@ -156,6 +156,11 @@ export default {
       height: 17px;
       color: #fff;
       font-size: 13px;
+      @at-root {
+        .zh-hant #pop #pop-pointDetail .link {
+          font-size: 12px;
+        }
+      }
       text-indent: 8px;
       line-height: 15px;
       margin-top: 15px;
@@ -172,6 +177,12 @@ export default {
         height: 22px;
         font-size: 18px;
         line-height: 18px;
+        @at-root {
+          .zh-hant #pop #pop-pointDetail .link {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
         &.link-lg {
           width: 120px;
         }
@@ -248,6 +259,11 @@ export default {
       font-size: 15px;
       text-indent: 10px;
       line-height: 16px;
+      @at-root {
+        .mobile.zh-hant #pop #pop-pointDetail .link {
+          line-height: 20px;
+        }
+      }
       &.link-lg {
         width: 120px;
       }
